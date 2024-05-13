@@ -83,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(movement * Vector2.right);
         if(rb.velocity.y < 0f)
         {
-            rb.gravityScale = movementData.fallingGravityScale;
+            rb.gravityScale = movementData.gravityScale * movementData.fallingGravityScale;
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Max(rb.velocity.y, -movementData.maxFallingSpeed));
         }
     }
@@ -98,16 +98,15 @@ public class PlayerMovement : MonoBehaviour
             remainingJumpCoyoteTime = movementData.jumpCoyoteTime;
             isJumping = false;
             isFalling = false;
-            rb.gravityScale = 1f;
+            rb.gravityScale = movementData.gravityScale;
         }
     }
 
     void Jump()
     {
-        // If the player is holding the jump button, make a great jump, else make a short jump
-        float trueJumpHeight = Input.GetKey(KeyCode.Space) ? movementData.jumpHeight : movementData.miniJumpHeight;
-        float jumpForce = Mathf.Sqrt(-2.0f * Physics2D.gravity.y * trueJumpHeight);
-        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        // If the player is holding the jump button, make a normal jump, else make a short jump
+        float trueJumpForce = Input.GetKey(KeyCode.Space) ? movementData.jumpForce : movementData.miniJumpForce;
+        rb.velocity = new Vector2(rb.velocity.x, trueJumpForce);
         remainingJumpBufferTime = 0f;
         remainingJumpCoyoteTime = 0f;
         isJumping = true;
