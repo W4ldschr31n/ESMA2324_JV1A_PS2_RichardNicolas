@@ -209,15 +209,10 @@ MonoBehaviour:
   platformLayers:
     serializedVersion: 2
     m_Bits: 8
-  acceleration: 10
-  groundFriction: 15
-  airControl: 5
-  speed: 5
-  jumpHeight: 4
-  miniJumpHeight: 2
-  jumpBufferTime: 0.2
-  jumpCoyoteTime: 0.2
+  movementData: {fileID: 11400000, guid: 012d8bf86c1057349b9b2539371f8858, type: 2}
   isOnGround: 0
+  isJumping: 0
+  isFalling: 0
 --- !u!1 &7809884439680194052
 GameObject:
   m_ObjectHideFlags: 0
