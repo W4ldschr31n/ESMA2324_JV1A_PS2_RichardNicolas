@@ -12,16 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f0c786815dd2cd489bcde2890e59a39, type: 3}
   m_Name: BasePlayerMovementData
   m_EditorClassIdentifier: 
-  baseAcceleration: 0
-  deceleration: 0
-  airControl: 0
-  baseMaxSpeed: 0
-  jumpHeight: 0
-  miniJumpHeight: 0
-  fallingGravityScale: 0
-  maxFallingSpeed: 0
-  jumpBufferTime: 0
-  jumpCoyoteTime: 0
-  apexBoostThreshold: 0
-  apexBoostMaxSpeed: 0
-  apexBoostAcceleration: 0
+  baseAcceleration: 10
+  deceleration: 20
+  airControl: 5
+  baseMaxSpeed: 10
+  jumpHeight: 5
+  miniJumpRatio: 0.6
+  jumpApexTime: 0.5
+  jumpForce: 20
+  miniJumpForce: 12
+  fallingGravityScale: 1.5
+  maxFallingSpeed: 20
+  gravityScale: 4.0774717
+  jumpBufferTime: 0.2
+  jumpCoyoteTime: 0.2
+  apexBoostThreshold: 0.1
+  apexBoostMaxSpeed: 12
+  apexBoostAcceleration: 15
+  apexBoostGravityMult: 0.5
