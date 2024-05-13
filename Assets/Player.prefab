@@ -136,7 +136,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 94321597471db2941843515f54acfdcd, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -209,8 +209,12 @@ MonoBehaviour:
   platformLayers:
     serializedVersion: 2
     m_Bits: 8
-  speed: 3
+  acceleration: 10
+  groundFriction: 15
+  airControl: 5
+  speed: 5
   jumpHeight: 4
+  miniJumpHeight: 2
   jumpBufferTime: 0.2
   jumpCoyoteTime: 0.2
   isOnGround: 0
