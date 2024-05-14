@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerMovementData))]
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
@@ -11,13 +10,17 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask platformLayers;
     [SerializeField] private PlayerMovementData movementData;
 
+    private Recorder recorder;
+
     private float directionInput;
     private float remainingJumpBufferTime, remainingJumpCoyoteTime;
     public bool isOnGround, isJumping, isFalling;
+    private bool isRecording;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         hitbox = GetComponent<Collider2D>();
+        recorder = GetComponent<Recorder>();
     }
 
 
@@ -50,8 +53,27 @@ public class PlayerMovement : MonoBehaviour
             remainingJumpCoyoteTime -= Time.deltaTime;
         }
         Debug.Log(rb.velocity);
+
+        // Replay
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            isRecording = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            isRecording = false;
+            recorder.StartReplay();
+        }
     }
 
+    private void LateUpdate()
+    {
+        if (isRecording)
+        {
+            ReplayData data = new ReplayData(transform.position);
+            recorder.RecordReplayData(data);
+        }
+    }
     private void FixedUpdate()
     {
         CheckIsOnGround();
