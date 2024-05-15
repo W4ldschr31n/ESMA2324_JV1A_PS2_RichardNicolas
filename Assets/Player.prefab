@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5582911484287457561}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FeetSpot
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 434917439439679646}
   - component: {fileID: 8224600757320683624}
   - component: {fileID: 7744256056719640284}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -213,7 +213,6 @@ MonoBehaviour:
   movementData: {fileID: 11400000, guid: 012d8bf86c1057349b9b2539371f8858, type: 2}
   isOnGround: 0
   isJumping: 0
-  isFalling: 0
 --- !u!114 &7744256056719640284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,7 +236,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5714527607184790291}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HeadSpot
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
