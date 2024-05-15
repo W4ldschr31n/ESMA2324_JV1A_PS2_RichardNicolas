@@ -24,12 +24,12 @@ public class PlayerMovementData : ScriptableObject
     [HideInInspector] public float gravityScale; // The computed gravity force needed to compensate the jumpForce
 
     [Header("Accessibility")]
-    public float jumpBufferTime;
-    public float jumpCoyoteTime;
-    public float apexBoostThreshold;
-    public float apexBoostMaxSpeed;
-    public float apexBoostAcceleration;
-    public float apexBoostGravityMult;
+    public float jumpBufferTime; // Grace time allowing the player to register a jump early
+    public float jumpCoyoteTime; // Grace time allowing the player to jump after leaving a platform
+    public float apexBoostThreshold; // Absolute Y Velocity under which the player gets additional air control
+    public float apexBoostMaxSpeed; // Speed limit for additional air control
+    public float apexBoostAcceleration; // Acceleration for additional air control
+    public float apexBoostGravityMult; // Gravity mulitplier at the apex of the jump (to get a floaty feeling)
 
     // Update hidden values when changes occur in inspector
     private void OnValidate()

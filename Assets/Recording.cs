@@ -17,12 +17,14 @@ public class Recording
 
     public void ReplayFromBeginning()
     {
+        // Replace current replay queue with original queue
         replayQueue = new(originalQueue);
     }
 
     public bool ReplayNextData()
     {
         bool hasMoreData = false;
+        // Check if there is more data to play
         if(replayQueue.Count > 0)
         {
             ReplayData data = replayQueue.Dequeue();
@@ -35,7 +37,8 @@ public class Recording
 
     public void CreateReplayPlayer(GameObject replayPlayerPrefab)
     {
-        if(replayQueue.Count > 0)
+        // Create a replay player if needed
+        if(replayQueue.Count > 0 && player == null)
         {
             ReplayData firstData = replayQueue.Peek();
             player = GameObject.Instantiate(replayPlayerPrefab, firstData.position, Quaternion.identity)
@@ -45,6 +48,7 @@ public class Recording
 
     public void DestroyReplayPlayer()
     {
+        // Destroy the replay player if needed
         if (player != null)
         {
             GameObject.Destroy(player.gameObject);

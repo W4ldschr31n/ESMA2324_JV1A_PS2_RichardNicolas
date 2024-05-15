@@ -21,11 +21,13 @@ public class Recorder : MonoBehaviour
         if (!isReplaying)
             return;
 
+        // Play next data for every ongoing replay
         bool hasMoreData = false;
         foreach(Recording recording in recordingList)
         {
             hasMoreData |= recording.ReplayNextData();
         }
+        // Restart when there is no next data TODO not needed if fixed replay time
         if (!hasMoreData)
             RestartReplay();
     }
@@ -37,17 +39,19 @@ public class Recorder : MonoBehaviour
 
     public void StartReplay()
     {
+        // Create replay with current record
         isReplaying = true;
         AddCurrentRecording();
+        // TODO only the last recording needs to be called
         foreach(Recording recording in recordingList)
         {
             recording.CreateReplayPlayer(replayPlayerPrefab);
         }
-        // TODO camera follow
     }
 
     public void RestartReplay()
     {
+        // Restart every replay from the beginning
         isReplaying = true;
         foreach (Recording recording in recordingList)
         {
@@ -57,6 +61,7 @@ public class Recorder : MonoBehaviour
 
     public void Clear()
     {
+        // Delete every replay and stop replaying
         isReplaying = false;
         recordingQueue.Clear();
         foreach (Recording recording in recordingList)
@@ -68,6 +73,7 @@ public class Recorder : MonoBehaviour
 
     public void AddCurrentRecording()
     {
+        // Save current record and start a new one
         recordingList.Add(new Recording(recordingQueue));
         recordingQueue.Clear();
     }
