@@ -78,6 +78,11 @@ public class Recorder : MonoBehaviour
         recordingQueue.Clear();
     }
 
+    public void CancelCurrentRecording()
+    {
+        recordingQueue.Clear();
+    }
+
     public void StartNewRecording()
     {
         AddCurrentRecording();

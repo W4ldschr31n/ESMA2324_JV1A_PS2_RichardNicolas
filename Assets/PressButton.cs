@@ -5,18 +5,23 @@ using UnityEngine;
 public class PressButton : MonoBehaviour
 {
     public GameObject activable;
+    public LayerMask playerLayer;
+    private Rigidbody2D rb;
 
-    private void OnTriggerStay2D(Collider2D collision)
+
+    private void Awake()
     {
-        if (collision.CompareTag("Player"))
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+
+    private void FixedUpdate()
+    {
+        if (rb.IsTouchingLayers(playerLayer))
         {
             activable.SetActive(false);
         }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
+        else
         {
             activable.SetActive(true);
         }

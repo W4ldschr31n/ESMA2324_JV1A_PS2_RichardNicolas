@@ -44,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.position = Vector2.zero;
             rb.velocity = Vector2.zero;
+            recorder.CancelCurrentRecording();
         }
         // Timers
         if(remainingJumpBufferTime > 0f)
@@ -54,22 +55,22 @@ public class PlayerMovement : MonoBehaviour
         {
             remainingJumpCoyoteTime -= Time.deltaTime;
         }
+    }
 
-        // Replay
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            recorder.StartNewRecording();
-            isRecording = true;
-        }
-        else if (Input.GetKeyDown(KeyCode.Backspace))
-        {
-            isRecording = false;
-            recorder.StartReplay();
-        }
-        else if (Input.GetKeyDown(KeyCode.Delete))
-        {
-            recorder.Clear();
-        }
+    public void StartRecording()
+    {
+        recorder.StartNewRecording();
+        isRecording = true;
+    }
+    public void StopRecording()
+    {
+        isRecording = false;
+        recorder.StartReplay();
+    }
+
+    public void ClearAllRecordings()
+    {
+        recorder.Clear();
     }
 
     private void LateUpdate()
