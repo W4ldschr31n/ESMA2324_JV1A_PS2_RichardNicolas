@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     private PlayerMovement playerInstance;
     public TimerManager timerManager;
     public float timer;
+    public GameObject promptText;
 
     private void OnEnable()
     {
@@ -22,10 +23,12 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        // Level Start
         if (playerInstance==null)
         {
             if (Input.GetKeyDown(KeyCode.Return))
             {
+                promptText.SetActive(false);
                 RespawnPlayer();
             }
         }
