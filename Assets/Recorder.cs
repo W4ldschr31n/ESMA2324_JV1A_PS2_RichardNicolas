@@ -7,11 +7,12 @@ public class Recorder : MonoBehaviour
     public Queue<ReplayData> recordingQueue;
     public GameObject replayPlayerPrefab;
     public bool isReplaying;
-    private Recording recording;
+    private List<Recording> recordingList;
 
     private void Awake()
     {
         recordingQueue = new Queue<ReplayData>();
+        recordingList = new List<Recording>();
     }
 
     private void Update()
@@ -20,7 +21,11 @@ public class Recorder : MonoBehaviour
         if (!isReplaying)
             return;
 
-        bool hasMoreData = recording.ReplayNextData();
+        bool hasMoreData = false;
+        foreach(Recording recording in recordingList)
+        {
+            hasMoreData |= recording.ReplayNextData();
+        }
         if (!hasMoreData)
             RestartReplay();
     }
@@ -33,23 +38,42 @@ public class Recorder : MonoBehaviour
     public void StartReplay()
     {
         isReplaying = true;
-        recording = new Recording(recordingQueue);
-        recordingQueue.Clear();
-        recording.CreateReplayPlayer(replayPlayerPrefab);
+        AddCurrentRecording();
+        foreach(Recording recording in recordingList)
+        {
+            recording.CreateReplayPlayer(replayPlayerPrefab);
+        }
+        // TODO camera follow
     }
 
     public void RestartReplay()
     {
         isReplaying = true;
-        recording.ReplayFromBeginning();
+        foreach (Recording recording in recordingList)
+        {
+            recording.ReplayFromBeginning();
+        }
     }
 
-
-    private void Reset()
+    public void Clear()
     {
         isReplaying = false;
         recordingQueue.Clear();
-        recording.DestroyReplayPlayer();
-        recording = null;
+        foreach (Recording recording in recordingList)
+        {
+            recording.DestroyReplayPlayer();
+        }
+        recordingList.Clear();
+    }
+
+    public void AddCurrentRecording()
+    {
+        recordingList.Add(new Recording(recordingQueue));
+        recordingQueue.Clear();
+    }
+
+    public void StartNewRecording()
+    {
+        AddCurrentRecording();
     }
 }

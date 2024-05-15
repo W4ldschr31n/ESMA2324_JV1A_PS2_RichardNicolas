@@ -6,20 +6,22 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Collider2D hitbox;
+    private SpriteRenderer sprite;
+    private Recorder recorder;
     [SerializeField] private Transform feetSpot, headSpot;
     [SerializeField] private LayerMask platformLayers;
     [SerializeField] private PlayerMovementData movementData;
 
-    private Recorder recorder;
 
     private float directionInput;
     private float remainingJumpBufferTime, remainingJumpCoyoteTime;
-    public bool isOnGround, isJumping, isFalling;
+    public bool isOnGround, isJumping;
     private bool isRecording;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         hitbox = GetComponent<Collider2D>();
+        sprite = GetComponent<SpriteRenderer>();
         recorder = GetComponent<Recorder>();
     }
 
@@ -52,11 +54,11 @@ public class PlayerMovement : MonoBehaviour
         {
             remainingJumpCoyoteTime -= Time.deltaTime;
         }
-        Debug.Log(rb.velocity);
 
         // Replay
         if (Input.GetKeyDown(KeyCode.Return))
         {
+            recorder.StartNewRecording();
             isRecording = true;
         }
         else if (Input.GetKeyDown(KeyCode.Backspace))
@@ -64,13 +66,18 @@ public class PlayerMovement : MonoBehaviour
             isRecording = false;
             recorder.StartReplay();
         }
+        else if (Input.GetKeyDown(KeyCode.Delete))
+        {
+            recorder.Clear();
+        }
     }
 
     private void LateUpdate()
     {
         if (isRecording)
         {
-            ReplayData data = new ReplayData(transform.position);
+            // TODO interact and die this frame
+            ReplayData data = new ReplayData(transform.position, rb.velocity, isJumping, sprite.flipX, false, false);
             recorder.RecordReplayData(data);
         }
     }
@@ -113,14 +120,16 @@ public class PlayerMovement : MonoBehaviour
     void CheckIsOnGround()
     {
         Vector3 offset = new Vector3(0.5f, 0f, 0f);
-        Debug.DrawRay((feetSpot.position - offset), Vector3.right, Color.red, 0);
+        //Debug.DrawRay((feetSpot.position - offset), Vector3.right, Color.red, 0);
         isOnGround = Physics2D.OverlapArea(feetSpot.position - offset, feetSpot.position + offset, platformLayers);
         if (isOnGround)
         {
             remainingJumpCoyoteTime = movementData.jumpCoyoteTime;
-            isJumping = false;
-            isFalling = false;
             rb.gravityScale = movementData.gravityScale;
+        }
+        else
+        {
+            isJumping = rb.velocity.y > 0f;
         }
     }
 
@@ -131,6 +140,5 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(rb.velocity.x, trueJumpForce);
         remainingJumpBufferTime = 0f;
         remainingJumpCoyoteTime = 0f;
-        isJumping = true;
     }
 }
