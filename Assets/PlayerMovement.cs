@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     private float remainingJumpBufferTime, remainingJumpCoyoteTime;
     public bool isOnGround, isJumping;
     private bool isRecording;
+    public bool canMove;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -29,6 +30,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!canMove)
+        {
+            return;
+        }
         //Movement
         
         directionInput = Input.GetAxisRaw("Horizontal");
@@ -141,5 +146,19 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(rb.velocity.x, trueJumpForce);
         remainingJumpBufferTime = 0f;
         remainingJumpCoyoteTime = 0f;
+    }
+
+    public void DisableAndHide()
+    {
+        canMove = false;
+        sprite.enabled = false;
+        rb.simulated = false;
+    }
+
+    public void EnableAndShow()
+    {
+        canMove = true;
+        sprite.enabled = true;
+        rb.simulated = true;
     }
 }

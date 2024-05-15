@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour
             playerInstance.StopRecording();
             playerInstance.transform.position = playerSpawn.position;
         }
+        playerInstance.EnableAndShow();
         playerInstance.StartRecording();
         timerManager.StartTimer(timer);
     }
@@ -65,5 +66,11 @@ public class GameManager : MonoBehaviour
     private void OnTimerEnded()
     {
         RespawnPlayer();
+    }
+
+    public void FinishGame()
+    {
+        playerInstance.StopRecording();
+        playerInstance.DisableAndHide();
     }
 }
