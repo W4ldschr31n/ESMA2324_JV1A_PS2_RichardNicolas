@@ -78,6 +78,11 @@ public class PlayerMovement : MonoBehaviour
         recorder.Clear();
     }
 
+    public void RestartReplay()
+    {
+        recorder.RestartReplay();
+    }
+
     private void LateUpdate()
     {
         if (isRecording)
@@ -152,6 +157,7 @@ public class PlayerMovement : MonoBehaviour
     {
         canMove = false;
         sprite.enabled = false;
+        rb.velocity = Vector2.zero;
         rb.simulated = false;
     }
 

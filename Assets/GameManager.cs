@@ -10,9 +10,11 @@ public class GameManager : MonoBehaviour
     public TimerManager timerManager;
     public float timer;
     public GameObject promptText;
+    private bool isPlaying;
 
-    private void OnEnable()
+    void Start()
     {
+        // Do this in Start to let the event be initialized in an Awake
         TimerManager.onTimerEnded.AddListener(OnTimerEnded);
     }
 
@@ -24,11 +26,13 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         // Level Start
-        if (playerInstance==null)
+        if (!isPlaying)
         {
             if (Input.GetKeyDown(KeyCode.Return))
             {
+                isPlaying = true;
                 promptText.SetActive(false);
+                DestroyPlayer();
                 RespawnPlayer();
             }
         }
@@ -43,6 +47,16 @@ public class GameManager : MonoBehaviour
                 playerInstance.ClearAllRecordings();
                 RespawnPlayer();
             }
+        }
+    }
+
+    private void DestroyPlayer()
+    {
+        if(playerInstance != null)
+        {
+            playerInstance.ClearAllRecordings();
+            Destroy(playerInstance.gameObject);
+            playerInstance = null;
         }
     }
 
@@ -65,12 +79,19 @@ public class GameManager : MonoBehaviour
 
     private void OnTimerEnded()
     {
-        RespawnPlayer();
+        if(isPlaying)
+            RespawnPlayer();
+        else
+            timerManager.StartTimer(timer);
     }
 
     public void FinishGame()
     {
-        playerInstance.StopRecording();
+        isPlaying = false;
         playerInstance.DisableAndHide();
+        playerInstance.StopRecording();
+        timerManager.StartTimer(timer);
+        playerInstance.RestartReplay();
+        promptText.SetActive(true);
     }
 }
