@@ -1,32 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-public class ScanRoom : MonoBehaviour
+public class ScanRoom : Activator
 {
     public int nbPlayersNeeded;
-    public GameObject activable;
     private Rigidbody2D rb;
     public LayerMask playerLayer;
+    public TextMeshProUGUI text;
+    private ContactFilter2D playerFilter;
+    private List<Collider2D> playersHere;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        playerFilter = new ContactFilter2D();
+        playerFilter.SetLayerMask(playerLayer);
+        playersHere = new();
     }
 
-    private void FixedUpdate()
+
+    override protected bool CheckCanActivate()
     {
-        ContactFilter2D playerFilter = new ContactFilter2D();
-        playerFilter.SetLayerMask(playerLayer);
-        List<Collider2D> playersHere = new();
         rb.OverlapCollider(playerFilter, playersHere);
-        if(playersHere.Count >= nbPlayersNeeded)
-        {
-            activable.SetActive(false);
-        }
-        else
-        {
-            activable.SetActive(true);
-        }
+        return playersHere.Count >= nbPlayersNeeded;
+    }
+
+    override protected void UpdateDisplay()
+    {
+        text.text = $"{playersHere.Count} / {nbPlayersNeeded}";
     }
 }
