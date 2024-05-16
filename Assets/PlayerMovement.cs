@@ -69,6 +69,7 @@ public class PlayerMovement : MonoBehaviour
     }
     public void StopRecording()
     {
+        // Stop the record and start the play back
         isRecording = false;
         recorder.StartReplay();
     }
@@ -166,5 +167,11 @@ public class PlayerMovement : MonoBehaviour
         canMove = true;
         sprite.enabled = true;
         rb.simulated = true;
+    }
+
+    public void Die()
+    {
+        canMove = false;
+        sprite.color = Color.red;
     }
 }
