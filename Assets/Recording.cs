@@ -21,18 +21,14 @@ public class Recording
         replayQueue = new(originalQueue);
     }
 
-    public bool ReplayNextData()
+    public void ReplayNextData()
     {
-        bool hasMoreData = false;
         // Check if there is more data to play
         if(replayQueue.Count > 0)
         {
             ReplayData data = replayQueue.Dequeue();
             player.SetReplayData(data);
-            hasMoreData = true;
         }
-
-        return hasMoreData;
     }
 
     public void CreateReplayPlayer(GameObject replayPlayerPrefab)

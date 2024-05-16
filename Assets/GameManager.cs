@@ -75,16 +75,20 @@ public class GameManager : MonoBehaviour
         {
             playerInstance.StopRecording();
             playerInstance.transform.position = playerSpawn.position;
+            playerInstance.RestartReplay();
         }
         playerInstance.EnableAndShow();
         playerInstance.StartRecording();
         timerManager.StartTimer(timer);
+
     }
 
     private void OnTimerEnded()
     {
-        if(isPlaying)
+        if (isPlaying)
+        {
             RespawnPlayer();
+        }
         else
             timerManager.StartTimer(timer);
     }

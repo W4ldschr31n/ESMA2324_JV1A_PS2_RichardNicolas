@@ -21,15 +21,10 @@ public class Recorder : MonoBehaviour
         if (!isReplaying)
             return;
 
-        // Play next data for every ongoing replay
-        bool hasMoreData = false;
         foreach(Recording recording in recordingList)
         {
-            hasMoreData |= recording.ReplayNextData();
+            recording.ReplayNextData();
         }
-        // Restart when there is no next data TODO not needed if fixed replay time
-        if (!hasMoreData)
-            RestartReplay();
     }
 
     public void RecordReplayData(ReplayData data)
