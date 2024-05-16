@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,11 +12,14 @@ public class GameManager : MonoBehaviour
     public float timer;
     public GameObject promptText;
     private bool isPlaying;
+    public string sceneToPlay;
 
     void Start()
     {
         // Do this in Start to let the event be initialized in an Awake
         TimerManager.onTimerEnded.AddListener(OnTimerEnded);
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        SceneManager.LoadScene(sceneToPlay);
     }
 
     private void OnDisable()
@@ -93,5 +97,13 @@ public class GameManager : MonoBehaviour
         timerManager.StartTimer(timer);
         playerInstance.RestartReplay();
         promptText.SetActive(true);
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
+    {
+        if(loadSceneMode == LoadSceneMode.Single)
+        {
+            playerSpawn = GameObject.FindGameObjectWithTag("Respawn").transform;
+        }
     }
 }
