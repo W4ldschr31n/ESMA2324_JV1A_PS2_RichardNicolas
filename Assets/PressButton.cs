@@ -2,28 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PressButton : MonoBehaviour
+public class PressButton : Activator
 {
-    public GameObject activable;
     public LayerMask playerLayer;
-    private Rigidbody2D rb;
+    private ContactFilter2D playerFilter;
+    [SerializeField] private Collider2D pressSpot;
 
-
-    private void Awake()
+    // Start is called before the first frame update
+    void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        playerFilter = new ContactFilter2D();
+        playerFilter.SetLayerMask(playerLayer);
     }
 
-
-    private void FixedUpdate()
+    protected override bool CheckCanActivate()
     {
-        if (rb.IsTouchingLayers(playerLayer))
-        {
-            activable.SetActive(false);
-        }
-        else
-        {
-            activable.SetActive(true);
-        }
+        List<Collider2D> playersHere = new();
+        pressSpot.OverlapCollider(playerFilter, playersHere);
+        return playersHere.Count > 0;
+    }
+
+    protected override void UpdateDisplay()
+    {
+        return;
     }
 }
