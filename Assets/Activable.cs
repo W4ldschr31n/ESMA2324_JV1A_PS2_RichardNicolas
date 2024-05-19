@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Activable : MonoBehaviour
 {
-    private float currentCharge;
+    public float currentCharge { get; private set; }
     public float maxCharge;
     public void AddCharge(float charge)
     {
