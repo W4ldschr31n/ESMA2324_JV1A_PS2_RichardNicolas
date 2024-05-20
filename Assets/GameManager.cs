@@ -44,12 +44,12 @@ public class GameManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Backspace))
             {
-                RespawnPlayer();
+                timerManager.currentTimer = 0f;
             }
             else if (Input.GetKeyDown(KeyCode.Delete))
             {
                 playerInstance.ClearAllRecordings();
-                RespawnPlayer();
+                timerManager.currentTimer = 0f;
             }
         }
     }
