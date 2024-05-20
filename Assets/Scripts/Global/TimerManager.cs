@@ -43,5 +43,6 @@ public class TimerManager : MonoBehaviour
         // Inititalize time variables
         maxTimer = currentTimer = time;
         isPlaying = true;
+        onTimerStarted?.Invoke();
     }
 }

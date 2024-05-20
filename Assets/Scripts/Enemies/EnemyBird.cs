@@ -52,7 +52,7 @@ public class EnemyBird : MonoBehaviour
         else if(currentState == BirdState.Locking) 
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, 20f, playerLayer);
-            if (hit)
+            if (hit && hit.transform.CompareTag("Player"))
             {
                 Debug.DrawLine(transform.position, hit.transform.position, Color.red);
                 direction = (hit.transform.position - transform.position).normalized;
