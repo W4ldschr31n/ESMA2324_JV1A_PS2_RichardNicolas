@@ -21,12 +21,13 @@ public class MovingWall : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(isMoving)
+        if (isMoving)
         { // Constant acceleration
             float direction = goRight ? 1f : -1f;
             float addedSpeed = acceleration * Time.fixedDeltaTime * direction;
             rb.velocity = new Vector2(rb.velocity.x + addedSpeed, 0f);
-        }else if(rb.velocity.x != 0f)
+        }
+        else if (rb.velocity.x != 0f)
         { // Slow down until we stop compltetly
             float newSpeed = Mathf.MoveTowards(rb.velocity.x, 0f, deceleration * Time.fixedDeltaTime);
             rb.velocity = new Vector2(newSpeed, 0f);

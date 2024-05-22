@@ -10,7 +10,8 @@ public class TriggerZoneMovingWall : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             movingWall.StartMoving();
-        }else if(collision.gameObject.layer == LayerMask.NameToLayer("Platform"))
+        }
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("Platform"))
         {
             movingWall.StopMoving();
         }

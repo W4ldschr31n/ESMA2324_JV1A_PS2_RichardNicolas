@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 7182316413332226333}
   - component: {fileID: 3498847583487554646}
   - component: {fileID: 8006571868561920678}
-  - component: {fileID: 6751919414409027019}
-  - component: {fileID: 2343621136093216853}
+  - component: {fileID: 309752102106999131}
+  - component: {fileID: 2456482991986350178}
   m_Layer: 0
   m_Name: MovingWall
   m_TagString: Untagged
@@ -162,7 +162,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &6751919414409027019
+--- !u!114 &309752102106999131
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -174,12 +174,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea5675be7eb0ed84fbdcc308b0013fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goRight: 0
-  acceleration: 0.7
+  goRight: 1
+  acceleration: 0.3
   deceleration: 3
   leftTrigger: {fileID: 6344284886696064050}
   rightTrigger: {fileID: 3912135294201537866}
---- !u!114 &2343621136093216853
+--- !u!114 &2456482991986350178
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -201,7 +201,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7270924402221714529}
   - component: {fileID: 7250486391350166489}
-  - component: {fileID: 1521573482212943811}
+  - component: {fileID: 3164049252288538287}
   m_Layer: 0
   m_Name: TriggerZoneRight
   m_TagString: Untagged
@@ -269,7 +269,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1521573482212943811
+--- !u!114 &3164049252288538287
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -281,7 +281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63f2a3d02c3ad604594adce87b21b1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movingWall: {fileID: 6751919414409027019}
+  movingWall: {fileID: 309752102106999131}
 --- !u!1 &6344284886696064050
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,7 +292,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2326921885147181780}
   - component: {fileID: 4874125306522167046}
-  - component: {fileID: 3051853380175956727}
+  - component: {fileID: 7587891090091586490}
   m_Layer: 0
   m_Name: TriggerZoneLeft
   m_TagString: Untagged
@@ -360,7 +360,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 1}
   m_EdgeRadius: 0
---- !u!114 &3051853380175956727
+--- !u!114 &7587891090091586490
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -372,4 +372,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63f2a3d02c3ad604594adce87b21b1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movingWall: {fileID: 6751919414409027019}
+  movingWall: {fileID: 309752102106999131}

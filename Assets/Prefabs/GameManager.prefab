@@ -51,7 +51,7 @@ MonoBehaviour:
   cameraManager: {fileID: 0}
   timer: 15
   promptText: {fileID: 0}
-  sceneToPlay: Level2
+  sceneToPlay: TestEnemies
 --- !u!114 &2214682934111916844
 MonoBehaviour:
   m_ObjectHideFlags: 0
