@@ -8,8 +8,6 @@ public class GameManager : MonoBehaviour
     public Transform playerSpawn;
     public GameObject playerPrefab;
     private PlayerMovement playerInstance;
-    public TimerManager timerManager;
-    public CameraManager cameraManager;
     public float timer;
     public GameObject promptText;
     private bool isPlaying;
@@ -45,12 +43,12 @@ public class GameManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Backspace))
             {
-                timerManager.currentTimer = 0f;
+                SingletonMaster.Instance.TimerManager.EndTimer();
             }
             else if (Input.GetKeyDown(KeyCode.Delete))
             {
                 DestroyPlayer();
-                timerManager.currentTimer = 0f;
+                SingletonMaster.Instance.TimerManager.EndTimer();
             }
         }
     }
@@ -80,9 +78,9 @@ public class GameManager : MonoBehaviour
         }
         playerInstance.EnableAndShow();
         playerInstance.StartRecording();
-        cameraManager.SetCameraTarget(playerInstance.transform);
-        cameraManager.ResetZoom();
-        timerManager.StartTimer(timer);
+        SingletonMaster.Instance.CameraManager.SetCameraTarget(playerInstance.transform);
+        SingletonMaster.Instance.CameraManager.ResetZoom();
+        SingletonMaster.Instance.TimerManager.StartTimer(timer);
 
     }
 
@@ -93,7 +91,7 @@ public class GameManager : MonoBehaviour
             RespawnPlayer();
         }
         else
-            timerManager.StartTimer(timer);
+            SingletonMaster.Instance.TimerManager.StartTimer(timer);
     }
 
     public void FinishGame()
@@ -101,11 +99,11 @@ public class GameManager : MonoBehaviour
         isPlaying = false;
         playerInstance.DisableAndHide();
         playerInstance.StopRecording();
-        timerManager.StartTimer(timer);
+        SingletonMaster.Instance.TimerManager.StartTimer(timer);
         playerInstance.RestartReplay();
         promptText.SetActive(true);
-        cameraManager.SetCameraTarget(playerSpawn);
-        cameraManager.ZoomOut();
+        SingletonMaster.Instance.CameraManager.SetCameraTarget(playerSpawn);
+        SingletonMaster.Instance.CameraManager.ZoomOut();
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
@@ -113,8 +111,8 @@ public class GameManager : MonoBehaviour
         if(loadSceneMode == LoadSceneMode.Single)
         {
             playerSpawn = GameObject.FindGameObjectWithTag("Respawn").transform;
-            cameraManager.SetCameraTarget(playerSpawn);
-            cameraManager.ZoomOut();
+            SingletonMaster.Instance.CameraManager.SetCameraTarget(playerSpawn);
+            SingletonMaster.Instance.CameraManager.ZoomOut();
         }
     }
 }

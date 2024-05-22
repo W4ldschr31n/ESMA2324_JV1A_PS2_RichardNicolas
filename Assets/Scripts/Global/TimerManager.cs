@@ -45,4 +45,9 @@ public class TimerManager : MonoBehaviour
         isPlaying = true;
         onTimerStarted?.Invoke();
     }
+
+    public void EndTimer()
+    {
+        currentTimer = 0f;
+    }
 }

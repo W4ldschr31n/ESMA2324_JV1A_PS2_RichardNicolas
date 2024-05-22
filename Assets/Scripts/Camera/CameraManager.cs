@@ -33,4 +33,17 @@ public class CameraManager : MonoBehaviour
     {
         cameraZoom.ZoomOut();
     }
+
+    public void Nudge(Transform nudgeTarget, float travelTime, float nudgeDuration)
+    {
+        cameraZoom.ZoomOut();
+        cameraFollow.Nudge(nudgeTarget, travelTime);
+        Invoke(nameof(EndNudge), nudgeDuration);
+    }
+
+    public void EndNudge()
+    {
+        cameraZoom.ResetSize();
+        cameraFollow.EndNudge();
+    }
 }

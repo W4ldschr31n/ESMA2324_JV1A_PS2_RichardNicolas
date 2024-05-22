@@ -6,6 +6,8 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     private Transform target;
+    private Transform nudgeTarget;
+	private bool isNudging;
     private Camera _camera;
 	public float smoothTime = 1f;
 	private Vector3 velocity;
@@ -31,7 +33,7 @@ public class CameraFollow : MonoBehaviour
 		if (target != null)
 		{
 			Vector3 from = _camera.transform.position;
-			Vector3 to = target.position;
+			Vector3 to = isNudging ? nudgeTarget.position : target.position;
 			// Keep original z else camera cannot display anything
 			if (targetRb != null)
             {
@@ -45,5 +47,17 @@ public class CameraFollow : MonoBehaviour
 
 			_camera.transform.position = Vector3.SmoothDamp(from, to, ref velocity, smoothTime);
 		}
+	}
+
+	public void Nudge(Transform nudgePosition, float travelTime)
+	{
+		isNudging = true;
+		nudgeTarget = nudgePosition;
+	}
+
+	public void EndNudge()
+	{
+		isNudging = false;
+		nudgeTarget = null;
 	}
 }

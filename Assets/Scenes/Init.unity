@@ -197,6 +197,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3290055646703366438, guid: 86dffc620b57aeb45ac36a9d611f1042, type: 3}
       insertIndex: -1
       addedObject: {fileID: 239734530}
+    - targetCorrespondingSourceObject: {fileID: 3290055646703366438, guid: 86dffc620b57aeb45ac36a9d611f1042, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 239734534}
   m_SourcePrefab: {fileID: 100100000, guid: 86dffc620b57aeb45ac36a9d611f1042, type: 3}
 --- !u!1 &239734528 stripped
 GameObject:
@@ -228,6 +231,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 1188467334}
+--- !u!114 &239734534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239734528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4e2313075a38eb4181bc738582fe54e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &420651641
 GameObject:
   m_ObjectHideFlags: 0
@@ -755,9 +770,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dea2af9579d4e3546b196f2d2da0af26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSize: 5
-  zoomInSize: 3
-  zoomOutSize: 7
+  baseSize: 7
+  zoomInSize: 5
+  zoomOutSize: 10
   timeToZoom: 0.5
 --- !u!114 &1188467338
 MonoBehaviour:
