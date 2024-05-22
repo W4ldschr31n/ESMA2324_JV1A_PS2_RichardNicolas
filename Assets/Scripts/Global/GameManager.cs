@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public GameObject playerPrefab;
     private PlayerMovement playerInstance;
     public TimerManager timerManager;
+    public CameraManager cameraManager;
     public float timer;
     public GameObject promptText;
     private bool isPlaying;
@@ -79,6 +80,8 @@ public class GameManager : MonoBehaviour
         }
         playerInstance.EnableAndShow();
         playerInstance.StartRecording();
+        cameraManager.SetCameraTarget(playerInstance.transform);
+        cameraManager.ResetZoom();
         timerManager.StartTimer(timer);
 
     }
@@ -101,6 +104,8 @@ public class GameManager : MonoBehaviour
         timerManager.StartTimer(timer);
         playerInstance.RestartReplay();
         promptText.SetActive(true);
+        cameraManager.SetCameraTarget(playerSpawn);
+        cameraManager.ZoomOut();
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
@@ -108,6 +113,8 @@ public class GameManager : MonoBehaviour
         if(loadSceneMode == LoadSceneMode.Single)
         {
             playerSpawn = GameObject.FindGameObjectWithTag("Respawn").transform;
+            cameraManager.SetCameraTarget(playerSpawn);
+            cameraManager.ZoomOut();
         }
     }
 }

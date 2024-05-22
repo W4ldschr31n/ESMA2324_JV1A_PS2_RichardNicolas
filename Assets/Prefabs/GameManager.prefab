@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 3290055646703366438}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.44415963, y: 1.3790672, z: 0.044992283}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -48,9 +48,10 @@ MonoBehaviour:
   playerSpawn: {fileID: 0}
   playerPrefab: {fileID: 4447115678087935019, guid: 08e3cf550e7681949986bd98cdec834e, type: 3}
   timerManager: {fileID: 2214682934111916844}
+  cameraManager: {fileID: 0}
   timer: 15
   promptText: {fileID: 0}
-  sceneToPlay: TestEnemies
+  sceneToPlay: Level2
 --- !u!114 &2214682934111916844
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public Transform target;
+    private Transform target;
     private Camera _camera;
 	public float smoothTime = 1f;
 	private Vector3 velocity;
@@ -17,13 +17,18 @@ public class CameraFollow : MonoBehaviour
 	private void Start()
     {
         _camera = GetComponent<Camera>();
-		targetRb = target.GetComponent<Rigidbody2D>();
 		velocity = Vector3.zero;
+    }
+
+	public void SetTarget(Transform _target)
+	{
+		target = _target;
+        targetRb = target.GetComponent<Rigidbody2D>();
     }
 
     void Update()
 	{
-		if (target)
+		if (target != null)
 		{
 			Vector3 from = _camera.transform.position;
 			Vector3 to = target.position;

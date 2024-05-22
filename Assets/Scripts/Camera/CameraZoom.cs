@@ -5,7 +5,9 @@ using UnityEngine;
 public class CameraZoom : MonoBehaviour
 {
     private Camera _camera;
-    private float baseSize;
+    public float baseSize;
+    public float zoomInSize;
+    public float zoomOutSize;
     private float targetSize;
     private float stepSize = 1;
     public float timeToZoom;
@@ -32,6 +34,16 @@ public class CameraZoom : MonoBehaviour
         }
         float newSize = Mathf.MoveTowards(_camera.orthographicSize, targetSize, stepSize * Time.deltaTime);
         _camera.orthographicSize = newSize;
+    }
+
+    public void ZoomIn()
+    {
+        ChangeSize(zoomInSize);
+    }
+
+    public void ZoomOut()
+    {
+        ChangeSize(zoomOutSize);
     }
 
     public void ChangeSize(float newSize)

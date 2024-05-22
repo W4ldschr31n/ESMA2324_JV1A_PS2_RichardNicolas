@@ -237,11 +237,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f6e8592a955ed44d9bb88c622454650, type: 3}
---- !u!4 &444094858 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4804971626390395844, guid: 08e3cf550e7681949986bd98cdec834e, type: 3}
-  m_PrefabInstance: {fileID: 2093654271}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &638523481
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -444,7 +439,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &1190122908
 AudioListener:
   m_ObjectHideFlags: 0
@@ -531,6 +526,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dea2af9579d4e3546b196f2d2da0af26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseSize: 0
+  zoomInSize: 0
+  zoomOutSize: 0
   timeToZoom: 0.5
 --- !u!114 &1190122912
 MonoBehaviour:
@@ -544,7 +542,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ba01dd7eea0cbf49b97e865c62edd29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 444094858}
   smoothTime: 0.2
   lookAheadOffsetX: 1.5
   lookAheadOffsetY: 1
