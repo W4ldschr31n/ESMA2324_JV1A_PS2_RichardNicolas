@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
             }
             else if (Input.GetKeyDown(KeyCode.Delete))
             {
-                playerInstance.ClearAllRecordings();
+                DestroyPlayer();
                 timerManager.currentTimer = 0f;
             }
         }

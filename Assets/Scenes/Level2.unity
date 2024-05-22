@@ -432,6 +432,14 @@ PrefabInstance:
       propertyPath: activable
       value: 
       objectReference: {fileID: 1715698854}
+    - target: {fileID: 848602314189104968, guid: 44779c71e979aff46b375c34d3246deb, type: 3}
+      propertyPath: listActivables.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 848602314189104968, guid: 44779c71e979aff46b375c34d3246deb, type: 3}
+      propertyPath: listActivables.Array.data[0]
+      value: 
+      objectReference: {fileID: 1715698854}
     - target: {fileID: 2314699299899877800, guid: 44779c71e979aff46b375c34d3246deb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.19
@@ -499,7 +507,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3322157643551323687, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
       propertyPath: maxCharge
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5820351970574710000, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
       propertyPath: m_LocalPosition.x

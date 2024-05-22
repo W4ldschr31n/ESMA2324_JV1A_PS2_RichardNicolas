@@ -5,7 +5,8 @@ using UnityEngine;
 public abstract class Activator : MonoBehaviour
 {
     public float chargeFactor = 1f;
-    public Activable activable;
+    public List<Activable> listActivablesOn = new List<Activable>();
+    public List<Activable> listActivablesOff = new List<Activable>();
     abstract protected bool CheckCanActivate();
     abstract protected void UpdateDisplay();
 
@@ -13,11 +14,25 @@ public abstract class Activator : MonoBehaviour
     {
         if (CheckCanActivate())
         {
-            activable.AddCharge(Time.fixedDeltaTime * chargeFactor);
+            foreach (Activable activable in listActivablesOn)
+            {
+                activable.AddCharge(Time.fixedDeltaTime * chargeFactor);
+            }
+            foreach (Activable activable in listActivablesOff)
+            {
+                activable.DecreaseCharge(Time.fixedDeltaTime * chargeFactor);
+            }
         }
         else
         {
-            activable.DecreaseCharge(Time.fixedDeltaTime * chargeFactor);
+            foreach (Activable activable in listActivablesOff)
+            {
+                activable.AddCharge(Time.fixedDeltaTime * chargeFactor);
+            }
+            foreach (Activable activable in listActivablesOn)
+            {
+                activable.DecreaseCharge(Time.fixedDeltaTime * chargeFactor);
+            }
         }
     }
 

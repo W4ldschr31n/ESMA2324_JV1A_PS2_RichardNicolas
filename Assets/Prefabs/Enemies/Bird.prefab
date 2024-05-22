@@ -175,9 +175,9 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
-  maxSpeed: 10
-  accelerationLockingPhase: 1
-  accelerationChasePhase: 5
+  maxSpeed: 20
+  accelerationLockingPhase: 5
+  accelerationChasePhase: 10
   speedChaseThreshold: 2
 --- !u!114 &7892751720230607352
 MonoBehaviour:
