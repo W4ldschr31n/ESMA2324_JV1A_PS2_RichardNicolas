@@ -49,6 +49,9 @@ public class GameManager : MonoBehaviour
             {
                 DestroyPlayer();
                 SingletonMaster.Instance.TimerManager.EndTimer();
+                isPlaying = false;
+                promptText.SetActive(true);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }
     }

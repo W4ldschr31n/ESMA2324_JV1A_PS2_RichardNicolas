@@ -2,31 +2,37 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class DesintegrationGate : MonoBehaviour
 {
-    public int playersNeeded;
+    public int nbPlayersNeeded;
+    public TextMeshProUGUI textCounter;
     public DesintegrationObjects[] desintegrationsObjectsArray;
     public List<Activable> activablesList;
 
     private void Start()
     {
-        TimerManager.onTimerStarted.AddListener(OnTimerStarted);
+        UpdateDisplay();
+        UpdateGameObjects();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && playersNeeded>0)
+        // If the current player touches the gate and we need to destroy more players
+        if (collision.CompareTag("Player") && nbPlayersNeeded>0)
         {
             collision.GetComponent<PlayerMovement>().Die();
-            playersNeeded--;
+            nbPlayersNeeded--;
+            UpdateDisplay();
+            UpdateGameObjects();
         }
     }
 
-    private void OnTimerStarted()
+    private void UpdateGameObjects()
     {
         // If we reached the target amount of players, activate the activables
-        if(playersNeeded == 0)
+        if(nbPlayersNeeded == 0)
         {
             foreach(Activable activable in activablesList)
             {
@@ -34,7 +40,7 @@ public class DesintegrationGate : MonoBehaviour
             }
         }
         // Enable and disable objects according to remaining players (extra index for after the gate is solved)
-        DesintegrationObjects desintegrationObjects = desintegrationsObjectsArray[^(playersNeeded+1)];
+        DesintegrationObjects desintegrationObjects = desintegrationsObjectsArray[^(nbPlayersNeeded+1)];
         foreach(GameObject go in desintegrationObjects.objectsToEnable)
         {
             go.SetActive(true);
@@ -45,10 +51,15 @@ public class DesintegrationGate : MonoBehaviour
         }
     }
 
+    private void UpdateDisplay()
+    {
+        textCounter.text = nbPlayersNeeded.ToString();
+    }
+
     private void OnValidate()
     {
         // Resize with an extra slot to account for what happens after the gate is solved
-        Array.Resize(ref desintegrationsObjectsArray, playersNeeded + 1);
+        Array.Resize(ref desintegrationsObjectsArray, nbPlayersNeeded + 1);
     }
 
     [System.Serializable]

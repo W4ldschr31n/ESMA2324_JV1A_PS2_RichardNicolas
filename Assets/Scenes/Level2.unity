@@ -974,6 +974,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8080187388372599454, guid: c84b8fdf130946a40bad165d1f1812ea, type: 3}
+      propertyPath: desintegrationsObjectsArray.Array.data[0].objectsToEnable.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080187388372599454, guid: c84b8fdf130946a40bad165d1f1812ea, type: 3}
+      propertyPath: desintegrationsObjectsArray.Array.data[1].objectsToEnable.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080187388372599454, guid: c84b8fdf130946a40bad165d1f1812ea, type: 3}
+      propertyPath: desintegrationsObjectsArray.Array.data[0].objectsToDisable.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080187388372599454, guid: c84b8fdf130946a40bad165d1f1812ea, type: 3}
       propertyPath: desintegrationsObjectsArray.Array.data[0].objectsToEnable.Array.data[0]
       value: 
       objectReference: {fileID: 730525794}
@@ -1008,7 +1020,7 @@ PrefabInstance:
     - target: {fileID: 8080187388372599454, guid: c84b8fdf130946a40bad165d1f1812ea, type: 3}
       propertyPath: desintegrationsObjectsArray.Array.data[1].objectsToDisable.Array.data[0]
       value: 
-      objectReference: {fileID: 730525794}
+      objectReference: {fileID: 13763035}
     - target: {fileID: 8278904588006073969, guid: c84b8fdf130946a40bad165d1f1812ea, type: 3}
       propertyPath: m_Name
       value: DesintegrationGate
