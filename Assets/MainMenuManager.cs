@@ -67,22 +67,6 @@ public class MainMenuManager : MonoBehaviour
 
     public void PlayGame()
     {
-        StartCoroutine(LoadYourAsyncScene());//SceneManager.LoadSceneAsync("Init");
-    }
-
-    private IEnumerator LoadYourAsyncScene()
-    {
-        // The Application loads the Scene in the background as the current Scene runs.
-        // This is particularly good for creating loading screens.
-
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Init");
-
-        // Wait until the asynchronous scene fully loads
-        while (!asyncLoad.isDone)
-        {
-            Debug.Log("WAIT");
-            yield return null;
-        }
-        Debug.Log("ALLO");
+        SceneChangeManager.Instance.LoadSceneWithFade("Init");
     }
 }
