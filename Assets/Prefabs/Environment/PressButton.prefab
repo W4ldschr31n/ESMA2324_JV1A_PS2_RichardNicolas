@@ -112,6 +112,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5716691012192831983}
   - component: {fileID: 6298608046076786704}
+  - component: {fileID: 4136085834121896275}
   m_Layer: 3
   m_Name: PressSpot
   m_TagString: Untagged
@@ -131,7 +132,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4046932562881498252}
   m_Father: {fileID: 4765108836756332112}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &6298608046076786704
@@ -179,6 +181,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.2}
   m_EdgeRadius: 0
+--- !u!114 &4136085834121896275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998624926668611045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e6c4cb456240884ea6f486428ed12e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nudgePosition: {fileID: 4046932562881498252}
+  nudgeDuration: 1
 --- !u!1 &4202676257876863002
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,6 +270,37 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &5264721226444858518
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4046932562881498252}
+  m_Layer: 3
+  m_Name: NudgePosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4046932562881498252
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5264721226444858518}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5716691012192831983}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8239566466417872142
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,7 +475,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chargeFactor: 1
-  activable: {fileID: 0}
+  listActivablesOn: []
+  listActivablesOff: []
   playerLayer:
     serializedVersion: 2
     m_Bits: 64

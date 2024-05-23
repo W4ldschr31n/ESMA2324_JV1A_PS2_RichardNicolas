@@ -47,11 +47,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSpawn: {fileID: 0}
   playerPrefab: {fileID: 4447115678087935019, guid: 08e3cf550e7681949986bd98cdec834e, type: 3}
-  timerManager: {fileID: 2214682934111916844}
-  cameraManager: {fileID: 0}
   timer: 15
   promptText: {fileID: 0}
-  sceneToPlay: Level1
+  sceneToPlay: Level2
 --- !u!114 &2214682934111916844
 MonoBehaviour:
   m_ObjectHideFlags: 0

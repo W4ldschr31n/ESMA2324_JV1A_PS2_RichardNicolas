@@ -49,7 +49,7 @@ public class CameraFollow : MonoBehaviour
 		}
 	}
 
-	public void Nudge(Transform nudgePosition, float travelTime)
+	public void Nudge(Transform nudgePosition)
 	{
 		isNudging = true;
 		nudgeTarget = nudgePosition;
