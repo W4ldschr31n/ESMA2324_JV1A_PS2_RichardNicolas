@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ReplayPlayer
   - LoadingBar
+  - LoadingPrompt
   layers:
   - Default
   - TransparentFX

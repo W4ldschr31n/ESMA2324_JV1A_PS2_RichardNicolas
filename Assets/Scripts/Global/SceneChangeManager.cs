@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+using TMPro;
 public class SceneChangeManager : MonoBehaviour
 {
     public FadeScreen fadeScreen;
@@ -21,39 +21,56 @@ public class SceneChangeManager : MonoBehaviour
             Destroy(this);
         }
     }
-    
+
+    public void LoadInitScene()
+    {
+        fadeScreen.FadeIn();
+        SceneManager.LoadScene("Init");
+    }
 
     public void LoadSceneWithFade(string sceneName)
     {
-        
         StartCoroutine(LoadYourAsyncScene(sceneName));
-        
-
     }
 
     IEnumerator LoadYourAsyncScene(string sceneName)
     {
-        // The Application loads the Scene in the background as the current Scene runs.
-        // This is particularly good for creating loading screens.
-        // You could also load the Scene by using sceneBuildIndex. In this case Scene2 has
-        // a sceneBuildIndex of 1 as shown in Build Settings.
+        // Fade to black and load the loading screen
         fadeScreen.FadeIn();
         yield return new WaitForSeconds(1f);
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(loadingScreenScene);
 
-        // Wait until the asynchronous scene fully loads
+        // Wait until the loading screen scene fully loads
         while (!asyncLoad.isDone)
         {
             yield return null;
         }
+
+        // Load the real scene we want to get to
         asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+        asyncLoad.allowSceneActivation = false;
         Slider loadingBar = GameObject.FindGameObjectWithTag("LoadingBar").GetComponent<Slider>();
+        TextMeshProUGUI textPrompt = GameObject.FindGameObjectWithTag("LoadingPrompt").GetComponent<TextMeshProUGUI>();
+        textPrompt.enabled = false;
+
+        // Update the loading bar
         while (!asyncLoad.isDone)
         {
             loadingBar.value = asyncLoad.progress / 0.9f;
+            if(asyncLoad.progress >= 0.9f)
+            {
+                // Show the player he can load the scene
+                textPrompt.enabled = true;
+
+                // Wait for the player to confirm the loading
+                if (Input.anyKeyDown)//!SingletonMaster.Instance.InputManager.JumpInputPressed)
+                {
+                    asyncLoad.allowSceneActivation = true;
+                }
+
+            }
             yield return null;
         }
-        // afficher % chargement
         fadeScreen.FadeOut();
     }
 }

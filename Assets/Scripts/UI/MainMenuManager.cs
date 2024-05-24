@@ -67,6 +67,6 @@ public class MainMenuManager : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneChangeManager.Instance.LoadSceneWithFade("Init");
+        SceneChangeManager.Instance.LoadInitScene();
     }
 }

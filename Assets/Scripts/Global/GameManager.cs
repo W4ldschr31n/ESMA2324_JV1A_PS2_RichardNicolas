@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
         // Do this in Start to let the event be initialized in an Awake
         TimerManager.onTimerEnded.AddListener(OnTimerEnded);
         SceneManager.sceneLoaded += OnSceneLoaded;
-        SceneManager.LoadScene(firstScene);
+        SingletonMaster.Instance.SceneChangeManager.LoadSceneWithFade(firstScene);
     }
 
     private void OnDisable()

@@ -149,7 +149,7 @@ public class PlayerMovement : MonoBehaviour
     void Jump()
     {
         // If the player is holding the jump button, make a normal jump, else make a short jump
-        float trueJumpForce = Input.GetKey(KeyCode.Space) ? movementData.jumpForce : movementData.miniJumpForce;
+        float trueJumpForce = SingletonMaster.Instance.InputManager.JumpInputPressing ? movementData.jumpForce : movementData.miniJumpForce;
         rb.velocity = new Vector2(rb.velocity.x, trueJumpForce);
         remainingJumpBufferTime = 0f;
         remainingJumpCoyoteTime = 0f;
