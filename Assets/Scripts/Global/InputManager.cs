@@ -13,6 +13,7 @@ public class InputManager : MonoBehaviour
     public bool PauseInput;
     public bool CancelInput;
     public bool ResetInput;
+    public bool AnyInput;
 
     // Not accessible properties
 
@@ -42,5 +43,6 @@ public class InputManager : MonoBehaviour
         PauseInput = pauseAction.WasPressedThisFrame();
         CancelInput = cancelAction.WasPressedThisFrame();
         ResetInput = resetAction.WasPressedThisFrame();
+        AnyInput = Input.anyKeyDown;
     }
 }

@@ -53,9 +53,9 @@ public class SceneChangeManager : MonoBehaviour
         TextMeshProUGUI textPrompt = GameObject.FindGameObjectWithTag("LoadingPrompt").GetComponent<TextMeshProUGUI>();
         textPrompt.enabled = false;
 
-        // Update the loading bar
         while (!asyncLoad.isDone)
         {
+            // Update the loading bar
             loadingBar.value = asyncLoad.progress / 0.9f;
             if(asyncLoad.progress >= 0.9f)
             {
@@ -63,7 +63,7 @@ public class SceneChangeManager : MonoBehaviour
                 textPrompt.enabled = true;
 
                 // Wait for the player to confirm the loading
-                if (Input.anyKeyDown)//!SingletonMaster.Instance.InputManager.JumpInputPressed)
+                if (SingletonMaster.Instance.InputManager.AnyInput)
                 {
                     asyncLoad.allowSceneActivation = true;
                 }
@@ -71,6 +71,8 @@ public class SceneChangeManager : MonoBehaviour
             }
             yield return null;
         }
+
+        // Fade out as the new scene is loaded
         fadeScreen.FadeOut();
     }
 }

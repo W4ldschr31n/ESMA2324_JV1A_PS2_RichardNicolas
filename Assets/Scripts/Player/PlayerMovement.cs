@@ -33,9 +33,9 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
         //Movement
-        
-        directionInput = Input.GetAxisRaw("Horizontal");
-        
+
+        directionInput = SingletonMaster.Instance.InputManager.MoveInput;
+
         // Player want to jump
         if (SingletonMaster.Instance.InputManager.JumpInputPressed)
             remainingJumpBufferTime = movementData.jumpBufferTime;

@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         // Level Start
-        if (!isPlaying && Input.GetKeyDown(KeyCode.Return))
+        if (!isPlaying && SingletonMaster.Instance.InputManager.JumpInputPressed)
         {
             if (!finishedLevel)
             {
@@ -45,11 +45,11 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            if (Input.GetKeyDown(KeyCode.Backspace))
+            if (SingletonMaster.Instance.InputManager.CancelInput)
             {
                 SingletonMaster.Instance.TimerManager.EndTimer();
             }
-            else if (Input.GetKeyDown(KeyCode.Delete))
+            else if (SingletonMaster.Instance.InputManager.ResetInput)
             {
                 DestroyPlayer();
                 SingletonMaster.Instance.TimerManager.EndTimer();

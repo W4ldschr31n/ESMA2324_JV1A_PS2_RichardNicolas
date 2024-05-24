@@ -6,7 +6,7 @@ public class TitleScreen : MonoBehaviour
     MainMenuManager mainMenuManager;
     void Update()
     {
-        if (Input.anyKey)
+        if (Input.anyKeyDown)
         {
             mainMenuManager.HideTitleScreen();
         }
