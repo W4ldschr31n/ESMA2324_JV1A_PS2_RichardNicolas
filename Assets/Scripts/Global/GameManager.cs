@@ -11,32 +11,36 @@ public class GameManager : MonoBehaviour
     public float timer;
     public GameObject promptText;
     private bool isPlaying;
-    public string sceneToPlay;
+    public string firstScene;
+    private string nextScene;
+    private bool finishedLevel;
 
     void Start()
     {
         // Do this in Start to let the event be initialized in an Awake
         TimerManager.onTimerEnded.AddListener(OnTimerEnded);
         SceneManager.sceneLoaded += OnSceneLoaded;
-        SceneManager.LoadScene(sceneToPlay);
+        SceneManager.LoadScene(firstScene);
     }
 
     private void OnDisable()
     {
         TimerManager.onTimerEnded.RemoveListener(OnTimerEnded);
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     private void Update()
     {
         // Level Start
-        if (!isPlaying)
+        if (!isPlaying && Input.GetKeyDown(KeyCode.Return))
         {
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (!finishedLevel)
             {
-                isPlaying = true;
-                promptText.SetActive(false);
-                DestroyPlayer();
-                RespawnPlayer();
+                StartLevel();
+            }
+            else
+            {
+                GoNextLevel();
             }
         }
         else
@@ -49,11 +53,25 @@ public class GameManager : MonoBehaviour
             {
                 DestroyPlayer();
                 SingletonMaster.Instance.TimerManager.EndTimer();
+                SingletonMaster.Instance.TimerManager.isPlaying = false;
                 isPlaying = false;
                 promptText.SetActive(true);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }
+    }
+
+    private void StartLevel()
+    {
+        isPlaying = true;
+        promptText.SetActive(false);
+        DestroyPlayer();
+        RespawnPlayer();
+    }
+
+    private void GoNextLevel()
+    {
+        SingletonMaster.Instance.SceneChangeManager.LoadSceneWithFade(nextScene);
     }
 
     private void DestroyPlayer()
@@ -97,9 +115,10 @@ public class GameManager : MonoBehaviour
             SingletonMaster.Instance.TimerManager.StartTimer(timer);
     }
 
-    public void FinishGame()
+    public void FinishGame(string _nextScene)
     {
         isPlaying = false;
+        finishedLevel = true;
         playerInstance.DisableAndHide();
         playerInstance.StopRecording();
         SingletonMaster.Instance.TimerManager.StartTimer(timer);
@@ -107,15 +126,22 @@ public class GameManager : MonoBehaviour
         promptText.SetActive(true);
         SingletonMaster.Instance.CameraManager.SetCameraTarget(playerSpawn);
         SingletonMaster.Instance.CameraManager.ZoomOut();
+        nextScene = _nextScene;
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
     {
-        if(loadSceneMode == LoadSceneMode.Single)
+        // If we are loading a new level that is not the loading screen
+        if(loadSceneMode == LoadSceneMode.Single && scene.name != SingletonMaster.Instance.SceneChangeManager.loadingScreenScene)
         {
             playerSpawn = GameObject.FindGameObjectWithTag("Respawn").transform;
             SingletonMaster.Instance.CameraManager.SetCameraTarget(playerSpawn);
             SingletonMaster.Instance.CameraManager.ZoomOut();
+            isPlaying = false;
+            finishedLevel = false;
+            SingletonMaster.Instance.TimerManager.EndTimer();
+            SingletonMaster.Instance.TimerManager.isPlaying = false;
+            SingletonMaster.Instance.TimerManager.currentTimer = timer;
         }
     }
 }

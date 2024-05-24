@@ -49,7 +49,7 @@ MonoBehaviour:
   playerPrefab: {fileID: 4447115678087935019, guid: 08e3cf550e7681949986bd98cdec834e, type: 3}
   timer: 60
   promptText: {fileID: 0}
-  sceneToPlay: TestEnemies
+  firstScene: Level1
 --- !u!114 &2214682934111916844
 MonoBehaviour:
   m_ObjectHideFlags: 0

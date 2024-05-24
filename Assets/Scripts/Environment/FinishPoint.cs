@@ -4,18 +4,10 @@ using UnityEngine;
 
 public class FinishPoint : MonoBehaviour
 {
-
-    private GameManager gameManager;
-
-
-    private void Awake()
-    {
-        gameManager = FindObjectOfType<GameManager>();
-    }
-
+    public string nextScene;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Player"))
-            gameManager.FinishGame();
+            SingletonMaster.Instance.GameManager.FinishGame(nextScene);
     }
 }
