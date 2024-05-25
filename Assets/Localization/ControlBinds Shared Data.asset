@@ -10,51 +10,43 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
-  m_Name: TextLocalization Shared Data
+  m_Name: ControlBinds Shared Data
   m_EditorClassIdentifier: 
-  m_TableCollectionName: TextLocalization
-  m_TableCollectionNameGuidString: 1ede3c5db02ad9b428615441cc9feb57
+  m_TableCollectionName: ControlBinds
+  m_TableCollectionNameGuidString: d7c36a0ef276bcf468e54067c7dca9c8
   m_Entries:
-  - m_Id: 177091264512
-    m_Key: press_any_key
+  - m_Id: 33243414528
+    m_Key: move_1
     m_Metadata:
       m_Items: []
-  - m_Id: 519250001920
-    m_Key: button_play
+  - m_Id: 78168604672
+    m_Key: move_2
     m_Metadata:
       m_Items: []
-  - m_Id: 580646223872
-    m_Key: button_settings
+  - m_Id: 142630862848
+    m_Key: jump
     m_Metadata:
       m_Items: []
-  - m_Id: 639332925440
-    m_Key: button_exit
+  - m_Id: 195042885632
+    m_Key: reset
     m_Metadata:
       m_Items: []
-  - m_Id: 691984023552
-    m_Key: button_back
+  - m_Id: 263124828160
+    m_Key: cancel
     m_Metadata:
       m_Items: []
-  - m_Id: 6383117680640
-    m_Key: button_controls
-    m_Metadata:
-      m_Items: []
-  - m_Id: 113208706088960
-    m_Key: button_reset
-    m_Metadata:
-      m_Items: []
-  - m_Id: 113444635688960
-    m_Key: bind_move
+  - m_Id: 437838561280
+    m_Key: pause
     m_Metadata:
       m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 1718278867068911620
+    rid: 1718278873551470598
   references:
     version: 2
     RefIds:
-    - rid: 1718278867068911620
+    - rid: 1718278873551470598
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1716640470083
+        m_CustomEpoch: 1716673896118

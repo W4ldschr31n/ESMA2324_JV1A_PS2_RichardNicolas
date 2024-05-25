@@ -10,44 +10,36 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: TextLocalization_en
+  m_Name: ControlBinds_fr
   m_EditorClassIdentifier: 
   m_LocaleId:
-    m_Code: en
-  m_SharedData: {fileID: 11400000, guid: 1ede3c5db02ad9b428615441cc9feb57, type: 2}
+    m_Code: fr
+  m_SharedData: {fileID: 11400000, guid: d7c36a0ef276bcf468e54067c7dca9c8, type: 2}
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 177091264512
-    m_Localized: Press any key...
+  - m_Id: 33243414528
+    m_Localized: "D\xE9placement"
     m_Metadata:
       m_Items: []
-  - m_Id: 519250001920
-    m_Localized: Play
+  - m_Id: 78168604672
+    m_Localized: "D\xE9placement (alt)"
     m_Metadata:
       m_Items: []
-  - m_Id: 580646223872
-    m_Localized: Settings
+  - m_Id: 142630862848
+    m_Localized: Sauter
     m_Metadata:
       m_Items: []
-  - m_Id: 639332925440
-    m_Localized: Exit
+  - m_Id: 195042885632
+    m_Localized: Recommencer
     m_Metadata:
       m_Items: []
-  - m_Id: 691984023552
-    m_Localized: Back
+  - m_Id: 263124828160
+    m_Localized: Annuler
     m_Metadata:
       m_Items: []
-  - m_Id: 6383117680640
-    m_Localized: Controls
-    m_Metadata:
-      m_Items: []
-  - m_Id: 113208706088960
-    m_Localized: Reset
-    m_Metadata:
-      m_Items: []
-  - m_Id: 113444635688960
-    m_Localized: Move
+  - m_Id: 437838561280
+    m_Localized: Pause
     m_Metadata:
       m_Items: []
   references:
