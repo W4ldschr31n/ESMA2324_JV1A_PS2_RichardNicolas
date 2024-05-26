@@ -212,8 +212,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   movementData: {fileID: 11400000, guid: 012d8bf86c1057349b9b2539371f8858, type: 2}
+  gravePrefab: {fileID: 6717652147598981111, guid: b8a973fdd9c86d949ac52b8475ce3641, type: 3}
   isOnGround: 0
   isJumping: 0
+  isDead: 0
   canMove: 0
 --- !u!114 &7744256056719640284
 MonoBehaviour:

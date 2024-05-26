@@ -11,11 +11,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform feetSpot, headSpot;
     [SerializeField] private LayerMask platformLayers;
     [SerializeField] private PlayerMovementData movementData;
+    public GameObject gravePrefab;
+    private GameObject graveInstance;
 
 
     private float directionInput;
     private float remainingJumpBufferTime, remainingJumpCoyoteTime;
-    public bool isOnGround, isJumping;
+    public bool isOnGround, isJumping, isDead;
     private bool isRecording;
     public bool canMove;
     private void Awake()
@@ -165,12 +167,17 @@ public class PlayerMovement : MonoBehaviour
         animator.SetTrigger("Jump");
     }
 
-    public void DisableAndHide()
+    private void DisableBody()
     {
         canMove = false;
-        sprite.enabled = false;
         rb.velocity = Vector2.zero;
         rb.simulated = false;
+    }
+
+    public void DisableAndHide()
+    {
+        DisableBody();
+        sprite.enabled = false;
     }
 
     public void EnableAndShow()
@@ -182,14 +189,31 @@ public class PlayerMovement : MonoBehaviour
 
     public void Die()
     {
-        canMove = false;
+        // Check if we're not already dead
+        if (isDead)
+            return;
+
+        DisableBody();
+        isDead = true;
         animator.SetTrigger("Die");
         animator.ResetTrigger("Jump");
     }
 
+    public void OnDeathAnimationEnd()
+    {
+        graveInstance = Instantiate(gravePrefab, headSpot.position, Quaternion.identity);
+        DisableAndHide();
+    }
+
     public void Resurrect()
     {
-        canMove = true;
+        if(graveInstance != null)
+        {
+            Destroy(graveInstance);
+            graveInstance = null;
+        }
+        EnableAndShow();
+        isDead = false;
         animator.SetTrigger("Resurrect");
     }
 }

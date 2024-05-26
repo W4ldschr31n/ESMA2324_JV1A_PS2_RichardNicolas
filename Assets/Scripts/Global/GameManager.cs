@@ -90,6 +90,7 @@ public class GameManager : MonoBehaviour
         {
             playerInstance = Instantiate(playerPrefab, playerSpawn.position, Quaternion.identity)
                 .GetComponent<PlayerMovement>();
+            playerInstance.EnableAndShow();
         }
         else
         {
@@ -98,7 +99,6 @@ public class GameManager : MonoBehaviour
             playerInstance.Resurrect();
             playerInstance.RestartReplay();
         }
-        playerInstance.EnableAndShow();
         playerInstance.StartRecording();
         SingletonMaster.Instance.CameraManager.SetCameraTarget(playerInstance.transform);
         SingletonMaster.Instance.CameraManager.ResetZoom();
