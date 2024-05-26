@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 434917439439679646}
   - component: {fileID: 8224600757320683624}
   - component: {fileID: 7744256056719640284}
+  - component: {fileID: 7806193788361562489}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -213,6 +214,7 @@ MonoBehaviour:
   movementData: {fileID: 11400000, guid: 012d8bf86c1057349b9b2539371f8858, type: 2}
   isOnGround: 0
   isJumping: 0
+  canMove: 0
 --- !u!114 &7744256056719640284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,6 +229,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   replayPlayerPrefab: {fileID: 4394751484032233145, guid: b61581696c95b26439bd243ee35da019, type: 3}
   isReplaying: 0
+--- !u!95 &7806193788361562489
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4447115678087935019}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 15c1d19e0602c734b9ca28154752d75d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7809884439680194052
 GameObject:
   m_ObjectHideFlags: 0

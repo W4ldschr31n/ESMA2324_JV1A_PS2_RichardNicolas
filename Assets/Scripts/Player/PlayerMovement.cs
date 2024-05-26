@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
+    private Animator animator;
     private Recorder recorder;
     [SerializeField] private Transform feetSpot, headSpot;
     [SerializeField] private LayerMask platformLayers;
@@ -21,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
         recorder = GetComponent<Recorder>();
     }
 
@@ -60,6 +62,13 @@ public class PlayerMovement : MonoBehaviour
         if (remainingJumpCoyoteTime > 0f)
         {
             remainingJumpCoyoteTime -= Time.deltaTime;
+        }
+        // Animation
+        animator.SetBool("Moving", rb.velocity != Vector2.zero);
+        animator.SetBool("OnGround", isOnGround);
+        if (rb.velocity.x != 0f)
+        {
+            sprite.flipX = rb.velocity.x < 0f;
         }
     }
 
@@ -146,13 +155,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void Jump()
+    private void Jump()
     {
         // If the player is holding the jump button, make a normal jump, else make a short jump
         float trueJumpForce = SingletonMaster.Instance.InputManager.JumpInputPressing ? movementData.jumpForce : movementData.miniJumpForce;
         rb.velocity = new Vector2(rb.velocity.x, trueJumpForce);
         remainingJumpBufferTime = 0f;
         remainingJumpCoyoteTime = 0f;
+        animator.SetTrigger("Jump");
     }
 
     public void DisableAndHide()
@@ -173,6 +183,13 @@ public class PlayerMovement : MonoBehaviour
     public void Die()
     {
         canMove = false;
-        sprite.color = Color.red;
+        animator.SetTrigger("Die");
+        animator.ResetTrigger("Jump");
+    }
+
+    public void Resurrect()
+    {
+        canMove = true;
+        animator.SetTrigger("Resurrect");
     }
 }

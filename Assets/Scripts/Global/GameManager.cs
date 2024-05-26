@@ -95,6 +95,7 @@ public class GameManager : MonoBehaviour
         {
             playerInstance.StopRecording();
             playerInstance.transform.position = playerSpawn.position;
+            playerInstance.Resurrect();
             playerInstance.RestartReplay();
         }
         playerInstance.EnableAndShow();
