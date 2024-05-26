@@ -47,7 +47,7 @@ public class Recording
         // Destroy the replay player if needed
         if (player != null)
         {
-            GameObject.Destroy(player.gameObject);
+            player.DestroySelf();
         }
     }
 }

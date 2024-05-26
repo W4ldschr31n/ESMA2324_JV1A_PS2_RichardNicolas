@@ -100,9 +100,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isRecording)
         {
-            // TODO interact and die this frame
-            ReplayData data = new ReplayData(transform.position, rb.velocity, isJumping, sprite.flipX, false, false);
+            ReplayData data = new ReplayData(transform.position, isJumping, sprite.flipX, isDead);
             recorder.RecordReplayData(data);
+            // We don't need further data when the player dies
+            if (isDead)
+            {
+                isRecording = false;
+            }
         }
     }
     private void FixedUpdate()
