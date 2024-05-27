@@ -12,7 +12,15 @@ public class ChangeLanguage : MonoBehaviour
 
     private void Start()
     {
-        SetEnglishLocale();
+        // Retrieve what locale is used when the screen appears
+        if (LocalizationSettings.SelectedLocale == LocalizationSettings.AvailableLocales.Locales[0])
+        {
+            SetEnglishLocale();
+        }
+        else
+        {
+            SetFrenchLocale();
+        }
     }
 
     public void SwitchLanguage()
