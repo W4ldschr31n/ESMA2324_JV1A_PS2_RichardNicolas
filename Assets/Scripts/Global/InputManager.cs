@@ -11,7 +11,9 @@ public class InputManager : MonoBehaviour
     public bool JumpInputPressing;
     public bool JumpInputReleased;
     public bool PauseInput;
-    public bool CancelInput;
+    public bool CancelInputPressed;
+    public bool CancelInputPressing;
+    public bool CancelInputReleased;
     public bool ResetInput;
     public bool AnyInput;
 
@@ -41,7 +43,9 @@ public class InputManager : MonoBehaviour
         JumpInputPressing = jumpAction.IsPressed();
         JumpInputReleased = jumpAction.WasReleasedThisFrame();
         PauseInput = pauseAction.WasPressedThisFrame();
-        CancelInput = cancelAction.WasPressedThisFrame();
+        CancelInputPressed = cancelAction.WasPressedThisFrame();
+        CancelInputPressing = cancelAction.IsPressed();
+        CancelInputReleased = cancelAction.WasReleasedThisFrame();
         ResetInput = resetAction.WasPressedThisFrame();
         AnyInput = Input.anyKeyDown;
     }

@@ -16,7 +16,8 @@ public class PlayerMovement : MonoBehaviour
 
 
     private float directionInput;
-    private float remainingJumpBufferTime, remainingJumpCoyoteTime;
+    public float cancelChargeTime;
+    private float remainingJumpBufferTime, remainingJumpCoyoteTime, currentCancelChargedTime;
     public bool isOnGround, isJumping, isDead;
     private bool isRecording;
     public bool canMove;
@@ -64,6 +65,20 @@ public class PlayerMovement : MonoBehaviour
         if (remainingJumpCoyoteTime > 0f)
         {
             remainingJumpCoyoteTime -= Time.deltaTime;
+        }
+        // Cancel charge
+        if (SingletonMaster.Instance.InputManager.CancelInputPressed || SingletonMaster.Instance.InputManager.CancelInputReleased)
+        {
+            currentCancelChargedTime = 0f;
+        }
+        else if (SingletonMaster.Instance.InputManager.CancelInputPressing)
+        {
+            currentCancelChargedTime += Time.deltaTime;
+            if(currentCancelChargedTime >= cancelChargeTime)
+            {
+                Die();
+                currentCancelChargedTime = 0f;
+            }
         }
         // Animation
         animator.SetBool("Moving", rb.velocity != Vector2.zero);

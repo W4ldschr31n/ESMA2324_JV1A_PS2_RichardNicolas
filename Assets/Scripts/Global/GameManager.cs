@@ -45,11 +45,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            if (SingletonMaster.Instance.InputManager.CancelInput)
-            {
-                SingletonMaster.Instance.TimerManager.EndTimer();
-            }
-            else if (SingletonMaster.Instance.InputManager.ResetInput)
+            if (SingletonMaster.Instance.InputManager.ResetInput)
             {
                 DestroyPlayer();
                 SingletonMaster.Instance.TimerManager.EndTimer();
