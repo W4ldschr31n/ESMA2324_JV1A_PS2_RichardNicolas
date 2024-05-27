@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.Localization.Components;
+
 public class SceneChangeManager : MonoBehaviour
 {
     public FadeScreen fadeScreen;
@@ -51,6 +53,8 @@ public class SceneChangeManager : MonoBehaviour
         asyncLoad.allowSceneActivation = false;
         Slider loadingBar = GameObject.FindGameObjectWithTag("LoadingBar").GetComponent<Slider>();
         TextMeshProUGUI textPrompt = GameObject.FindGameObjectWithTag("LoadingPrompt").GetComponent<TextMeshProUGUI>();
+        TextMeshProUGUI textLore = GameObject.FindGameObjectWithTag("LoadingLore").GetComponent<TextMeshProUGUI>();
+        textLore.GetComponent<LocalizeStringEvent>().SetEntry(sceneName);
         textPrompt.enabled = false;
 
         while (!asyncLoad.isDone)

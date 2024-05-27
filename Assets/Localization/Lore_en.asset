@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Lore_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 058b7d8180386c94baf7b6c07ce78cc6, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 38926696448
+    m_Localized: Water. Earth. Fire. Air. Long ago, the four nations lived together
+      in harmony. Then, everything changed when the Fire Nation attacked. Only the
+      Avatar, master of all four elements, could stop them, but when the world needed
+      him most, he vanished. A hundred years passed and my brother and I discovered
+      the new Avatar, an airbender named Aang. And although his airbending skills
+      are great, he has a lot to learn before he's ready to save anyone. But I believe
+      Aang can save the world.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3191415914496
+    m_Localized: "Once upon a midnight dreary, while I pondered, weak and weary,\r\nOver
+      many a quaint and curious volume of forgotten lore\u2014\r\n    While I nodded,
+      nearly napping, suddenly there came a tapping,\r\nAs of some one gently rapping,
+      rapping at my chamber door.\r\n\u201C\u2019Tis some visitor,\u201D I muttered,
+      \u201Ctapping at my chamber door\u2014\r\n            Only this and nothing
+      more.\u201D"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

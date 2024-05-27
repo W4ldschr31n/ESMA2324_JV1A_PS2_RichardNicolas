@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Lore_fr
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: fr
+  m_SharedData: {fileID: 11400000, guid: 058b7d8180386c94baf7b6c07ce78cc6, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 38926696448
+    m_Localized: "L'Eau. La Terre. Le Feu. L'Air. Il y a tr\xE8s longtemps, ces quatre
+      peuples vivaient en harmonie. Mais un jour, la Nation du Feu d\xE9cida de passer
+      \xE0 l'attaque. Seul l'Avatar, ma\xEEtre de ces quatre \xE9l\xE9ments, pouvait
+      mettre fin \xE0 la guerre, mais alors qu'on avait besoin de lui, il disparu.
+      Cent ans plus tard, mon fr\xE8re et moi avons d\xE9couvert le nouvel Avatar,
+      un fils de l'air appel\xE9 Aang. Et m\xEAme si sa ma\xEEtrise de l'air est
+      exceptionnelle, il a encore beaucoup \xE0 apprendre avant de pouvoir sauver
+      qui que ce soit. Mais je suis certaine que Aang peut sauver le monde."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3191415914496
+    m_Localized: "\xAB Une fois, sur le minuit lugubre, pendant que je m\xE9ditais,
+      faible et fatigu\xE9, sur maint pr\xE9cieux et\r\n\r\ncurieux volume d\u2019une
+      doctrine oubli\xE9e, pendant que je donnais de la t\xEAte, presque assoupi,
+      soudain i\r\n\r\nse fit un tapotement, comme de quelqu\u2019un frappant doucement,
+      frappant \xE0 la porte de ma chambre.\r\n\r\n\xAB C\u2019est quelque visiteur,
+      \u2014 murmurai-je, \u2014 qui frappe \xE0 la porte de ma chambre ; ce n\u2019est
+      que cela,\r\n\r\net rien de plus. \xBB"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
