@@ -17,15 +17,12 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        // Do this in Start to let the event be initialized in an Awake
-        TimerManager.onTimerEnded.AddListener(OnTimerEnded);
         SceneManager.sceneLoaded += OnSceneLoaded;
         SingletonMaster.Instance.SceneChangeManager.LoadSceneWithFade(firstScene);
     }
 
     private void OnDisable()
     {
-        TimerManager.onTimerEnded.RemoveListener(OnTimerEnded);
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
@@ -36,7 +33,7 @@ public class GameManager : MonoBehaviour
         {
             if (!finishedLevel)
             {
-                StartLevel();
+                RespawnPlayer();
             }
             else
             {
@@ -55,14 +52,6 @@ public class GameManager : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }
-    }
-
-    private void StartLevel()
-    {
-        isPlaying = true;
-        promptText.SetActive(false);
-        DestroyPlayer();
-        RespawnPlayer();
     }
 
     private void GoNextLevel()
@@ -100,7 +89,8 @@ public class GameManager : MonoBehaviour
         SingletonMaster.Instance.CameraManager.SetCameraTarget(playerInstance.transform);
         SingletonMaster.Instance.CameraManager.ResetZoom();
         SingletonMaster.Instance.TimerManager.StartTimer(timer);
-
+        isPlaying = true;
+        promptText.SetActive(false);
     }
 
     private void OnPlayerDeath()
@@ -108,16 +98,6 @@ public class GameManager : MonoBehaviour
         isPlaying = false;
         promptText.SetActive(true);
         SingletonMaster.Instance.CameraManager.ZoomOut();
-    }
-
-    private void OnTimerEnded()
-    {
-        if (isPlaying)
-        {
-            RespawnPlayer();
-        }
-        else
-            SingletonMaster.Instance.TimerManager.StartTimer(timer);
     }
 
     public void FinishGame(string _nextScene)
