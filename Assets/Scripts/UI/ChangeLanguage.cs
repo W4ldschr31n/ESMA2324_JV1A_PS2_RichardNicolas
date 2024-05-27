@@ -10,7 +10,7 @@ public class ChangeLanguage : MonoBehaviour
     public Sprite englishFlag;
     public Sprite frenchFlag;
 
-    private void Start()
+    private void OnEnable()
     {
         // Retrieve what locale is used when the screen appears
         if (LocalizationSettings.SelectedLocale == LocalizationSettings.AvailableLocales.Locales[0])
