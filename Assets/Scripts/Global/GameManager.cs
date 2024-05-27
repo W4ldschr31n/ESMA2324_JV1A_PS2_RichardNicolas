@@ -87,6 +87,7 @@ public class GameManager : MonoBehaviour
             playerInstance = Instantiate(playerPrefab, playerSpawn.position, Quaternion.identity)
                 .GetComponent<PlayerMovement>();
             playerInstance.EnableAndShow();
+            playerInstance.onPlayerDeath.AddListener(OnPlayerDeath);
         }
         else
         {
@@ -100,6 +101,13 @@ public class GameManager : MonoBehaviour
         SingletonMaster.Instance.CameraManager.ResetZoom();
         SingletonMaster.Instance.TimerManager.StartTimer(timer);
 
+    }
+
+    private void OnPlayerDeath()
+    {
+        isPlaying = false;
+        promptText.SetActive(true);
+        SingletonMaster.Instance.CameraManager.ZoomOut();
     }
 
     private void OnTimerEnded()

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private PlayerMovementData movementData;
     public GameObject gravePrefab;
     private GameObject graveInstance;
+
+    public UnityEvent onPlayerDeath;
 
 
     private float directionInput;
@@ -27,6 +30,11 @@ public class PlayerMovement : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         recorder = GetComponent<Recorder>();
+
+        if(onPlayerDeath == null)
+        {
+            onPlayerDeath = new UnityEvent();
+        }
     }
 
 
@@ -222,6 +230,7 @@ public class PlayerMovement : MonoBehaviour
     {
         graveInstance = Instantiate(gravePrefab, headSpot.position, Quaternion.identity);
         DisableAndHide();
+        onPlayerDeath?.Invoke();
     }
 
     public void Resurrect()
