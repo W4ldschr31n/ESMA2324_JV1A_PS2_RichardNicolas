@@ -49,11 +49,11 @@ public class MovingPlatform : MonoBehaviour
             // Not ping pong : loop through the waypoints again
             else
             {
-                if (currentIndex == waypoints.Length - 1)
+                if (currentIndex == waypoints.Length - 1 && stepWaypoint > 0)
                 {
                     currentIndex = -1;
                 }
-                else if (currentIndex == 0)
+                else if (currentIndex == 0 && stepWaypoint < 0)
                 {
                     currentIndex = waypoints.Length;
                 }
