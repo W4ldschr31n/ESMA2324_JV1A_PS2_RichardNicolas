@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using TMPro;
-using UnityEngine.Localization.Components;
 
 public class SceneChangeManager : MonoBehaviour
 {
@@ -51,28 +49,37 @@ public class SceneChangeManager : MonoBehaviour
         // Load the real scene we want to get to
         asyncLoad = SceneManager.LoadSceneAsync(sceneName);
         asyncLoad.allowSceneActivation = false;
-        Slider loadingBar = GameObject.FindGameObjectWithTag("LoadingBar").GetComponent<Slider>();
-        TextMeshProUGUI textPrompt = GameObject.FindGameObjectWithTag("LoadingPrompt").GetComponent<TextMeshProUGUI>();
-        TextMeshProUGUI textLore = GameObject.FindGameObjectWithTag("LoadingLore").GetComponent<TextMeshProUGUI>();
-        textLore.GetComponent<LocalizeStringEvent>().SetEntry(sceneName);
-        textPrompt.enabled = false;
+        
+        // Get the loading screen manager in the scene and tell him what to display
+        LoadingScreenManager loadingScreenManager = FindObjectOfType<LoadingScreenManager>();
+        loadingScreenManager.SetLocalizationKey(sceneName);
 
         while (!asyncLoad.isDone)
         {
-            // Update the loading bar
-            loadingBar.value = asyncLoad.progress / 0.9f;
-            if(asyncLoad.progress >= 0.9f)
+            // Loading in progress
+            if (asyncLoad.progress < 0.9f)
+            {
+                loadingScreenManager.UpdateLoadingProgress(asyncLoad.progress / 0.9f);
+            }
+            // Loading finished
+            else
             {
                 // Show the player he can load the scene
-                textPrompt.enabled = true;
+                loadingScreenManager.FinishLoading();
 
-                // Wait for the player to confirm the loading
-                if (SingletonMaster.Instance.InputManager.AnyInput)
+                // Wait for the player to confirm the loading after displaying the full text
+                if (SingletonMaster.Instance.InputManager.AnyInput && loadingScreenManager.isTextFullyDisplayed)
                 {
                     asyncLoad.allowSceneActivation = true;
                 }
-
             }
+
+            // Player can fast forward the text
+            if (SingletonMaster.Instance.InputManager.AnyInput && !loadingScreenManager.isTextFullyDisplayed)
+            {
+                loadingScreenManager.ForceTextDisplay();
+            }
+
             yield return null;
         }
 
