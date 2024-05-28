@@ -10,15 +10,18 @@ public class GameManager : MonoBehaviour
     private PlayerMovement playerInstance;
     public float timer;
     public GameObject promptText;
-    private bool isPlaying;
+    private bool isPlaying, isInLoadingScreen;
     public string firstScene;
     private string nextScene;
     private bool finishedLevel;
+    public GameObject mainUI;
 
     void Start()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
         SingletonMaster.Instance.SceneChangeManager.LoadSceneWithFade(firstScene);
+        HideMainUI();
+        isInLoadingScreen = true;
     }
 
     private void OnDisable()
@@ -29,7 +32,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         // Level Start
-        if (!isPlaying && SingletonMaster.Instance.InputManager.JumpInputPressed)
+        if (!isInLoadingScreen && !isPlaying && SingletonMaster.Instance.InputManager.JumpInputPressed)
         {
             if (!finishedLevel)
             {
@@ -40,18 +43,23 @@ public class GameManager : MonoBehaviour
                 GoNextLevel();
             }
         }
-        else
+        else // During gameplay
         {
             if (SingletonMaster.Instance.InputManager.ResetInput)
             {
-                DestroyPlayer();
-                SingletonMaster.Instance.TimerManager.EndTimer();
-                SingletonMaster.Instance.TimerManager.isPlaying = false;
-                isPlaying = false;
-                promptText.SetActive(true);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                ResetLevel();
             }
         }
+    }
+
+    private void ResetLevel()
+    {
+        DestroyPlayer();
+        SingletonMaster.Instance.TimerManager.EndTimer();
+        SingletonMaster.Instance.TimerManager.isPlaying = false;
+        isPlaying = false;
+        promptText.SetActive(true);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void GoNextLevel()
@@ -116,17 +124,33 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
     {
-        // If we are loading a new level that is not the loading screen
-        if(loadSceneMode == LoadSceneMode.Single && scene.name != SingletonMaster.Instance.SceneChangeManager.loadingScreenScene)
+        if(scene.name == SingletonMaster.Instance.SceneChangeManager.loadingScreenScene)
         {
+            HideMainUI();
+            isInLoadingScreen = true;
+        }
+        // If we are loading a new level that is not the loading screen
+        else if(loadSceneMode == LoadSceneMode.Single)
+        {
+            ShowMainUI();
             playerSpawn = GameObject.FindGameObjectWithTag("Respawn").transform;
-            SingletonMaster.Instance.CameraManager.SetCameraTarget(playerSpawn);
-            SingletonMaster.Instance.CameraManager.ZoomOut();
+            isInLoadingScreen = false;
             isPlaying = false;
             finishedLevel = false;
-            SingletonMaster.Instance.TimerManager.EndTimer();
+            SingletonMaster.Instance.CameraManager.ZoomOut();
+            SingletonMaster.Instance.CameraManager.SetCameraTarget(playerSpawn);
             SingletonMaster.Instance.TimerManager.isPlaying = false;
             SingletonMaster.Instance.TimerManager.currentTimer = timer;
         }
+    }
+
+    private void HideMainUI()
+    {
+        mainUI.SetActive(false);
+    }
+
+    private void ShowMainUI()
+    {
+        mainUI.SetActive(true);
     }
 }
