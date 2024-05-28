@@ -11,16 +11,18 @@ public class MovingPlatform : MonoBehaviour
     public bool isPingPong;
     private int stepWaypoint;
     public bool isMoving;
+    private Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         Reset();
         isMoving = false;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (!isMoving)
         {
@@ -28,48 +30,56 @@ public class MovingPlatform : MonoBehaviour
         }
 
         Vector2 currentPosition = transform.position;
-        // Too far away from target, move towards it
-        if(Vector2.Distance(currentPosition, targetPosition) > 0.01f)
-        {
-            transform.position = Vector2.MoveTowards(currentPosition, targetPosition, speed * Time.deltaTime);
-        }
-        else // Target reached
+
+        // Target reached
+        if (Vector2.Distance(currentPosition, targetPosition) <= 0.1f)
         {
             // Ping pong : we want to travel back to the previous waypoints
             if (isPingPong)
             {
-                if(currentIndex == waypoints.Length -1)
+                if (currentIndex == waypoints.Length - 1)
                 {
                     stepWaypoint = -1;
-                }else if(currentIndex == 0)
+                }
+                else if (currentIndex == 0)
                 {
                     stepWaypoint = 1;
                 }
             }
             // Not ping pong : loop through the waypoints again
-            else if(currentIndex == waypoints.Length -1)
+            else
             {
-                currentIndex = -1;
+                if (currentIndex == waypoints.Length - 1)
+                {
+                    currentIndex = -1;
+                }
+                else if (currentIndex == 0)
+                {
+                    currentIndex = waypoints.Length;
+                }
             }
-            // Get the next waypoint
+            // Move towards the next waypoint
             currentIndex += stepWaypoint;
             targetPosition = waypoints[currentIndex].position;
+            rb.velocity = (targetPosition - currentPosition).normalized * speed;
         }
     }
 
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
+        // Check if we're coming from above (platform effector enables the collision)
+        if (collision.enabled && collision.gameObject.CompareTag("Player"))
         {
-            collision.gameObject.transform.SetParent(transform);
+            collision.gameObject.GetComponent<PlayerMovement>().SnapToMovingPlatform(rb);
         }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            collision.gameObject.transform.SetParent(null);
+            collision.gameObject.GetComponent<PlayerMovement>().DetachFromMovingPlatform();
         }
     }
 

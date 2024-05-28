@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private GameObject graveInstance;
 
     public UnityEvent onPlayerDeath;
+    private Rigidbody2D movingPlatformRb;
 
 
     private float directionInput;
@@ -173,14 +174,31 @@ public class PlayerMovement : MonoBehaviour
         float movement = deltaSpeed * acceleration;
 
         rb.AddForce(movement * Vector2.right);
+
         if(rb.velocity.y < 0f)
         {
             rb.gravityScale = movementData.gravityScale * movementData.fallingGravityScale;
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Max(rb.velocity.y, -movementData.maxFallingSpeed));
         }
+
+        // Add a force corresponding to the platform moving us
+        if (movingPlatformRb != null)
+        {
+            rb.AddForce(Vector2.right * movingPlatformRb.velocity.x * 20); // 20 is amount of FixedUpdate/second
+        }
     }
 
-    void CheckIsOnGround()
+    public void SnapToMovingPlatform(Rigidbody2D _movingPlatformRb)
+    {
+        movingPlatformRb = _movingPlatformRb;
+    }
+
+    public void DetachFromMovingPlatform()
+    {
+        movingPlatformRb = null;
+    }
+
+    private void CheckIsOnGround()
     {
         Vector3 offset = new Vector3(0.5f, 0f, 0f);
         isOnGround = Physics2D.OverlapArea(feetSpot.position - offset, feetSpot.position + offset, platformLayers);
