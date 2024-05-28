@@ -57,12 +57,9 @@ public class SceneChangeManager : MonoBehaviour
         while (!asyncLoad.isDone)
         {
             // Loading in progress
-            if (asyncLoad.progress < 0.9f)
-            {
-                loadingScreenManager.UpdateLoadingProgress(asyncLoad.progress / 0.9f);
-            }
+            loadingScreenManager.UpdateLoadingProgress(asyncLoad.progress / 0.9f);
             // Loading finished
-            else
+            if (asyncLoad.progress >= 0.9f)
             {
                 // Show the player he can load the scene
                 loadingScreenManager.FinishLoading();
