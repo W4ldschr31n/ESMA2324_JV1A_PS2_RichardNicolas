@@ -23,11 +23,9 @@ public class Door : Activable
 
     private void Update()
     {
-        Debug.Log(Vector2.Distance(body.position, targetPosition));
         if(Vector2.Distance(body.position, targetPosition) != 0f)
         {
             body.position = Vector3.MoveTowards(body.position, targetPosition, speed * Time.deltaTime);
-            Debug.Log(Vector3.MoveTowards(body.position, targetPosition, speed * Time.deltaTime));
         }
     }
 

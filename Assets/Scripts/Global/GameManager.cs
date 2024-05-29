@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     private bool isPlaying, isInLoadingScreen, isGameOver;
     public string firstScene;
     private string nextScene;
+    private bool isLoreTransition;
     private bool finishedLevel;
     public GameObject mainUI;
     public GameObject gameOverScreen;
@@ -24,7 +25,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
-        SingletonMaster.Instance.SceneChangeManager.LoadSceneWithFade(firstScene);
+        SingletonMaster.Instance.SceneChangeManager.LoadScene(firstScene, false);
         HideMainUI();
         isInLoadingScreen = true;
     }
@@ -73,7 +74,7 @@ public class GameManager : MonoBehaviour
 
     private void GoNextLevel()
     {
-        SingletonMaster.Instance.SceneChangeManager.LoadSceneWithFade(nextScene);
+        SingletonMaster.Instance.SceneChangeManager.LoadScene(nextScene, isLoreTransition);
     }
 
     private void DestroyPlayer()
@@ -167,6 +168,7 @@ public class GameManager : MonoBehaviour
                 timer = levelData.timer;
                 maxLives = levelData.lives;
                 nextScene = levelData.nextLevel;
+                isLoreTransition = levelData.isLoreTransition;
             }
             // Setup the singletons
             SingletonMaster.Instance.CameraManager.ZoomOut();

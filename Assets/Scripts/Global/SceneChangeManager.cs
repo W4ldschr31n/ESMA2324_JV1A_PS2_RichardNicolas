@@ -28,12 +28,35 @@ public class SceneChangeManager : MonoBehaviour
         SceneManager.LoadScene("Init");
     }
 
-    public void LoadSceneWithFade(string sceneName)
+    public void LoadScene(string sceneName, bool isLoreTransition)
     {
-        StartCoroutine(LoadYourAsyncScene(sceneName));
+        if (isLoreTransition)
+        {
+            StartCoroutine(LoadSceneWithLore(sceneName));
+        }
+        else
+        {
+            StartCoroutine(LoadSceneWithoutLore(sceneName));
+        }
     }
 
-    IEnumerator LoadYourAsyncScene(string sceneName)
+    IEnumerator LoadSceneWithoutLore(string sceneName)
+    {
+        // Fade to black and load the loading screen
+        fadeScreen.FadeIn();
+        yield return new WaitForSeconds(1f);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+
+        // Fade out as the new scene is loaded
+        fadeScreen.FadeOut();
+    }
+
+    IEnumerator LoadSceneWithLore(string sceneName)
     {
         // Fade to black and load the loading screen
         fadeScreen.FadeIn();

@@ -7,4 +7,5 @@ public class LevelData : MonoBehaviour
     public float timer;
     public int lives;
     public string nextLevel;
+    public bool isLoreTransition;
 }
