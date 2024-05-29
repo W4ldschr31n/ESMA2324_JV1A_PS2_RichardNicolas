@@ -47,6 +47,14 @@ MonoBehaviour:
     m_Key: bind_move
     m_Metadata:
       m_Items: []
+  - m_Id: 1394937901473792
+    m_Key: time_left
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1394971149721600
+    m_Key: lives_remaining
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

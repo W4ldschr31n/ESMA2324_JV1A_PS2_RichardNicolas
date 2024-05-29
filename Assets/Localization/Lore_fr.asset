@@ -39,6 +39,10 @@ MonoBehaviour:
       que cela,\r\n\r\net rien de plus. \xBB"
     m_Metadata:
       m_Items: []
+  - m_Id: 726550925926400
+    m_Localized: bonjour
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,12 +10,15 @@ public class GameManager : MonoBehaviour
     public GameObject playerPrefab;
     private PlayerMovement playerInstance;
     public float timer;
+    public int maxLives;
+    private int currentLives;
     public GameObject promptText;
-    private bool isPlaying, isInLoadingScreen;
+    private bool isPlaying, isInLoadingScreen, isGameOver;
     public string firstScene;
     private string nextScene;
     private bool finishedLevel;
     public GameObject mainUI;
+    public TextMeshProUGUI livesText;
 
     void Start()
     {
@@ -31,8 +35,12 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        //GameOver
+        if(isGameOver && SingletonMaster.Instance.InputManager.JumpInputPressed) {
+            ResetLevel();
+        }
         // Level Start
-        if (!isInLoadingScreen && !isPlaying && SingletonMaster.Instance.InputManager.JumpInputPressed)
+        else if (!isInLoadingScreen && !isPlaying && SingletonMaster.Instance.InputManager.JumpInputPressed)
         {
             if (!finishedLevel)
             {
@@ -106,6 +114,17 @@ public class GameManager : MonoBehaviour
         isPlaying = false;
         promptText.SetActive(true);
         SingletonMaster.Instance.CameraManager.ZoomOut();
+        currentLives--;
+        UpdateDisplayLives();
+        if(currentLives == 0)
+        {
+            GameOver();
+        }
+    }
+
+    private void GameOver()
+    {
+        isGameOver = true;
     }
 
     public void FinishGame(string _nextScene)
@@ -137,11 +156,19 @@ public class GameManager : MonoBehaviour
             isInLoadingScreen = false;
             isPlaying = false;
             finishedLevel = false;
+            isGameOver=false;
+            currentLives = maxLives;
             SingletonMaster.Instance.CameraManager.ZoomOut();
             SingletonMaster.Instance.CameraManager.SetCameraTarget(playerSpawn);
             SingletonMaster.Instance.TimerManager.isPlaying = false;
             SingletonMaster.Instance.TimerManager.currentTimer = timer;
+            UpdateDisplayLives();
         }
+    }
+
+    private void UpdateDisplayLives()
+    {
+        livesText.text = $"Lives left\n{currentLives}";
     }
 
     private void HideMainUI()
