@@ -7,7 +7,6 @@ using UnityEngine.Events;
 public class TimerManager : MonoBehaviour
 {
     public TextMeshProUGUI timerText;
-    public float maxTimer;
     public float currentTimer;
     public bool isPlaying;
 
@@ -41,7 +40,7 @@ public class TimerManager : MonoBehaviour
     public void StartTimer(float time)
     {
         // Inititalize time variables
-        maxTimer = currentTimer = time;
+        currentTimer = time;
         isPlaying = true;
         onTimerStarted?.Invoke();
     }

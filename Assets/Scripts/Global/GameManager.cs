@@ -127,7 +127,7 @@ public class GameManager : MonoBehaviour
         isGameOver = true;
     }
 
-    public void FinishGame(string _nextScene)
+    public void FinishGame()
     {
         isPlaying = false;
         finishedLevel = true;
@@ -138,7 +138,6 @@ public class GameManager : MonoBehaviour
         promptText.SetActive(true);
         SingletonMaster.Instance.CameraManager.SetCameraTarget(playerSpawn);
         SingletonMaster.Instance.CameraManager.ZoomOut();
-        nextScene = _nextScene;
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
@@ -151,18 +150,31 @@ public class GameManager : MonoBehaviour
         // If we are loading a new level that is not the loading screen
         else if(loadSceneMode == LoadSceneMode.Single)
         {
-            ShowMainUI();
+            // Setup game data
             playerSpawn = GameObject.FindGameObjectWithTag("Respawn").transform;
             isInLoadingScreen = false;
             isPlaying = false;
             finishedLevel = false;
             isGameOver=false;
-            currentLives = maxLives;
+
+            // Load data from the level
+            LevelData levelData = FindObjectOfType<LevelData>();
+            if (levelData)
+            {
+                timer = levelData.timer;
+                maxLives = levelData.lives;
+                nextScene = levelData.nextLevel;
+            }
+            // Setup the singletons
             SingletonMaster.Instance.CameraManager.ZoomOut();
             SingletonMaster.Instance.CameraManager.SetCameraTarget(playerSpawn);
             SingletonMaster.Instance.TimerManager.isPlaying = false;
             SingletonMaster.Instance.TimerManager.currentTimer = timer;
+
+            // Display UI
+            currentLives = maxLives;
             UpdateDisplayLives();
+            ShowMainUI();
         }
     }
 
