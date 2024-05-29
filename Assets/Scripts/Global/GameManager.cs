@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     private string nextScene;
     private bool finishedLevel;
     public GameObject mainUI;
+    public GameObject gameOverScreen;
     public TextMeshProUGUI livesText;
 
     void Start()
@@ -125,6 +126,7 @@ public class GameManager : MonoBehaviour
     private void GameOver()
     {
         isGameOver = true;
+        gameOverScreen.SetActive(true);
     }
 
     public void FinishGame()
