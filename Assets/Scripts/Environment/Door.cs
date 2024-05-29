@@ -4,25 +4,31 @@ using UnityEngine;
 
 public class Door : Activable
 {
-    private Rigidbody2D rb;
-    private SpriteRenderer sprite;
-
-    private void Awake()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        sprite = GetComponent<SpriteRenderer>();
-    }
+    public Transform body, spotOpen, spotClose;
+    private Vector3 targetPosition;
+    private float speed;
+    public float speedOpen, speedClose;
 
     public override void Activate()
     {
-        rb.simulated = false;
-        sprite.enabled = false;
+        targetPosition = spotOpen.position;
+        speed = speedOpen;
     }
 
     public override void Deactivate()
     {
-        rb.simulated = true;
-        sprite.enabled = true;
+        targetPosition = spotClose.position;
+        speed = speedClose;
+    }
+
+    private void Update()
+    {
+        Debug.Log(Vector2.Distance(body.position, targetPosition));
+        if(Vector2.Distance(body.position, targetPosition) != 0f)
+        {
+            body.position = Vector3.MoveTowards(body.position, targetPosition, speed * Time.deltaTime);
+            Debug.Log(Vector3.MoveTowards(body.position, targetPosition, speed * Time.deltaTime));
+        }
     }
 
 }

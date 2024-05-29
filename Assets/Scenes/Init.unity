@@ -326,10 +326,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1083101039}
     - target: {fileID: 98694215849913425, guid: 86dffc620b57aeb45ac36a9d611f1042, type: 3}
-      propertyPath: cameraManager
-      value: 
-      objectReference: {fileID: 239734530}
-    - target: {fileID: 98694215849913425, guid: 86dffc620b57aeb45ac36a9d611f1042, type: 3}
       propertyPath: gameOverScreen
       value: 
       objectReference: {fileID: 1968603984}
@@ -341,10 +337,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
-    - target: {fileID: 3290055646703366438, guid: 86dffc620b57aeb45ac36a9d611f1042, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 5184877199397787987, guid: 86dffc620b57aeb45ac36a9d611f1042, type: 3}
+      propertyPath: _camera
+      value: 
+      objectReference: {fileID: 1188467334}
     - target: {fileID: 7243739771298630923, guid: 86dffc620b57aeb45ac36a9d611f1042, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -388,117 +384,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3290055646703366438, guid: 86dffc620b57aeb45ac36a9d611f1042, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 239734529}
-    - targetCorrespondingSourceObject: {fileID: 3290055646703366438, guid: 86dffc620b57aeb45ac36a9d611f1042, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 239734530}
-    - targetCorrespondingSourceObject: {fileID: 3290055646703366438, guid: 86dffc620b57aeb45ac36a9d611f1042, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 239734534}
-    - targetCorrespondingSourceObject: {fileID: 3290055646703366438, guid: 86dffc620b57aeb45ac36a9d611f1042, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 239734536}
-    - targetCorrespondingSourceObject: {fileID: 3290055646703366438, guid: 86dffc620b57aeb45ac36a9d611f1042, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 239734535}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86dffc620b57aeb45ac36a9d611f1042, type: 3}
---- !u!1 &239734528 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3290055646703366438, guid: 86dffc620b57aeb45ac36a9d611f1042, type: 3}
-  m_PrefabInstance: {fileID: 239734527}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &239734529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 239734528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4aef406685563f44fad16fff1315475f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &239734530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 239734528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b175b2de09a38f541bb6c26fc4d882d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _camera: {fileID: 1188467334}
---- !u!114 &239734534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 239734528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4e2313075a38eb4181bc738582fe54e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &239734535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 239734528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: bb1139997482cfd47b5595167a47e357, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Gameplay
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
---- !u!114 &239734536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 239734528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8849410bc36a93e46bf90f30af2f945d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MoveInput: 0
-  JumpInputPressed: 0
-  JumpInputPressing: 0
-  JumpInputReleased: 0
-  PauseInput: 0
-  CancelInputPressed: 0
-  CancelInputPressing: 0
-  CancelInputReleased: 0
-  ResetInput: 0
-  AnyInput: 0
 --- !u!1 &420651641
 GameObject:
   m_ObjectHideFlags: 0
