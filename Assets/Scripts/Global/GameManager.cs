@@ -126,7 +126,8 @@ public class GameManager : MonoBehaviour
     private void GameOver()
     {
         isGameOver = true;
-        gameOverScreen.SetActive(true);
+        HideMainUI();
+        ShowGameOverScreen();
     }
 
     public void FinishGame()
@@ -177,6 +178,7 @@ public class GameManager : MonoBehaviour
             currentLives = maxLives;
             UpdateDisplayLives();
             ShowMainUI();
+            HideGameOverScreen();
         }
     }
 
@@ -193,5 +195,15 @@ public class GameManager : MonoBehaviour
     private void ShowMainUI()
     {
         mainUI.SetActive(true);
+    }
+
+    private void ShowGameOverScreen()
+    {
+        gameOverScreen.SetActive(true);
+    }
+
+    private void HideGameOverScreen()
+    {
+        gameOverScreen.SetActive(false);
     }
 }
