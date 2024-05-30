@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private SpriteRenderer sprite;
+    public GameObject rig;
     private Animator animator;
     private Recorder recorder;
     [SerializeField] private Transform feetSpot, headSpot;
@@ -22,13 +22,12 @@ public class PlayerMovement : MonoBehaviour
     private float directionInput;
     public float cancelChargeTime;
     private float remainingJumpBufferTime, remainingJumpCoyoteTime, currentCancelChargedTime;
-    public bool isOnGround, isJumping, isDead;
+    public bool isOnGround, isJumping, isDead, isFlipped;
     private bool isRecording;
     public bool canMove;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        sprite = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         recorder = GetComponent<Recorder>();
 
@@ -101,11 +100,18 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         // Animation
-        animator.SetBool("Moving", rb.velocity != Vector2.zero);
+        animator.SetBool("Moving", directionInput != 0f);
         animator.SetBool("OnGround", isOnGround);
-        if (rb.velocity.x != 0f)
+        Flip();
+    }
+
+    public void Flip()
+    {
+        if (directionInput != 0f)
         {
-            sprite.flipX = rb.velocity.x < 0f;
+            isFlipped = directionInput < 0f;
+            int scale = isFlipped ? -1 : 1;
+            rig.transform.localScale = new Vector3(scale * Mathf.Abs(rig.transform.localScale.x), rig.transform.localScale.y, rig.transform.localScale.z);
         }
     }
 
@@ -135,7 +141,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isRecording)
         {
-            ReplayData data = new ReplayData(transform.position, isJumping, sprite.flipX, isDead);
+            ReplayData data = new ReplayData(transform.position, isJumping, isFlipped, isDead);
             recorder.RecordReplayData(data);
             // We don't need further data when the player dies
             if (isDead)
@@ -233,13 +239,13 @@ public class PlayerMovement : MonoBehaviour
     public void DisableAndHide()
     {
         DisableBody();
-        sprite.enabled = false;
+        rig.SetActive(false);
     }
 
     public void EnableAndShow()
     {
         canMove = true;
-        sprite.enabled = true;
+        rig.SetActive(true);
         rb.simulated = true;
     }
 
