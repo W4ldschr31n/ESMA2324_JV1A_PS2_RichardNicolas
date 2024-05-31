@@ -100,7 +100,8 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         // Animation
-        animator.SetBool("Moving", directionInput != 0f);
+        animator.SetBool("Moving", directionInput != 0f && Mathf.Abs(rb.velocity.x) >= 0.1f);
+        animator.SetFloat("VelocityY", rb.velocity.y);
         animator.SetBool("OnGround", isOnGround);
         Flip();
     }
