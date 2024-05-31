@@ -21,7 +21,7 @@ MonoBehaviour:
   jumpApexTime: 0.5
   jumpForce: 20
   miniJumpForce: 12
-  fallingGravityScale: 1.5
+  fallingGravityScale: 1.2
   maxFallingSpeed: 20
   gravityScale: 4.0774717
   jumpBufferTime: 0.2
