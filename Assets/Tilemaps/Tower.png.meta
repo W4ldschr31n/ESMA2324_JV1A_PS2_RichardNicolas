@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 58c8932742549124baa5294a4256d47c
+guid: 5cebb9ed583d2d24d9a21e228ca808c9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TilePlatform_0
+      name: Tower_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32a41e4453146f24bbf3e48f5b6100ca
-      internalID: -1606793336
+      spriteID: 58a3c42bfc0e2674db3c276de9a75d7f
+      internalID: 562589713
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilePlatform_1
+      name: Tower_1
       rect:
         serializedVersion: 2
         x: 128
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7123f9d74481c314ba55fcc07779b66f
-      internalID: -1555587809
+      spriteID: fa4413aedd1b2814483420a69b6e35e4
+      internalID: -388895485
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilePlatform_2
+      name: Tower_2
       rect:
         serializedVersion: 2
         x: 0
@@ -153,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a244c3ab350972a4d887d8d19f2d24ba
-      internalID: -1984591351
+      spriteID: 28d8c9d3aa52735428454a05b2709381
+      internalID: -2009603231
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilePlatform_3
+      name: Tower_3
       rect:
         serializedVersion: 2
         x: 128
@@ -174,8 +174,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aae31656ccccc1f4ebb482a9be40e7a1
-      internalID: -783913245
+      spriteID: 1278bdeeb7c5364428214c07d8c32955
+      internalID: -1516842335
       vertices: []
       indices: 
       edges: []
@@ -191,10 +191,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TilePlatform_0: -1606793336
-      TilePlatform_1: -1555587809
-      TilePlatform_2: -1984591351
-      TilePlatform_3: -783913245
+      Tower_0: 562589713
+      Tower_1: -388895485
+      Tower_2: -2009603231
+      Tower_3: -1516842335
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

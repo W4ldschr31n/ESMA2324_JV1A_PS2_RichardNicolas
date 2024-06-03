@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 58c8932742549124baa5294a4256d47c
+guid: 7c593d141aa95e747b8a7fab8ebd62ca
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TilePlatform_0
+      name: Mur_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32a41e4453146f24bbf3e48f5b6100ca
-      internalID: -1606793336
+      spriteID: d0065dfe27e5b0e4fb5ad49959c6a810
+      internalID: -1610115403
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilePlatform_1
+      name: Mur_1
       rect:
         serializedVersion: 2
         x: 128
@@ -132,14 +132,56 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7123f9d74481c314ba55fcc07779b66f
-      internalID: -1555587809
+      spriteID: 8532f86c4a83a564ab3c972efdc9e31f
+      internalID: -1289931967
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilePlatform_2
+      name: Mur_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2c408c86673f82468270451f6c98ba9
+      internalID: -306222728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mur_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09f95ae2fd28eb14d84e8cf391dcabec
+      internalID: -689831697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mur_4
       rect:
         serializedVersion: 2
         x: 0
@@ -153,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a244c3ab350972a4d887d8d19f2d24ba
-      internalID: -1984591351
+      spriteID: e4b9ddd50cc3cae4b9f46f7e3f9f1c45
+      internalID: -2001200238
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilePlatform_3
+      name: Mur_5
       rect:
         serializedVersion: 2
         x: 128
@@ -174,8 +216,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aae31656ccccc1f4ebb482a9be40e7a1
-      internalID: -783913245
+      spriteID: 3b62f313f49d887429a43c38389d9e78
+      internalID: -658300959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mur_6
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec1ffa4aec701a144bf70d900a5c224e
+      internalID: -300977828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mur_7
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d04dc47e50817e942876de5a5d2d07f3
+      internalID: -1332314253
       vertices: []
       indices: 
       edges: []
@@ -191,10 +275,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TilePlatform_0: -1606793336
-      TilePlatform_1: -1555587809
-      TilePlatform_2: -1984591351
-      TilePlatform_3: -783913245
+      Mur_0: -1610115403
+      Mur_1: -1289931967
+      Mur_2: -306222728
+      Mur_3: -689831697
+      Mur_4: -2001200238
+      Mur_5: -658300959
+      Mur_6: -300977828
+      Mur_7: -1332314253
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
