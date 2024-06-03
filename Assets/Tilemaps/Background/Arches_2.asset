@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Arches_2
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 171653091, guid: 0e72777b2cb60a145b458ca5c42b2ad7, type: 3}
-  m_Color: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
     e01: 0
