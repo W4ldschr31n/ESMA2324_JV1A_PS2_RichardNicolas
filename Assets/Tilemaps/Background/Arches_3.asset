@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: Mur_0
+  m_Name: Arches_3
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -1610115403, guid: 7c593d141aa95e747b8a7fab8ebd62ca, type: 3}
-  m_Color: {r: 0.3679245, g: 0.3239008, b: 0.27941436, a: 1}
+  m_Sprite: {fileID: 458399180, guid: 0e72777b2cb60a145b458ca5c42b2ad7, type: 3}
+  m_Color: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 1}
   m_Transform:
     e00: 1
     e01: 0

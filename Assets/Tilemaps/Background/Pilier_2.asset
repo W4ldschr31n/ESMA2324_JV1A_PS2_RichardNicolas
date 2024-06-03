@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: Tower_1
+  m_Name: Pilier_2
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -388895485, guid: 5cebb9ed583d2d24d9a21e228ca808c9, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 1988513164, guid: b8b23d314f051924c8c540a8d7605c98, type: 3}
+  m_Color: {r: 0.3207547, g: 0.3207547, b: 0.3207547, a: 1}
   m_Transform:
     e00: 1
     e01: 0

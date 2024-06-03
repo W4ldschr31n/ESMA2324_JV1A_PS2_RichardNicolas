@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5cebb9ed583d2d24d9a21e228ca808c9
+guid: 960f93150a5d26049a35ef67c7279e1d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tower_0
+      name: TileTower_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58a3c42bfc0e2674db3c276de9a75d7f
-      internalID: 562589713
+      spriteID: bc7545e26193d8c46880e1959cc62e92
+      internalID: -844086162
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tower_1
+      name: TileTower_1
       rect:
         serializedVersion: 2
         x: 128
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa4413aedd1b2814483420a69b6e35e4
-      internalID: -388895485
+      spriteID: acb06d91b1e2bf7418d0be36bb2c1a53
+      internalID: 889634575
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tower_2
+      name: TileTower_2
       rect:
         serializedVersion: 2
         x: 0
@@ -153,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28d8c9d3aa52735428454a05b2709381
-      internalID: -2009603231
+      spriteID: 7cc1722694a897749a5d418c11d50f26
+      internalID: 1324372918
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tower_3
+      name: TileTower_3
       rect:
         serializedVersion: 2
         x: 128
@@ -174,8 +174,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1278bdeeb7c5364428214c07d8c32955
-      internalID: -1516842335
+      spriteID: 46f0b79103bf9f546bc5de4b38c2aa0a
+      internalID: -582506631
       vertices: []
       indices: 
       edges: []
@@ -191,10 +191,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Tower_0: 562589713
-      Tower_1: -388895485
-      Tower_2: -2009603231
-      Tower_3: -1516842335
+      TileTower_0: -844086162
+      TileTower_1: 889634575
+      TileTower_2: 1324372918
+      TileTower_3: -582506631
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

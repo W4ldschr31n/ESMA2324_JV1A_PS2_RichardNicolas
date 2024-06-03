@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: Pilier
+  m_Name: TileTower_0
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: b8b23d314f051924c8c540a8d7605c98, type: 3}
+  m_Sprite: {fileID: -844086162, guid: 960f93150a5d26049a35ef67c7279e1d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
