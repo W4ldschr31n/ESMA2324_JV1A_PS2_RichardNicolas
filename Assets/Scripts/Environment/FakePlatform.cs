@@ -14,7 +14,7 @@ public class FakePlatform : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") || collision.CompareTag("ReplayPlayer"))
         {
             rb.AddForce(Vector2.down * fallSpeed, ForceMode2D.Impulse);
         }

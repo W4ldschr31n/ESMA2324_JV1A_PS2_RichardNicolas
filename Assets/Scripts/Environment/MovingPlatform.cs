@@ -8,7 +8,7 @@ public class MovingPlatform : MonoBehaviour
     public Transform[] waypoints;
     private int currentIndex;
     private Vector2 targetPosition;
-    public bool isPingPong;
+    public bool isPingPong, isActivatedOnTouch;
     private int stepWaypoint;
     public bool isMoving;
     private Rigidbody2D rb;
@@ -71,6 +71,10 @@ public class MovingPlatform : MonoBehaviour
         // Check if we're coming from above (platform effector enables the collision)
         if (collision.enabled && collision.gameObject.CompareTag("Player"))
         {
+            if (isActivatedOnTouch)
+            {
+                isMoving = true;
+            }
             collision.gameObject.GetComponent<PlayerMovement>().SnapToMovingPlatform(rb);
         }
     }
@@ -90,6 +94,7 @@ public class MovingPlatform : MonoBehaviour
         targetPosition = waypoints[currentIndex].position;
         transform.position = targetPosition;
         stepWaypoint = 1;
-        isMoving = true;
+        rb.velocity = Vector2.zero;
+        isMoving = !isActivatedOnTouch;
     }
 }
