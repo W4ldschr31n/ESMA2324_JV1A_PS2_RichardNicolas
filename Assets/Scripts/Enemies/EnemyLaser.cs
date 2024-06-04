@@ -41,8 +41,8 @@ public class EnemyLaser : MonoBehaviour
     private void FixedUpdate()
     {
         // Check how far the laser should go (ignore graves)
-        RaycastHit2D platformHit = Physics2D.Raycast(laserStart.position, transform.up, maxRange, LayerMask.NameToLayer("Platform"));
-        if (platformHit && !platformHit.collider.CompareTag("PlayerGrave"))
+        RaycastHit2D platformHit = Physics2D.Raycast(laserStart.position, transform.up, maxRange, LayerMask.GetMask("Platform"));
+        if (platformHit)
         {
             laserEndPosition = platformHit.point;
         }
