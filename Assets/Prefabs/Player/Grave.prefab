@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2968971495350686790}
   - component: {fileID: 1046878009240198982}
   - component: {fileID: 96021743550744140}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Grave
   m_TagString: PlayerGrave
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 119
+    m_Bits: 247
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 43338054664777154}
   - component: {fileID: 3089863504123223269}
   - component: {fileID: 4061782354433298867}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Platform
   m_TagString: PlayerGrave
   m_Icon: {fileID: 0}
@@ -244,11 +244,11 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 383
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 179
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 0

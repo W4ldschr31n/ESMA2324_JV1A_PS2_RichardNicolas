@@ -207,7 +207,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void CheckIsOnGround()
     {
-        Vector3 offset = new Vector3(0.5f, 0f, 0f);
+        Vector3 offset = new Vector3(0.2f, 0f, 0f);
         isOnGround = Physics2D.OverlapArea(feetSpot.position - offset, feetSpot.position + offset, platformLayers);
         if (isOnGround)
         {
