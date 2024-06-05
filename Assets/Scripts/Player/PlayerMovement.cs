@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!canMove)
+        if (!canMove || SingletonMaster.Instance.GameManager.isGamePaused)
         {
             return;
         }
@@ -260,8 +260,8 @@ public class PlayerMovement : MonoBehaviour
 
         DisableBody();
         isDead = true;
-        animator.SetTrigger("Die");
         animator.ResetTrigger("Jump");
+        animator.SetBool("Dead", true);
     }
 
     public void OnDeathAnimationEnd()
@@ -280,6 +280,6 @@ public class PlayerMovement : MonoBehaviour
         }
         EnableAndShow();
         isDead = false;
-        animator.SetTrigger("Resurrect");
+        animator.SetBool("Dead", false);
     }
 }
