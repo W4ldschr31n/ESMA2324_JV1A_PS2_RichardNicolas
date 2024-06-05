@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class ReplayPlayer : MonoBehaviour
 {
-    private SpriteRenderer sprite;
-    private Rigidbody2D rb;
-    private Animator animator;
+    [SerializeField] private GameObject rig;
+    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private Animator animator;
     public GameObject gravePrefab;
     private GameObject graveInstance;
 
     private void Start()
     {
-        sprite = GetComponent<SpriteRenderer>();
-        rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
         TimerManager.onTimerStarted.AddListener(Resurrect);
     }
 
@@ -26,11 +23,10 @@ public class ReplayPlayer : MonoBehaviour
     public void SetReplayData(ReplayData data)
     {
         transform.position = data.position;
-        // Sometimes the sprite variable is not yet initialized when the first update calls this
-        if(sprite != null)
-        {
-            sprite.flipX = data.isFlippedX;
-        }
+        int scale = data.isFlippedX ? -1 : 1;
+        rig.transform.localScale = new Vector3(scale * Mathf.Abs(rig.transform.localScale.x), rig.transform.localScale.y, rig.transform.localScale.z);
+        animator.SetBool("OnGround", data.isOnGround);
+        animator.SetBool("Moving", data.isMoving);
         if (data.isDead)
         {
             Die();
@@ -41,7 +37,7 @@ public class ReplayPlayer : MonoBehaviour
     private void Die()
     {
         // Make the body disappear and spawn a grave instead
-        sprite.enabled = false;
+        rig.SetActive(false);
         rb.simulated = false;
         graveInstance = Instantiate(gravePrefab, transform.position, Quaternion.identity);
     }
@@ -54,7 +50,7 @@ public class ReplayPlayer : MonoBehaviour
             graveInstance = null;
         }
 
-        sprite.enabled = true;
+        rig.SetActive(true);
         rb.simulated = true;
     }
 

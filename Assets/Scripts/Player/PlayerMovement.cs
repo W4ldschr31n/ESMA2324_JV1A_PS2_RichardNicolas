@@ -142,7 +142,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isRecording)
         {
-            ReplayData data = new ReplayData(transform.position, isJumping, isFlipped, isDead);
+            ReplayData data = new ReplayData(transform.position, isOnGround, directionInput!=0f, isFlipped, isDead);
             recorder.RecordReplayData(data);
             // We don't need further data when the player dies
             if (isDead)
@@ -177,11 +177,13 @@ public class PlayerMovement : MonoBehaviour
         else // We are jumping or falling
             acceleration = movementData.airControl;
 
+        // Moving left or right
         float deltaSpeed = desiredSpeed - rb.velocity.x;
         float movement = deltaSpeed * acceleration;
 
         rb.AddForce(movement * Vector2.right);
 
+        // Falling
         if(rb.velocity.y < 0f)
         {
             rb.gravityScale = movementData.gravityScale * movementData.fallingGravityScale;

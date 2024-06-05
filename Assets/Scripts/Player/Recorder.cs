@@ -15,7 +15,7 @@ public class Recorder : MonoBehaviour
         recordingList = new List<Recording>();
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         // Exit early if not replaying
         if (!isReplaying)
