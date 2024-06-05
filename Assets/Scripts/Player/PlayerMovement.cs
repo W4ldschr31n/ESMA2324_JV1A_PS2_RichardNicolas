@@ -278,8 +278,12 @@ public class PlayerMovement : MonoBehaviour
             Destroy(graveInstance);
             graveInstance = null;
         }
-        EnableAndShow();
-        isDead = false;
         animator.SetBool("Dead", false);
+        isDead = false;
+    }
+
+    public void OnResurrectAnimationEnd()
+    {
+        EnableAndShow();
     }
 }
