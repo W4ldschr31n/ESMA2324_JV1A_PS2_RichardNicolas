@@ -279,6 +279,7 @@ public class PlayerMovement : MonoBehaviour
             Destroy(graveInstance);
             graveInstance = null;
         }
+        isDead = false;
         isFlipped = false;
         EnableAndShow();
         canMove = false; // Don't let the player move until res animation is done
@@ -287,7 +288,6 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnResurrectAnimationEnd()
     {
-        isDead = false;
         canMove = true;
     }
 }
