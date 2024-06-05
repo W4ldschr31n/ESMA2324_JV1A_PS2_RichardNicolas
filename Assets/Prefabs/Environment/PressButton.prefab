@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 3757458445960251987}
   m_Layer: 3
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: PressButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -273,7 +273,7 @@ GameObject:
   - component: {fileID: 4136085834121896275}
   m_Layer: 3
   m_Name: PressSpot
-  m_TagString: Untagged
+  m_TagString: PressButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -472,7 +472,7 @@ GameObject:
   - component: {fileID: 7216653698834818735}
   m_Layer: 3
   m_Name: PressButton
-  m_TagString: Untagged
+  m_TagString: PressButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

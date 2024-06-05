@@ -9,6 +9,7 @@ TagManager:
   - LoadingPrompt
   - PlayerGrave
   - LoadingLore
+  - PressButton
   layers:
   - Default
   - TransparentFX

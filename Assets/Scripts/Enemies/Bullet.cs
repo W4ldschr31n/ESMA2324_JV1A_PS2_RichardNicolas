@@ -12,7 +12,7 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        // Shoot the bullet in the direciton it has spawned
+        // Shoot the bullet in the direction it has spawned
         rb.velocity = transform.right * speed;
         // Automatically destroy itself after timeToLive seconds
         Invoke(nameof(SelfDestroy), timeToLive);
@@ -24,7 +24,7 @@ public class Bullet : MonoBehaviour
         {
             collision.GetComponent<PlayerMovement>().Die();
             SelfDestroy();
-        }else if (collision.gameObject.layer == LayerMask.NameToLayer("Platform"))
+        }else if (collision.gameObject.layer == LayerMask.NameToLayer("Platform") && !collision.gameObject.CompareTag("PressButton"))
         {
             SelfDestroy();
         }
