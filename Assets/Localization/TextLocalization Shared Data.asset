@@ -47,12 +47,12 @@ MonoBehaviour:
     m_Key: bind_move
     m_Metadata:
       m_Items: []
-  - m_Id: 1394937901473792
-    m_Key: time_left
+  - m_Id: 3973171880431616
+    m_Key: pause_resume
     m_Metadata:
       m_Items: []
-  - m_Id: 1394971149721600
-    m_Key: lives_remaining
+  - m_Id: 3973345650446336
+    m_Key: pause_exit
     m_Metadata:
       m_Items: []
   m_Metadata:

@@ -16,11 +16,10 @@ MonoBehaviour:
     m_Code: en
   m_SharedData: {fileID: 11400000, guid: 1ede3c5db02ad9b428615441cc9feb57, type: 2}
   m_Metadata:
-    m_Items:
-    - rid: 3351728821183971330
+    m_Items: []
   m_TableData:
   - m_Id: 177091264512
-    m_Localized: Press any key...
+    m_Localized: Press any key to continue...
     m_Metadata:
       m_Items: []
   - m_Id: 519250001920
@@ -51,24 +50,14 @@ MonoBehaviour:
     m_Localized: Move
     m_Metadata:
       m_Items: []
-  - m_Id: 1394937901473792
-    m_Localized: 'Time left
-
-      {global.currentTimer}'
+  - m_Id: 3973171880431616
+    m_Localized: Resume
     m_Metadata:
-      m_Items:
-      - rid: 3351728821183971330
-  - m_Id: 1394971149721600
-    m_Localized: 'Lives left
-
-      {global.currentLives}'
+      m_Items: []
+  - m_Id: 3973345650446336
+    m_Localized: Exit
     m_Metadata:
-      m_Items:
-      - rid: 3351728821183971330
+      m_Items: []
   references:
     version: 2
-    RefIds:
-    - rid: 3351728821183971330
-      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_Entries: 00e0194ab0f4040000e0d907b8f40400
+    RefIds: []

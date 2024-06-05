@@ -50,6 +50,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level2-2.unity
     guid: a5a28321d4b127d419458eaa262d9f01
+  - enabled: 1
+    path: Assets/Scenes/EndScene.unity
+    guid: e8c0d860f34faad478ed2a00a98e452d
+  - enabled: 1
+    path: Assets/Scenes/PauseMenu.unity
+    guid: 99793cfa8ff18fb4fb803f0d23f1719b
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 5012261b4a4ad634cb454221f67a001d, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: 62cb4eac8d665964babd0fd255f8e0c8, type: 2}

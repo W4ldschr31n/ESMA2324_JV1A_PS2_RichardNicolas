@@ -16,8 +16,11 @@ public class GameManager : MonoBehaviour
     private bool isPlaying, isInLoadingScreen, isGameOver;
     public string firstScene;
     private string nextScene;
+    public string pauseScene;
+    public string endScene;
     private bool isLoreTransition;
     private bool finishedLevel;
+    public bool isGamePaused;
     public GameObject mainUI;
     public GameObject gameOverScreen;
     public TextMeshProUGUI livesText;
@@ -37,6 +40,15 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (SingletonMaster.Instance.InputManager.PauseInput)
+        {
+            SwitchPauseMenu();
+        }
+        // Don't listen for further inputs if game is paused
+        if (isGamePaused)
+        {
+            return;
+        }
         //GameOver
         if(isGameOver && SingletonMaster.Instance.InputManager.JumpInputPressed) {
             ResetLevel();
@@ -146,12 +158,12 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
     {
-        if(scene.name == SingletonMaster.Instance.SceneChangeManager.loadingScreenScene)
+        if(scene.name == SingletonMaster.Instance.SceneChangeManager.loadingScreenScene || scene.name == endScene)
         {
             HideMainUI();
             isInLoadingScreen = true;
         }
-        // If we are loading a new level that is not the loading screen
+        // If we are loading a new level
         else if(loadSceneMode == LoadSceneMode.Single)
         {
             // Setup game data
@@ -207,5 +219,26 @@ public class GameManager : MonoBehaviour
     private void HideGameOverScreen()
     {
         gameOverScreen.SetActive(false);
+    }
+
+    public void SwitchPauseMenu()
+    {
+        if (isGamePaused)
+        {
+            isGamePaused = false;
+            SceneManager.UnloadSceneAsync(pauseScene);
+            Time.timeScale = 1f;
+        }
+        else
+        {
+            isGamePaused = true;
+            SceneManager.LoadScene(pauseScene, LoadSceneMode.Additive);
+            Time.timeScale = 0f;
+        }
+    }
+
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene(endScene);
     }
 }
