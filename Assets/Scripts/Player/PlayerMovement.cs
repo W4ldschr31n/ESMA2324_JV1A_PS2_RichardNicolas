@@ -111,9 +111,10 @@ public class PlayerMovement : MonoBehaviour
         if (directionInput != 0f)
         {
             isFlipped = directionInput < 0f;
-            int scale = isFlipped ? -1 : 1;
-            rig.transform.localScale = new Vector3(scale * Mathf.Abs(rig.transform.localScale.x), rig.transform.localScale.y, rig.transform.localScale.z);
         }
+        int scale = isFlipped ? -1 : 1;
+        rig.transform.localScale = new Vector3(scale * Mathf.Abs(rig.transform.localScale.x), rig.transform.localScale.y, rig.transform.localScale.z);
+
     }
 
     public void StartRecording()
@@ -278,12 +279,15 @@ public class PlayerMovement : MonoBehaviour
             Destroy(graveInstance);
             graveInstance = null;
         }
+        isFlipped = false;
+        EnableAndShow();
+        canMove = false; // Don't let the player move until res animation is done
         animator.SetBool("Dead", false);
-        isDead = false;
     }
 
     public void OnResurrectAnimationEnd()
     {
-        EnableAndShow();
+        isDead = false;
+        canMove = true;
     }
 }
