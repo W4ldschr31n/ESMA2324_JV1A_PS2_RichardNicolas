@@ -29,4 +29,4 @@ MonoBehaviour:
   apexBoostThreshold: 0.1
   apexBoostMaxSpeed: 12
   apexBoostAcceleration: 15
-  apexBoostGravityMult: 0.5
+  apexBoostGravityMult: 0.7
