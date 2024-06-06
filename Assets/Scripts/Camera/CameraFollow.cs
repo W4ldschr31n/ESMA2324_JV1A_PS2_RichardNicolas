@@ -12,7 +12,7 @@ public class CameraFollow : MonoBehaviour
 	public float smoothTime = 1f;
 	private Vector3 velocity;
 	public float lookAheadOffsetX;
-	public float lookAheadOffsetY;
+	public float offsetY;
 	private Rigidbody2D targetRb;
 
 
@@ -37,9 +37,11 @@ public class CameraFollow : MonoBehaviour
 			// Keep original z else camera cannot display anything
 			if (targetRb != null)
             {
-				// Math lib is used to get 0 when velocity is 0
-				float offsetX = Math.Sign(targetRb.velocity.x) * lookAheadOffsetX;
-				float offsetY = Math.Sign(targetRb.velocity.y) * lookAheadOffsetY;
+				float offsetX = 0f;
+				if(Mathf.Abs(targetRb.velocity.x) > 0.1f)
+                {
+					offsetX = Mathf.Sign(targetRb.velocity.x) * lookAheadOffsetX;
+				}
 				to.x += offsetX;
 				to.y += offsetY;
             }

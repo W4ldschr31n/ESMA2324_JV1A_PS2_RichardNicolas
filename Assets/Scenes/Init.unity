@@ -1309,7 +1309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smoothTime: 0.3
   lookAheadOffsetX: 1.5
-  lookAheadOffsetY: 1
+  offsetY: 1
 --- !u!1 &1352460204
 GameObject:
   m_ObjectHideFlags: 0

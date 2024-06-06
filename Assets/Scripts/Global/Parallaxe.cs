@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class Parallaxe : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class Parallaxe : MonoBehaviour
 
     // Data
     private Vector2 startPosition;
-    private const int PPU = 32; // Pixels per unit
+    private const int PPU = 128; // Pixels per unit
 
     private void Awake()
     {
@@ -28,7 +29,16 @@ public class Parallaxe : MonoBehaviour
         startPosition = transform.position;
         if (repeatDistance <= 0)
         {
-            repeatDistance = GetComponent<SpriteRenderer>().bounds.size.x;
+            SpriteRenderer sprite = GetComponent<SpriteRenderer>();
+            if (sprite)
+            {
+                repeatDistance = sprite.bounds.size.x;
+            }
+            else
+            {
+                TilemapRenderer tile = GetComponent<TilemapRenderer>();
+                repeatDistance = tile.bounds.size.x;
+            }
         }
     }
 
