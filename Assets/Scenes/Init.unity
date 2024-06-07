@@ -329,6 +329,10 @@ PrefabInstance:
       propertyPath: gameOverScreen
       value: 
       objectReference: {fileID: 1968603984}
+    - target: {fileID: 98694215849913425, guid: 86dffc620b57aeb45ac36a9d611f1042, type: 3}
+      propertyPath: localizedPromptText
+      value: 
+      objectReference: {fileID: 1083101041}
     - target: {fileID: 2214682934111916844, guid: 86dffc620b57aeb45ac36a9d611f1042, type: 3}
       propertyPath: timerText
       value: 
@@ -619,7 +623,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9013512425554505616, guid: 1b676e8c1bb8a2e47bf53a3b2a17d394, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 9013512425554505616, guid: 1b676e8c1bb8a2e47bf53a3b2a17d394, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1071,7 +1075,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5836848936197427441, guid: 1b676e8c1bb8a2e47bf53a3b2a17d394, type: 3}
       propertyPath: m_enableAutoSizing
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7528820854708727332, guid: 1b676e8c1bb8a2e47bf53a3b2a17d394, type: 3}
       propertyPath: m_Name
@@ -1172,6 +1176,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7528820854708727332, guid: 1b676e8c1bb8a2e47bf53a3b2a17d394, type: 3}
   m_PrefabInstance: {fileID: 1083101037}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1083101041 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4470076188229883810, guid: 1b676e8c1bb8a2e47bf53a3b2a17d394, type: 3}
+  m_PrefabInstance: {fileID: 1083101037}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083101039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1188467332
 GameObject:
   m_ObjectHideFlags: 0

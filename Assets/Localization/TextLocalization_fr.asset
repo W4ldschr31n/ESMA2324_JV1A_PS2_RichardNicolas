@@ -58,6 +58,14 @@ MonoBehaviour:
     m_Localized: Quitter
     m_Metadata:
       m_Items: []
+  - m_Id: 4726846888755200
+    m_Localized: Appuyez sur une touche pour commencer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4726920607842304
+    m_Localized: Appuyez sur une touche pour recommencer
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

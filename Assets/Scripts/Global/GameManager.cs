@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Localization.Components;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class GameManager : MonoBehaviour
     public int maxLives;
     private int currentLives;
     public GameObject promptText;
+    public LocalizeStringEvent localizedPromptText;
     private bool isPlaying, isInLoadingScreen, isGameOver;
     public string firstScene;
     private string nextScene;
@@ -99,13 +101,31 @@ public class GameManager : MonoBehaviour
         SingletonMaster.Instance.TimerManager.EndTimer();
         SingletonMaster.Instance.TimerManager.isPlaying = false;
         isPlaying = false;
-        promptText.SetActive(true);
+        ShowStartPrompt();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void GoNextLevel()
     {
         SingletonMaster.Instance.SceneChangeManager.LoadScene(nextScene, isLoreTransition);
+    }
+
+    private void ShowStartPrompt()
+    {
+        localizedPromptText.SetEntry("pak_start");
+        promptText.SetActive(true);
+    }
+
+    private void ShowRestartPrompt()
+    {
+        localizedPromptText.SetEntry("pak_restart");
+        promptText.SetActive(true);
+    }
+
+    private void ShowContinuePrompt()
+    {
+        localizedPromptText.SetEntry("press_any_key");
+        promptText.SetActive(true);
     }
 
     private void DestroyPlayer()
@@ -158,7 +178,7 @@ public class GameManager : MonoBehaviour
     private void OnPlayerDeath()
     {
         isPlaying = false;
-        promptText.SetActive(true);
+        ShowRestartPrompt();
         SingletonMaster.Instance.CameraManager.ZoomOut();
         currentLives--;
         UpdateDisplayLives();
@@ -183,7 +203,7 @@ public class GameManager : MonoBehaviour
         playerInstance.StopRecording();
         SingletonMaster.Instance.TimerManager.StartTimer(timer);
         playerInstance.RestartReplay();
-        promptText.SetActive(true);
+        ShowContinuePrompt();
         SingletonMaster.Instance.CameraManager.SetCameraTarget(playerInstance.GetWinningReplay().transform);
         SingletonMaster.Instance.CameraManager.ZoomOut();
     }
@@ -225,6 +245,7 @@ public class GameManager : MonoBehaviour
             UpdateDisplayLives();
             ShowMainUI();
             HideGameOverScreen();
+            ShowStartPrompt();
         }
     }
 

@@ -16,15 +16,23 @@ MonoBehaviour:
   m_TableCollectionNameGuidString: 058b7d8180386c94baf7b6c07ce78cc6
   m_Entries:
   - m_Id: 38926696448
-    m_Key: Level1
+    m_Key: Level1-1
     m_Metadata:
       m_Items: []
   - m_Id: 3191415914496
-    m_Key: Level2
+    m_Key: Level1-2
     m_Metadata:
       m_Items: []
   - m_Id: 726550925926400
-    m_Key: TestEnemies
+    m_Key: Level2-1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4061884390457344
+    m_Key: Level3-1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4061900794380288
+    m_Key: EndScene
     m_Metadata:
       m_Items: []
   m_Metadata:

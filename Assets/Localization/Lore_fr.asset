@@ -19,28 +19,23 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 38926696448
-    m_Localized: "L'Eau. La Terre. Le Feu. L'Air. Il y a tr\xE8s longtemps, ces quatre
-      peuples vivaient en harmonie. Mais un jour, la Nation du Feu d\xE9cida de passer
-      \xE0 l'attaque. Seul l'Avatar, ma\xEEtre de ces quatre \xE9l\xE9ments, pouvait
-      mettre fin \xE0 la guerre, mais alors qu'on avait besoin de lui, il disparu.
-      Cent ans plus tard, mon fr\xE8re et moi avons d\xE9couvert le nouvel Avatar,
-      un fils de l'air appel\xE9 Aang. Et m\xEAme si sa ma\xEEtrise de l'air est
-      exceptionnelle, il a encore beaucoup \xE0 apprendre avant de pouvoir sauver
-      qui que ce soit. Mais je suis certaine que Aang peut sauver le monde."
+    m_Localized: "C'est le d\xE9but"
     m_Metadata:
       m_Items: []
   - m_Id: 3191415914496
-    m_Localized: "\xAB Une fois, sur le minuit lugubre, pendant que je m\xE9ditais,
-      faible et fatigu\xE9, sur maint pr\xE9cieux et\r\n\r\ncurieux volume d\u2019une
-      doctrine oubli\xE9e, pendant que je donnais de la t\xEAte, presque assoupi,
-      soudain i\r\n\r\nse fit un tapotement, comme de quelqu\u2019un frappant doucement,
-      frappant \xE0 la porte de ma chambre.\r\n\r\n\xAB C\u2019est quelque visiteur,
-      \u2014 murmurai-je, \u2014 qui frappe \xE0 la porte de ma chambre ; ce n\u2019est
-      que cela,\r\n\r\net rien de plus. \xBB"
+    m_Localized: Power up
     m_Metadata:
       m_Items: []
   - m_Id: 726550925926400
-    m_Localized: bonjour
+    m_Localized: COmplications
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4061884390457344
+    m_Localized: Bonus
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4061900794380288
+    m_Localized: Fini
     m_Metadata:
       m_Items: []
   references:
