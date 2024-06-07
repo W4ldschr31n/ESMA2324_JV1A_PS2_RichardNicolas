@@ -55,7 +55,7 @@ MonoBehaviour:
   timer: 15
   maxLives: 10
   promptText: {fileID: 0}
-  firstScene: Level1-1
+  firstScene: Level2-2
   pauseScene: PauseMenu
   endScene: EndScene
   isGamePaused: 0
