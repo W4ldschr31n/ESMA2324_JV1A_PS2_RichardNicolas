@@ -14,10 +14,12 @@ public class EnemyTurret : MonoBehaviour
     public int maxAmmo;
     private int currentAmmo;
     public bool shootToTheRight;
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         TimerManager.onTimerStarted.AddListener(OnTimerStarted);
         UpdateAmmoDisplay();
     }
@@ -63,6 +65,7 @@ public class EnemyTurret : MonoBehaviour
     {
         currentAmmo--;
         UpdateAmmoDisplay();
+        animator.SetTrigger("Shoot");
         if (shootToTheRight)
         {
             GameObject newBullet = Instantiate(bulletPrefab, bulletSpawnPointRight);
