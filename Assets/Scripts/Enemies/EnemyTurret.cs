@@ -19,14 +19,12 @@ public class EnemyTurret : MonoBehaviour
     void Start()
     {
         TimerManager.onTimerStarted.AddListener(OnTimerStarted);
-        TimerManager.onTimerEnded.AddListener(OnTimerEnded);
         UpdateAmmoDisplay();
     }
 
     private void OnDisable()
     {
         TimerManager.onTimerStarted.RemoveListener(OnTimerStarted);
-        TimerManager.onTimerEnded.RemoveListener(OnTimerEnded);
     }
 
     private void UpdateAmmoDisplay()
@@ -40,6 +38,15 @@ public class EnemyTurret : MonoBehaviour
         UpdateAmmoDisplay();
         // Make sure we have no overlapping shots
         CancelInvoke();
+        // Clear all bullets from both shooting points
+        foreach (Bullet bullet in bulletSpawnPointRight.GetComponentsInChildren<Bullet>())
+        {
+            bullet.SelfDestroy();
+        }
+        foreach (Bullet bullet in bulletSpawnPointRight.GetComponentsInChildren<Bullet>())
+        {
+            bullet.SelfDestroy();
+        }
         Invoke(nameof(ShootRepeating), delayBeforeFirstShot);
     }
 
@@ -67,19 +74,6 @@ public class EnemyTurret : MonoBehaviour
             GameObject newBullet = Instantiate(bulletPrefab, bulletSpawnPointLeft);
             // Make the bullet look to the left
             newBullet.transform.right = -transform.right;
-        }
-    }
-
-    private void OnTimerEnded()
-    {
-        // Clear all bullets from both shooting points
-        foreach (Bullet bullet in bulletSpawnPointRight.GetComponentsInChildren<Bullet>())
-        {
-            bullet.SelfDestroy();
-        }
-        foreach (Bullet bullet in bulletSpawnPointRight.GetComponentsInChildren<Bullet>())
-        {
-            bullet.SelfDestroy();
         }
     }
 }

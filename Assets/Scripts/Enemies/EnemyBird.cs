@@ -94,7 +94,6 @@ public class EnemyBird : MonoBehaviour
     {
         rb.simulated = false;
         sprite.enabled = false;
-        Debug.Log("prrt");
     }
 
     public void Reset()

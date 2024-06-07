@@ -15,23 +15,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Init.unity
     guid: 9f840cb01a4888245b1d960a1d23c208
   - enabled: 1
-    path: Assets/Scenes/Level1.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/Level2.unity
-    guid: 823009c1a3a700e419846bb277cd0018
-  - enabled: 1
-    path: Assets/Scenes/TestEnemies.unity
-    guid: c8dd7a557a03d8940be84363953b51d8
-  - enabled: 1
-    path: Assets/Scenes/TestMovement.unity
-    guid: 5d18cce02fc07c044ba2ae24d01e7b0c
+    path: Assets/Scenes/PauseMenu.unity
+    guid: 99793cfa8ff18fb4fb803f0d23f1719b
   - enabled: 1
     path: Assets/Scenes/LevelDesign.unity
     guid: 78e08f56b5170b547af74f3b036fb813
-  - enabled: 1
-    path: Assets/Scenes/LevelDesign2.unity
-    guid: 1b7ac2f2ca54b0049b6fc4b5dabf6ddf
   - enabled: 1
     path: Assets/Scenes/Level1-1.unity
     guid: 6e5da0cde5b5e0e4599bddb27b466ce8
@@ -45,6 +33,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Level2-1.unity
     guid: c86dd2c46a0f980468605ae6c6a65536
   - enabled: 1
+    path: Assets/Scenes/Level2-2.unity
+    guid: ad2d98e9f11bb514995915474e3234c7
+  - enabled: 1
+    path: Assets/Scenes/Level2-3.unity
+    guid: 4bab9049ec3b59d4e8063c0f6e7a7970
+  - enabled: 1
     path: Assets/Scenes/Level3-1.unity
     guid: a7c5517c981f61e44aee6dd745fdb756
   - enabled: 1
@@ -53,9 +47,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EndScene.unity
     guid: e8c0d860f34faad478ed2a00a98e452d
-  - enabled: 1
-    path: Assets/Scenes/PauseMenu.unity
-    guid: 99793cfa8ff18fb4fb803f0d23f1719b
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 5012261b4a4ad634cb454221f67a001d, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: 62cb4eac8d665964babd0fd255f8e0c8, type: 2}

@@ -69,13 +69,6 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y / 2);
         }
 
-        // Reset
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            rb.position = Vector2.zero;
-            rb.velocity = Vector2.zero;
-            recorder.CancelCurrentRecording();
-        }
         // Timers
         if(remainingJumpBufferTime > 0f)
         {
@@ -283,6 +276,7 @@ public class PlayerMovement : MonoBehaviour
         isFlipped = false;
         EnableAndShow();
         canMove = false; // Don't let the player move until res animation is done
+        directionInput = 0f; // Flush the direction input that was stored before death
         animator.SetBool("Dead", false);
     }
 

@@ -9,7 +9,6 @@ public class DesintegrationGate : MonoBehaviour
     public int nbPlayersNeeded;
     public TextMeshProUGUI textCounter;
     public DesintegrationObjects[] desintegrationsObjectsArray;
-    public List<Activable> activablesList;
 
     private void Start()
     {
@@ -31,13 +30,10 @@ public class DesintegrationGate : MonoBehaviour
 
     private void UpdateGameObjects()
     {
-        // If we reached the target amount of players, activate the activables
+        // If we reached the target amount of players, destroy itself
         if(nbPlayersNeeded == 0)
         {
-            foreach(Activable activable in activablesList)
-            {
-                activable.Activate();
-            }
+            Destroy(gameObject);
         }
         // Enable and disable objects according to remaining players (extra index for after the gate is solved)
         DesintegrationObjects desintegrationObjects = desintegrationsObjectsArray[^(nbPlayersNeeded+1)];

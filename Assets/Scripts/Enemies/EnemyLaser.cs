@@ -15,13 +15,13 @@ public class EnemyLaser : MonoBehaviour
     private Vector2 laserOffset;
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         lineRenderer = GetComponent<LineRenderer>();
         laserEndPosition = maxPosition = laserStart.position + transform.up * maxRange;
         lineRenderer.SetPosition(0, laserStart.position);
         lineRenderer.SetPosition(1, laserEndPosition);
-        TimerManager.onTimerStarted.AddListener(OnTimerStarted);
+        TimerManager.onTimerStarted.AddListener(()=>OnTimerStarted());
         TimerManager.onTimerEnded.AddListener(OnTimerEnded);
         // Controls how the collisions will be detected around the laser
         laserOffset = new Vector2(0.5f, 0f);
