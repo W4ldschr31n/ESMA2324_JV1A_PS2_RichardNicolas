@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        CheatCodes();
         if (SingletonMaster.Instance.InputManager.PauseInput)
         {
             SwitchPauseMenu();
@@ -71,6 +72,21 @@ public class GameManager : MonoBehaviour
             {
                 ResetLevel();
             }
+        }
+    }
+
+    private void CheatCodes()
+    {
+        if(Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftAlt))
+        {
+            if (Input.GetKeyDown(KeyCode.Keypad1))
+                SingletonMaster.Instance.SceneChangeManager.LoadScene("Level1-1", true);
+            else if (Input.GetKeyDown(KeyCode.Keypad2))
+                SingletonMaster.Instance.SceneChangeManager.LoadScene("Level2-1", true);
+            else if (Input.GetKeyDown(KeyCode.Keypad3))
+                SingletonMaster.Instance.SceneChangeManager.LoadScene("Level3-1", true);
+            else if (Input.GetKeyDown(KeyCode.KeypadPlus))
+                GoNextLevel();
         }
     }
 
