@@ -9,11 +9,15 @@ public class DesintegrationGate : MonoBehaviour
     public int nbPlayersNeeded;
     public TextMeshProUGUI textCounter;
     public DesintegrationObjects[] desintegrationsObjectsArray;
+    private SpriteRenderer sprite;
+    private Rigidbody2D rb;
 
     private void Start()
     {
         UpdateDisplay();
         UpdateGameObjects();
+        sprite = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -33,7 +37,8 @@ public class DesintegrationGate : MonoBehaviour
         // If we reached the target amount of players, destroy itself
         if(nbPlayersNeeded == 0)
         {
-            Destroy(gameObject);
+            sprite.enabled = false;
+            rb.simulated = false;
         }
         // Enable and disable objects according to remaining players (extra index for after the gate is solved)
         DesintegrationObjects desintegrationObjects = desintegrationsObjectsArray[^(nbPlayersNeeded+1)];
