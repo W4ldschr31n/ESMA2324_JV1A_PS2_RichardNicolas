@@ -63,6 +63,26 @@ MonoBehaviour:
     m_Key: pak_restart
     m_Metadata:
       m_Items: []
+  - m_Id: 4757708233654272
+    m_Key: bind_error
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4758117794856960
+    m_Key: kb_mapping
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4758305867448320
+    m_Key: ctrl_mapping
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4781271451844608
+    m_Key: hint_cancel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4781374996627456
+    m_Key: hint_reset
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

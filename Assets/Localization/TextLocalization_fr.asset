@@ -66,6 +66,26 @@ MonoBehaviour:
     m_Localized: Appuyez sur une touche pour recommencer
     m_Metadata:
       m_Items: []
+  - m_Id: 4757708233654272
+    m_Localized: "Erreur : touche d\xE9j\xE0 attribu\xE9e"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4758117794856960
+    m_Localized: Clavier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4758305867448320
+    m_Localized: Manette
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4781271451844608
+    m_Localized: (Maintenir) Mourir
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4781374996627456
+    m_Localized: Recommencer le niveau
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

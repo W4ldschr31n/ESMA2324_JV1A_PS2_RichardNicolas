@@ -27,7 +27,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 142630862848
-    m_Localized: Sauter
+    m_Localized: Saut
     m_Metadata:
       m_Items: []
   - m_Id: 195042885632
@@ -35,7 +35,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 263124828160
-    m_Localized: Annuler
+    m_Localized: Mort
     m_Metadata:
       m_Items: []
   - m_Id: 437838561280

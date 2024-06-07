@@ -66,6 +66,26 @@ MonoBehaviour:
     m_Localized: Press any key to restart
     m_Metadata:
       m_Items: []
+  - m_Id: 4757708233654272
+    m_Localized: 'Error : key already in use'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4758117794856960
+    m_Localized: Keyboard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4758305867448320
+    m_Localized: Controller
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4781271451844608
+    m_Localized: (Hold) Die
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4781374996627456
+    m_Localized: Reset level
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
