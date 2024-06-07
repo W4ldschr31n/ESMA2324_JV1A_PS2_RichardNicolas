@@ -37,17 +37,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        // Do this in Start to let the event be initialized in an Awake
-        TimerManager.onTimerEnded.AddListener(Die);
-    }
-
-    private void OnDisable()
-    {
-        TimerManager.onTimerEnded.RemoveListener(Die);
-    }
-
 
     // Update is called once per frame
     void Update()
@@ -283,5 +272,10 @@ public class PlayerMovement : MonoBehaviour
     public void OnResurrectAnimationEnd()
     {
         canMove = true;
+    }
+
+    public GameObject GetWinningReplay()
+    {
+        return recorder.GetLastReplay();
     }
 }

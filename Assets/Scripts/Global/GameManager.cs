@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
+        TimerManager.onTimerEnded.AddListener(OnTimerEnded);
         SingletonMaster.Instance.SceneChangeManager.LoadScene(firstScene, false);
         HideMainUI();
         isInLoadingScreen = true;
@@ -36,6 +37,8 @@ public class GameManager : MonoBehaviour
     private void OnDisable()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
+        TimerManager.onTimerEnded.RemoveListener(OnTimerEnded);
+
     }
 
     private void Update()
@@ -139,6 +142,19 @@ public class GameManager : MonoBehaviour
         promptText.SetActive(false);
     }
 
+    private void OnTimerEnded()
+    {
+        if (!finishedLevel)
+        {
+            playerInstance.Die();
+        }
+        else
+        {
+            playerInstance.RestartReplay();
+            SingletonMaster.Instance.TimerManager.StartTimer(timer);
+        }
+    }
+
     private void OnPlayerDeath()
     {
         isPlaying = false;
@@ -146,7 +162,7 @@ public class GameManager : MonoBehaviour
         SingletonMaster.Instance.CameraManager.ZoomOut();
         currentLives--;
         UpdateDisplayLives();
-        if(currentLives == 0)
+        if (currentLives == 0)
         {
             GameOver();
         }
@@ -168,7 +184,7 @@ public class GameManager : MonoBehaviour
         SingletonMaster.Instance.TimerManager.StartTimer(timer);
         playerInstance.RestartReplay();
         promptText.SetActive(true);
-        SingletonMaster.Instance.CameraManager.SetCameraTarget(playerSpawn);
+        SingletonMaster.Instance.CameraManager.SetCameraTarget(playerInstance.GetWinningReplay().transform);
         SingletonMaster.Instance.CameraManager.ZoomOut();
     }
 

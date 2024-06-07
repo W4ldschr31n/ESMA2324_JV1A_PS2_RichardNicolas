@@ -82,4 +82,9 @@ public class Recorder : MonoBehaviour
     {
         AddCurrentRecording();
     }
+
+    public GameObject GetLastReplay()
+    {
+        return recordingList[^1].player.gameObject;
+    }
 }

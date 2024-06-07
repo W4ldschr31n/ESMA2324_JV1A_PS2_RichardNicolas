@@ -225,7 +225,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2428772043761239941, guid: d90c966485000a641bce109e6f329bdb, type: 3}
       propertyPath: nextLevel
-      value: Level1-2
+      value: Level1-1
       objectReference: {fileID: 0}
     - target: {fileID: 2478590742197305738, guid: d90c966485000a641bce109e6f329bdb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7531,6 +7531,10 @@ PrefabInstance:
     - target: {fileID: 7595149156255420660, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
       propertyPath: m_Name
       value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 7595149156255420660, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
