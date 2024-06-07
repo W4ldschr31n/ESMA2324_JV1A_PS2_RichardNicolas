@@ -1008,11 +1008,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4046932562881498252, guid: db4021360f2d7db4da29fa6407571a65, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 4046932562881498252, guid: db4021360f2d7db4da29fa6407571a65, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.400001
+      value: 12.400001
       objectReference: {fileID: 0}
     - target: {fileID: 4136085834121896275, guid: db4021360f2d7db4da29fa6407571a65, type: 3}
       propertyPath: nudgeDuration
@@ -1020,11 +1020,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4765108836756332112, guid: db4021360f2d7db4da29fa6407571a65, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4765108836756332112, guid: db4021360f2d7db4da29fa6407571a65, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 15
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4765108836756332112, guid: db4021360f2d7db4da29fa6407571a65, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1068,11 +1068,11 @@ PrefabInstance:
       objectReference: {fileID: 31938255}
     - target: {fileID: 7155899925120354170, guid: db4021360f2d7db4da29fa6407571a65, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7155899925120354170, guid: db4021360f2d7db4da29fa6407571a65, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8239566466417872142, guid: db4021360f2d7db4da29fa6407571a65, type: 3}
       propertyPath: m_Name
@@ -1271,7 +1271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7868105897046870658, guid: cfba677ec7809e4418cc151e1852b71f, type: 3}
       propertyPath: speed
-      value: 2.5
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7868105897046870658, guid: cfba677ec7809e4418cc151e1852b71f, type: 3}
       propertyPath: isActivatedOnTouch
@@ -1622,7 +1622,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8406676380775321311, guid: dc8ca778326fc3844a38f09af3aca597, type: 3}
       propertyPath: delayBetweenShots
-      value: 5
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8406676380775321311, guid: dc8ca778326fc3844a38f09af3aca597, type: 3}
+      propertyPath: delayBeforeFirstShot
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 9042158419301516649, guid: dc8ca778326fc3844a38f09af3aca597, type: 3}
       propertyPath: m_Name
@@ -1691,7 +1695,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8406676380775321311, guid: dc8ca778326fc3844a38f09af3aca597, type: 3}
       propertyPath: delayBetweenShots
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8406676380775321311, guid: dc8ca778326fc3844a38f09af3aca597, type: 3}
       propertyPath: delayBeforeFirstShot
