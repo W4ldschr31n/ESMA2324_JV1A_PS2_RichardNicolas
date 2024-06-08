@@ -83,6 +83,18 @@ MonoBehaviour:
     m_Key: hint_reset
     m_Metadata:
       m_Items: []
+  - m_Id: 5182146812985344
+    m_Key: loading
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5184376626626560
+    m_Key: ui_time_left
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5184430024310784
+    m_Key: ui_lives_left
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

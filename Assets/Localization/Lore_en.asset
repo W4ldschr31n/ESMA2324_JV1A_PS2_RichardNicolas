@@ -19,23 +19,98 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 38926696448
-    m_Localized: "C'est le d\xE9but"
+    m_Localized: 'I finally broke out of prison. The guards are right behind me,
+      I need to keep moving.
+
+      
+
+      I still have that little gadget I stole
+      from that weird visitor, thief''s habits, I couldn''t help it when we crossed
+      paths.
+
+      
+
+      It seems to be running low on energy, the screen shows
+      one minute left, and more importantly, one life left.
+
+      
+
+      Even
+      though going back in time instead of dying has its perks, the feeling of your
+      body desintegrating is... uncomfortable.
+
+      
+
+      My mouth itches again,
+      maybe it merged with my nose ? I''d rather keep my mask on and not look.'
     m_Metadata:
       m_Items: []
   - m_Id: 3191415914496
-    m_Localized: Power up
+    m_Localized: 'There, the device is charged up. It seems entering this tower synchronised
+      it with something.
+
+      
+
+      Whenever I enter a new room, the parameters
+      reset, maybe there are more gadgets like this one scattered around ?
+
+      
+
+      Anyway,
+      I can make mistakes again, but with less time available. I must go forward,
+      at once.
+
+      
+
+      I hope I can find someone that will get this device
+      out of me.'
     m_Metadata:
       m_Items: []
   - m_Id: 726550925926400
-    m_Localized: COmplications
+    m_Localized: 'This tower is hell, it seems like those traps were laid around
+      just for me, or rather, for this damn device.
+
+      
+
+      Is someone watching
+      me ? Is this a test ? There is no time to stop and wonder.
+
+      
+
+      My
+      successive deaths are really starting to get on my nerves, like this itching
+      nose, or this mouth.
+
+      
+
+      Anyway, there is no turning back now,
+      so let''s press forward.'
     m_Metadata:
       m_Items: []
   - m_Id: 4061884390457344
-    m_Localized: Bonus
+    m_Localized: "It hurts, it hurts, it hurts, it hurts, it hurts.\r\n\r\nI wish
+      I could die in this tower, but this god-damn device won't let me.\r\n\r\nI
+      recognized some drawings on the walls, and the cogs scattered around are the
+      same as on the device.\r\n\r\nThis tower was made by the same creator, for
+      sure. The man I stole from before breaking out of prison, for sure. He is using
+      me like a lab rat for his tests, for sure.\r\n\r\nFocus, Mark, you just have
+      to get out of here, and all will be weel, for sure.\r"
     m_Metadata:
       m_Items: []
   - m_Id: 4061900794380288
-    m_Localized: Fini
+    m_Localized: 'I think the device messed up the last time it reconstructed my
+      body. I can''t open my eyes. Actually, I can no longer feel my whole face,
+      as if it was gone.
+
+      
+
+      Even though I can''t see the device''s
+      parameters, I have a feeling there is little time left, and few lives left.
+
+      
+
+      At
+      least, my nose stopped itching.'
     m_Metadata:
       m_Items: []
   references:

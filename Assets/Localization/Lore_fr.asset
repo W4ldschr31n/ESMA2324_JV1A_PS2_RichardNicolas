@@ -19,23 +19,53 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 38926696448
-    m_Localized: "C'est le d\xE9but"
+    m_Localized: "J'ai r\xE9ussi \xE0 m'enfuir de prison. Les gardiens sont sur mes
+      pas, je dois continuer d'avancer.\r\n\r\nJ'ai toujours avec moi le petit gadget
+      que j'ai subtilis\xE9 \xE0 cet \xE9trange visiteur, r\xE9flexes de voleur,
+      je n'ai pas pu m'en emp\xEAcher quand nous nous sommes crois\xE9s.\r\n\r\nIl
+      semble presque \xE0 cours d'\xE9nergie, le compteur indique une minute restante,
+      et surtout, une seule vie restante.\r\n\r\nM\xEAme si revenir dans le pass\xE9
+      au lieu de mourir est bien pratique, la sensation de son corps se d\xE9sint\xE9grant
+      n'est pas des plus... confortables.\r\n\r\nJ'ai encore la bouche qui me gratte,
+      peut-\xEAtre a-t-elle fusionn\xE9 avec mon nez? Je pr\xE9f\xE8re garder mon
+      masque et ne pas regarder."
     m_Metadata:
       m_Items: []
   - m_Id: 3191415914496
-    m_Localized: Power up
+    m_Localized: "\xC7a y est, l'appareil s'est recharg\xE9. On dirait qu'\xEAtre
+      entr\xE9 dans cette tour l'a synchronis\xE9 avec quelque chose. Peut \xEAtre
+      qu'il y a d'autres gadgets du m\xEAme genre qui tra\xEEne?\r\n\r\nEn tous cas,
+      j'ai de nouveau le droit \xE0 l'erreur, mais moins de temps disponible, je
+      dois continuer, et vite.\r\n\r\nJ'esp\xE8re trouver quelqu'un qui pourra me
+      retirer cet appareil."
     m_Metadata:
       m_Items: []
   - m_Id: 726550925926400
-    m_Localized: COmplications
+    m_Localized: "Cette tour est infernale, on dirait que les pi\xE8ges ont \xE9t\xE9
+      dispos\xE9s sp\xE9cialement pour moi, ou plut\xF4t pour ce maudit appareil.\r\n\r\nEst-ce
+      que quelqu'un m'observe ? Est-ce un test ? Je n'ai pas le temps de m'arr\xEAter\r.\n\r\nMes
+      mort successives commencent \xE0 me taper sur le syst\xE8me, un peu comme ce
+      nez qui me gratte, ou cette bouche.\r\n\r\nBref, il n'y a pas de retour en
+      arri\xE8re possible, alors autant foncer."
     m_Metadata:
       m_Items: []
   - m_Id: 4061884390457344
-    m_Localized: Bonus
+    m_Localized: "J'ai mal, j'ai mal, j'ai mal, j'ai mal, j'ai mal.\r\n\r\nJ'aimerais
+      penser que je vais mourir dans cette tour, mais ce foutu appareil m'en emp\xEAche.\r\n\r\nJ'ai
+      reconnu des symboles sur certains murs, et certains des rouages par terre sont
+      les m\xEAmes que ceux sur l'appareil.\r\n\r\nCette tour appartient \xE0 son
+      cr\xE9ateur, c'est s\xFBr. Celui que j'ai vol\xE9 avant de m'\xE9vader, c'est
+      s\xFBr. Il m'utilise comme cobaye pour ses tests, c'est s\xFBr.\r\n\r\nConcentres-toi
+      Mark, il suffit de sortir d'ici et tout ira bien, c'est s\xFBr.\r"
     m_Metadata:
       m_Items: []
   - m_Id: 4061900794380288
-    m_Localized: Fini
+    m_Localized: "Je crois que l'appareil s'est tromp\xE9 quand il a reconstitu\xE9
+      mon corps cette fois. Je ne peux plus ouvrir les yeux. En fait je ne sens plus
+      du tout mon visage, comme s'il n'\xE9tait plus l\xE0.\r\n\nM\xEAme si ne peux
+      pas voir les param\xE8tres de l'appareil, quelque chose me dit qu'il ne me
+      reste plus beaucoup de temps, et plus beaucoup de vies. Ce calvaire va enfin
+      finir.\r\n\nAu moins, mon nez ne me gratte plus."
     m_Metadata:
       m_Items: []
   references:

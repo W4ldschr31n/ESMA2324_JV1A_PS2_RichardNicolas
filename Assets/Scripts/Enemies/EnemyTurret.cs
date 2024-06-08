@@ -45,7 +45,7 @@ public class EnemyTurret : MonoBehaviour
         {
             bullet.SelfDestroy();
         }
-        foreach (Bullet bullet in bulletSpawnPointRight.GetComponentsInChildren<Bullet>())
+        foreach (Bullet bullet in bulletSpawnPointLeft.GetComponentsInChildren<Bullet>())
         {
             bullet.SelfDestroy();
         }

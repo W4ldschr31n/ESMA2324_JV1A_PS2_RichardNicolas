@@ -10,6 +10,7 @@ public class LoadingScreenManager : MonoBehaviour
 {
     public Slider loadingBar;
     public GameObject prompt;
+    public GameObject loadingText;
     public TextMeshProUGUI loreTextMeshPro;
     private LocalizeStringEvent localizeStringEvent;
     public bool isTextFullyDisplayed;
@@ -18,6 +19,7 @@ public class LoadingScreenManager : MonoBehaviour
     {
         localizeStringEvent = GetComponent<LocalizeStringEvent>();
         prompt.SetActive(false);
+        loadingText.SetActive(true);
         loadingBar.value = 0;
         loreTextMeshPro.text = "";
     }
@@ -42,6 +44,7 @@ public class LoadingScreenManager : MonoBehaviour
     public void FinishLoading()
     {
         prompt.SetActive(true);
+        loadingText.SetActive(false);
     }
 
     /*
@@ -68,6 +71,8 @@ public class LoadingScreenManager : MonoBehaviour
             {
                 // Pause time depending on the character revealed
                 case '.':
+                case '?':
+                case '!':
                     yield return new WaitForSeconds(0.5f);
                     break;
                 case ',':

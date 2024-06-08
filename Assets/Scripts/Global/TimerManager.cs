@@ -34,7 +34,7 @@ public class TimerManager : MonoBehaviour
             }
         }
         // Display time left with 2 decimals
-        timerText.text = $"TIME LEFT\n{currentTimer:F2}";
+        timerText.text = $"{currentTimer:F2}";
     }
 
     public void StartTimer(float time)

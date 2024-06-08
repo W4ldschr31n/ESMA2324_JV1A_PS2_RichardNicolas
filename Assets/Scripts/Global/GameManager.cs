@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
         TimerManager.onTimerEnded.AddListener(OnTimerEnded);
-        SingletonMaster.Instance.SceneChangeManager.LoadScene(firstScene, false);
+        SingletonMaster.Instance.SceneChangeManager.LoadScene(firstScene, true);
         HideMainUI();
         isInLoadingScreen = true;
     }
@@ -251,7 +251,7 @@ public class GameManager : MonoBehaviour
 
     private void UpdateDisplayLives()
     {
-        livesText.text = $"Lives left\n{currentLives}";
+        livesText.text = $"{currentLives}";
     }
 
     private void HideMainUI()
