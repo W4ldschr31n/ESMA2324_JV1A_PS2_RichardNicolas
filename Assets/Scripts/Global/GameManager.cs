@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         CheatCodes();
-        if (SingletonMaster.Instance.InputManager.PauseInput)
+        if (!isInLoadingScreen && SingletonMaster.Instance.InputManager.PauseInput)
         {
             SwitchPauseMenu();
         }
@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
 
     private void CheatCodes()
     {
-        if (finishedLevel)
+        if (finishedLevel || isInLoadingScreen)
             return;
         if(Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftAlt))
         {
