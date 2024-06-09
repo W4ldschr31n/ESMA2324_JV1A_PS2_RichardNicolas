@@ -98,6 +98,26 @@ MonoBehaviour:
     m_Localized: Lives left
     m_Metadata:
       m_Items: []
+  - m_Id: 5266243862282240
+    m_Localized: GAME OVER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5282496798670848
+    m_Localized: Try again
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5282519548575744
+    m_Localized: Quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5298738829869056
+    m_Localized: Thanks for playing !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5298718835621888
+    m_Localized: The end
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

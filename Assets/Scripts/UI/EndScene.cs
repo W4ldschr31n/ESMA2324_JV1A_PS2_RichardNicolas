@@ -14,6 +14,16 @@ public class EndScene : MonoBehaviour
         {
             Destroy(ddol.gameObject);
         }
+        StartCoroutine(LoadAfterDestroy());
+    }
+
+
+    private IEnumerator LoadAfterDestroy()
+    {
+        while (GameObject.FindObjectsOfType<DontDestroyOnLoad>().Length > 0)
+        {
+            yield return null;
+        }
         SceneManager.LoadSceneAsync(mainMenuScene);
     }
 }

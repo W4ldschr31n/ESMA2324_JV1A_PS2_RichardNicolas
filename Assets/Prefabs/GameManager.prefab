@@ -59,6 +59,7 @@ MonoBehaviour:
   firstScene: Level1-1
   pauseScene: PauseMenu
   endScene: EndScene
+  winScene: WinScene
   isGamePaused: 0
   mainUI: {fileID: 0}
   gameOverScreen: {fileID: 0}

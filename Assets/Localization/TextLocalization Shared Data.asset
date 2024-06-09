@@ -95,6 +95,26 @@ MonoBehaviour:
     m_Key: ui_lives_left
     m_Metadata:
       m_Items: []
+  - m_Id: 5266243862282240
+    m_Key: game_over
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5282496798670848
+    m_Key: go_try_again
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5282519548575744
+    m_Key: go_quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5298718835621888
+    m_Key: ui_end
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5298738829869056
+    m_Key: ui_thx_for_p
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

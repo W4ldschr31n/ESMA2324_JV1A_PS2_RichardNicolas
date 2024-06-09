@@ -98,6 +98,26 @@ MonoBehaviour:
     m_Localized: Vies restantes
     m_Metadata:
       m_Items: []
+  - m_Id: 5266243862282240
+    m_Localized: PERDU
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5282496798670848
+    m_Localized: Recommencer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5282519548575744
+    m_Localized: Quitter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5298738829869056
+    m_Localized: "Merci d'avoir jou\xE9 !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5298718835621888
+    m_Localized: Fin
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

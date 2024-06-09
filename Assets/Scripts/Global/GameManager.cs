@@ -15,11 +15,12 @@ public class GameManager : MonoBehaviour
     private int currentLives;
     public GameObject promptText;
     public LocalizeStringEvent localizedPromptText;
-    private bool isPlaying, isInLoadingScreen, isGameOver;
+    private bool isPlaying, isInLoadingScreen;
     public string firstScene;
     private string nextScene;
     public string pauseScene;
     public string endScene;
+    public string winScene;
     private bool isLoreTransition;
     private bool finishedLevel;
     public bool isGamePaused;
@@ -55,12 +56,8 @@ public class GameManager : MonoBehaviour
         {
             return;
         }
-        //GameOver
-        if(isGameOver && SingletonMaster.Instance.InputManager.JumpInputPressed) {
-            ResetLevel();
-        }
         // Level Start
-        else if (!isInLoadingScreen && !isPlaying && SingletonMaster.Instance.InputManager.JumpInputPressed)
+        else if (!isInLoadingScreen && !isPlaying && SingletonMaster.Instance.InputManager.AnyInput)
         {
             if (!finishedLevel)
             {
@@ -95,7 +92,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void ResetLevel()
+    public void ResetLevel()
     {
         DestroyPlayer();
         SingletonMaster.Instance.TimerManager.EndTimer();
@@ -206,7 +203,6 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
-        isGameOver = true;
         HideMainUI();
         ShowGameOverScreen();
     }
@@ -225,7 +221,7 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
     {
-        if(scene.name == SingletonMaster.Instance.SceneChangeManager.loadingScreenScene || scene.name == endScene)
+        if(scene.name == SingletonMaster.Instance.SceneChangeManager.loadingScreenScene || scene.name == endScene || scene.name == winScene)
         {
             HideMainUI();
             isInLoadingScreen = true;
@@ -238,7 +234,6 @@ public class GameManager : MonoBehaviour
             isInLoadingScreen = false;
             isPlaying = false;
             finishedLevel = false;
-            isGameOver=false;
 
             // Load data from the level
             LevelData levelData = FindObjectOfType<LevelData>();
@@ -307,6 +302,7 @@ public class GameManager : MonoBehaviour
 
     public void BackToMainMenu()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(endScene);
     }
 }
