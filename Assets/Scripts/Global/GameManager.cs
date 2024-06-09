@@ -107,7 +107,23 @@ public class GameManager : MonoBehaviour
 
     private void GoNextLevel()
     {
+        StartCoroutine(NextLevelCoroutine());
+    }
+
+    private IEnumerator NextLevelCoroutine()
+    {
+        FinishPoint elevator = FindObjectOfType<FinishPoint>();
+        if (elevator != null)
+        {
+            SingletonMaster.Instance.CameraManager.SetCameraTarget(elevator.gameObject.transform);
+            SingletonMaster.Instance.CameraManager.ZoomIn();
+            yield return new WaitForSeconds(0.5f);
+            playerInstance.DisableAndHide();
+            elevator.Close();
+            yield return new WaitForSeconds(1.5f);
+        }
         SingletonMaster.Instance.SceneChangeManager.LoadScene(nextScene, isLoreTransition);
+        yield return null;
     }
 
     private void ShowStartPrompt()
@@ -195,12 +211,11 @@ public class GameManager : MonoBehaviour
         ShowGameOverScreen();
     }
 
-    public void FinishGame()
+    public void FinishGame(Vector3 position)
     {
         isPlaying = false;
         finishedLevel = true;
-        playerInstance.DisableAndHide();
-        playerInstance.StopRecording();
+        playerInstance.Finish(position);
         SingletonMaster.Instance.TimerManager.StartTimer(timer);
         playerInstance.RestartReplay();
         ShowContinuePrompt();

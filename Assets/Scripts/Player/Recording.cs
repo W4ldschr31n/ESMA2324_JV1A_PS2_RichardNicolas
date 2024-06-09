@@ -28,6 +28,9 @@ public class Recording
         {
             ReplayData data = replayQueue.Dequeue();
             player.SetReplayData(data);
+        } else if (player != null)
+        {
+            player.Hide();
         }
     }
 

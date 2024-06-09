@@ -31,7 +31,11 @@ public class ReplayPlayer : MonoBehaviour
         {
             Die();
         }
-        // todo animation
+    }
+
+    public void Hide()
+    {
+        rig.SetActive(false);
     }
 
     private void Die()

@@ -278,4 +278,14 @@ public class PlayerMovement : MonoBehaviour
     {
         return recorder.GetLastReplay();
     }
+
+    public void Finish(Vector3 position)
+    {
+
+        DisableBody();
+        StopRecording();
+        transform.position = position;
+        animator.Play("PlayerKneel");
+    }
+
 }

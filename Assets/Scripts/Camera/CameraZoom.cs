@@ -21,17 +21,6 @@ public class CameraZoom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.KeypadPlus))
-        {
-            ChangeSize(2);
-        }else if (Input.GetKeyDown(KeyCode.KeypadMinus))
-        {
-            ChangeSize(10);
-        }
-        else if (Input.GetKeyDown(KeyCode.KeypadEnter))
-        {
-            ResetSize();
-        }
         float newSize = Mathf.MoveTowards(_camera.orthographicSize, targetSize, stepSize * Time.deltaTime);
         _camera.orthographicSize = newSize;
     }
