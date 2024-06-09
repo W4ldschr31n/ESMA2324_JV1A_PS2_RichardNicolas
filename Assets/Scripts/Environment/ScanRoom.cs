@@ -30,5 +30,16 @@ public class ScanRoom : Activator
     override protected void UpdateDisplay()
     {
         text.text = $"{playersHere.Count} / {nbPlayersNeeded}";
+        if(playersHere.Count <= 0)
+        {
+            text.color = Color.red;
+        }else if(playersHere.Count == nbPlayersNeeded)
+        {
+            text.color = Color.green;
+        }
+        else
+        {
+            text.color = Color.yellow;
+        }
     }
 }
