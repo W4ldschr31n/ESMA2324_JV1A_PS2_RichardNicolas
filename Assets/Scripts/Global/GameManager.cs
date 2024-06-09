@@ -119,7 +119,12 @@ public class GameManager : MonoBehaviour
 
     private void GoNextLevel()
     {
-        StartCoroutine(NextLevelCoroutine());
+        if (!isInLoadingScreen)
+        {
+            isInLoadingScreen = true;
+            StartCoroutine(NextLevelCoroutine());
+        }
+        
     }
 
     private IEnumerator NextLevelCoroutine()
