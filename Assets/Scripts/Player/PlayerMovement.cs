@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject rig;
     private Animator animator;
     private Recorder recorder;
+    private AudioSource audioSource;
     [SerializeField] private Transform feetSpot, headSpot;
     [SerializeField] private LayerMask platformLayers;
     [SerializeField] private PlayerMovementData movementData;
@@ -30,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         recorder = GetComponent<Recorder>();
+        audioSource = GetComponent<AudioSource>();
 
         if(onPlayerDeath == null)
         {
@@ -240,7 +242,7 @@ public class PlayerMovement : MonoBehaviour
         // Check if we're not already dead
         if (isDead)
             return;
-
+        audioSource.Play();
         DisableBody();
         isDead = true;
         animator.ResetTrigger("Jump");
