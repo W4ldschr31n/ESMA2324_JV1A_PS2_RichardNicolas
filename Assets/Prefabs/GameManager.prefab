@@ -56,7 +56,7 @@ MonoBehaviour:
   maxLives: 10
   promptText: {fileID: 0}
   localizedPromptText: {fileID: 0}
-  firstScene: Level3-1
+  firstScene: Level1-1
   pauseScene: PauseMenu
   endScene: EndScene
   winScene: WinScene
