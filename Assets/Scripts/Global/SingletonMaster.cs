@@ -12,6 +12,7 @@ public class SingletonMaster : MonoBehaviour
     public GameManager GameManager { get; private set; }
     public InputManager InputManager { get; private set; }
     public SceneChangeManager SceneChangeManager { get; private set; }
+    public AudioManager AudioManager { get; private set; }
 
 
     private void Awake()
@@ -28,7 +29,8 @@ public class SingletonMaster : MonoBehaviour
         TimerManager = GetComponent<TimerManager>();
         GameManager = GetComponent<GameManager>();
         InputManager = GetComponent<InputManager>();
-        // The SceneChangeManager exists within another game object to be in the main menu
+        // These exist within another game object to be in the main menu
         SceneChangeManager = FindObjectOfType<SceneChangeManager>();
+        AudioManager = FindObjectOfType<AudioManager>();
     }
 }
