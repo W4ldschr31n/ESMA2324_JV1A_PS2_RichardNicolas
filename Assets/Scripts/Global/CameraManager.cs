@@ -19,6 +19,11 @@ public class CameraManager : MonoBehaviour
         cameraFollow.SetTarget(target);
     }
 
+    public void ForcePosition(Vector3 position)
+    {
+        cameraFollow.transform.position = new Vector3(position.x, position.y, cameraFollow.transform.position.z);
+    }
+
     public void ResetZoom()
     {
         cameraZoom.ResetSize();

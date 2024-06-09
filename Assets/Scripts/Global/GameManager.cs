@@ -79,16 +79,30 @@ public class GameManager : MonoBehaviour
 
     private void CheatCodes()
     {
+        if (finishedLevel)
+            return;
         if(Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.LeftAlt))
         {
             if (Input.GetKeyDown(KeyCode.Keypad1))
+            {
                 SingletonMaster.Instance.SceneChangeManager.LoadScene("Level1-1", true);
+                finishedLevel = true;
+            }
             else if (Input.GetKeyDown(KeyCode.Keypad2))
+            {
+                finishedLevel = true;
                 SingletonMaster.Instance.SceneChangeManager.LoadScene("Level2-1", true);
+            }
             else if (Input.GetKeyDown(KeyCode.Keypad3))
+            {
+                finishedLevel = true;
                 SingletonMaster.Instance.SceneChangeManager.LoadScene("Level3-1", true);
+            }
             else if (Input.GetKeyDown(KeyCode.KeypadPlus))
+            {
+                finishedLevel = true;
                 GoNextLevel();
+            }
         }
     }
 
@@ -247,6 +261,7 @@ public class GameManager : MonoBehaviour
             // Setup the singletons
             SingletonMaster.Instance.CameraManager.ZoomOut();
             SingletonMaster.Instance.CameraManager.SetCameraTarget(playerSpawn);
+            SingletonMaster.Instance.CameraManager.ForcePosition(playerSpawn.position);
             SingletonMaster.Instance.TimerManager.isPlaying = false;
             SingletonMaster.Instance.TimerManager.currentTimer = timer;
 
