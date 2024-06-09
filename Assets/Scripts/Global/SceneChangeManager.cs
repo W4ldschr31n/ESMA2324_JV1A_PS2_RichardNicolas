@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Localization.Settings;
 
 public class SceneChangeManager : MonoBehaviour
 {
@@ -69,18 +70,19 @@ public class SceneChangeManager : MonoBehaviour
             yield return null;
         }
 
-        // Load the real scene we want to get to
-        asyncLoad = SceneManager.LoadSceneAsync(sceneName);
-        asyncLoad.allowSceneActivation = false;
-        
         // Get the loading screen manager in the scene and tell him what to display
         LoadingScreenManager loadingScreenManager = FindObjectOfType<LoadingScreenManager>();
         loadingScreenManager.SetLocalizationKey(sceneName);
+
+        // Load the real scene we want to get to
+        asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+        asyncLoad.allowSceneActivation = false;
 
         while (!asyncLoad.isDone)
         {
             // Loading in progress
             loadingScreenManager.UpdateLoadingProgress(asyncLoad.progress / 0.9f);
+
             // Loading finished
             if (asyncLoad.progress >= 0.9f)
             {

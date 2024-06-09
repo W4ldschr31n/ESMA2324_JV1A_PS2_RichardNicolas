@@ -32,9 +32,10 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
         TimerManager.onTimerEnded.AddListener(OnTimerEnded);
-        SingletonMaster.Instance.SceneChangeManager.LoadScene(firstScene, true);
         HideMainUI();
+        HideGameOverScreen();
         isInLoadingScreen = true;
+        SingletonMaster.Instance.SceneChangeManager.LoadScene(firstScene, true);
     }
 
     private void OnDisable()
