@@ -8,17 +8,20 @@ public class Door : Activable
     private Vector3 targetPosition;
     private float speed;
     public float speedOpen, speedClose;
+    public Animator alertAnimator;
 
     public override void Activate()
     {
         targetPosition = spotOpen.position;
         speed = speedOpen;
+        alertAnimator.SetBool("Activated", true);
     }
 
     public override void Deactivate()
     {
         targetPosition = spotClose.position;
         speed = speedClose;
+        alertAnimator.SetBool("Activated", false);
     }
 
     private void Update()

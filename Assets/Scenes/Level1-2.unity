@@ -183,9 +183,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 6503027630465637240, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.53
+      objectReference: {fileID: 0}
     - target: {fileID: 7595149156255420660, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
       propertyPath: m_Name
       value: Door (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9081171167683952709, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9081171167683952709, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9081171167683952709, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
+      propertyPath: m_Color.r
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17742,9 +17758,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6503027630465637240, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.51
+      objectReference: {fileID: 0}
     - target: {fileID: 7595149156255420660, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
       propertyPath: m_Name
       value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 9081171167683952709, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
+      propertyPath: m_Color.b
+      value: 0.9988626
+      objectReference: {fileID: 0}
+    - target: {fileID: 9081171167683952709, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9081171167683952709, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
+      propertyPath: m_Color.r
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18012,6 +18044,22 @@ PrefabInstance:
       propertyPath: listActivablesOff.Array.data[0]
       value: 
       objectReference: {fileID: 880898521}
+    - target: {fileID: 6232577596930763609, guid: db4021360f2d7db4da29fa6407571a65, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232577596930763609, guid: db4021360f2d7db4da29fa6407571a65, type: 3}
+      propertyPath: m_Color.g
+      value: 0.99615526
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232577596930763609, guid: db4021360f2d7db4da29fa6407571a65, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234612503669878884, guid: db4021360f2d7db4da29fa6407571a65, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.49
+      objectReference: {fileID: 0}
     - target: {fileID: 8239566466417872142, guid: db4021360f2d7db4da29fa6407571a65, type: 3}
       propertyPath: m_Name
       value: PressButton

@@ -8,6 +8,7 @@ public class PressButton : Activator
     private ContactFilter2D playerFilter;
     private Animator animator;
     [SerializeField] private Collider2D pressSpot;
+    public Animator alertAnimator;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,8 @@ public class PressButton : Activator
         List<Collider2D> playersHere = new();
         pressSpot.OverlapCollider(playerFilter, playersHere);
         bool activated = playersHere.Count > 0;
-        animator.SetBool("Down", playersHere.Count > 0);
+        animator.SetBool("Down", activated);
+        alertAnimator.SetBool("Activated", activated);
         return activated;
     }
 

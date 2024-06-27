@@ -1161,6 +1161,26 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: 27, y: 1, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 1
+      m_TileSpriteIndex: 1
+      m_TileMatrixIndex: 1
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 28, y: 1, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 1
+      m_TileSpriteIndex: 1
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: 30, y: 1, z: 0}
     second:
       serializedVersion: 2
@@ -6405,19 +6425,19 @@ Tilemap:
   m_TileAssetArray:
   - m_RefCount: 512
     m_Data: {fileID: 11400000, guid: 61dcbbf362150b442acd5283a9d43e36, type: 2}
-  - m_RefCount: 50
+  - m_RefCount: 52
     m_Data: {fileID: 11400000, guid: 3d1f2a1e2e0bebf45b6b66e53dc71226, type: 2}
   - m_RefCount: 16
     m_Data: {fileID: 11400000, guid: e60c0bfacdf69d74f8415aece32aedd9, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 512
     m_Data: {fileID: 889634575, guid: 960f93150a5d26049a35ef67c7279e1d, type: 3}
-  - m_RefCount: 50
+  - m_RefCount: 52
     m_Data: {fileID: -582506631, guid: 960f93150a5d26049a35ef67c7279e1d, type: 3}
   - m_RefCount: 16
     m_Data: {fileID: -844086162, guid: 960f93150a5d26049a35ef67c7279e1d, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 518
+  - m_RefCount: 519
     m_Data:
       e00: -1
       e01: 0
@@ -6435,7 +6455,7 @@ Tilemap:
       e31: 0
       e32: 0
       e33: 1
-  - m_RefCount: 60
+  - m_RefCount: 61
     m_Data:
       e00: 1
       e01: 0
@@ -6454,7 +6474,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 578
+  - m_RefCount: 580
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -13662,6 +13682,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6503027630465637240, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7595149156255420660, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
       propertyPath: m_Name
       value: Door
@@ -13669,6 +13693,14 @@ PrefabInstance:
     - target: {fileID: 7595149156255420660, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9081171167683952709, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9081171167683952709, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
+      propertyPath: m_Color.r
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14091,6 +14123,22 @@ PrefabInstance:
       propertyPath: listActivablesOn.Array.data[0]
       value: 
       objectReference: {fileID: 333220796}
+    - target: {fileID: 6232577596930763609, guid: db4021360f2d7db4da29fa6407571a65, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232577596930763609, guid: db4021360f2d7db4da29fa6407571a65, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232577596930763609, guid: db4021360f2d7db4da29fa6407571a65, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234612503669878884, guid: db4021360f2d7db4da29fa6407571a65, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 8239566466417872142, guid: db4021360f2d7db4da29fa6407571a65, type: 3}
       propertyPath: m_Name
       value: PressButton
@@ -33698,7 +33746,7 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 5
       m_TileSpriteIndex: 5
-      m_TileMatrixIndex: 1
+      m_TileMatrixIndex: 0
       m_TileColorIndex: 3
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
@@ -33807,7 +33855,7 @@ Tilemap:
   - m_RefCount: 1803
     m_Data: {fileID: 777975116, guid: 3dfc92b46f945f9449680b1dd974410e, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 15
+  - m_RefCount: 16
     m_Data:
       e00: 0.000000059604645
       e01: -0.99999994
@@ -33825,7 +33873,7 @@ Tilemap:
       e31: 0
       e32: 0
       e33: 1
-  - m_RefCount: 5
+  - m_RefCount: 4
     m_Data:
       e00: -1
       e01: 0.00000008742278
@@ -33982,15 +34030,17 @@ CompositeCollider2D:
       - X: 270000000
         Y: 10000000
     - - X: 300000000
-        Y: 9999999
-      - X: 295000000
-        Y: 10000000
-      - X: 300000000
-        Y: 10000000
-      - X: 300000000
         Y: 20000000
       - X: 290000000
         Y: 20000000
+      - X: 290000000
+        Y: 10000000
+      - X: 300000000
+        Y: 10000000
+    - - X: 300000000
+        Y: 9999999
+      - X: 290000000
+        Y: 10000000
       - X: 290000000
         Y: -9999999
       - X: 300000000
