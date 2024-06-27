@@ -242,7 +242,7 @@ public class PlayerMovement : MonoBehaviour
         // Check if we're not already dead
         if (isDead)
             return;
-        audioSource.Play();
+        SingletonMaster.Instance.AudioManager.PlayDeathSound();
         DisableBody();
         isDead = true;
         animator.ResetTrigger("Jump");

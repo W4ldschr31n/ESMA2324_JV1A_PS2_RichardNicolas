@@ -11,10 +11,10 @@ public class MainMenuManager : MonoBehaviour
     GameObject titleScreen;
 
     [SerializeField]
-    private GameObject mainMenu, settingsMenu, controlsMenu;
+    private GameObject mainMenu, settingsMenu, controlsMenu, audioMenu;
 
     [SerializeField]
-    private GameObject mainMenuFirstElement, settingsMenuFirstElement, controlsMenuFirstElement;
+    private GameObject mainMenuFirstElement, settingsMenuFirstElement, controlsMenuFirstElement, audioMenuFirstElement;
 
     private void Start()
     {
@@ -33,6 +33,7 @@ public class MainMenuManager : MonoBehaviour
         mainMenu.SetActive(false);
         settingsMenu.SetActive(false);
         controlsMenu.SetActive(false);
+        audioMenu.SetActive(false);
     }
 
     public void ShowMainMenu()
@@ -54,6 +55,13 @@ public class MainMenuManager : MonoBehaviour
         HideAllMenus();
         controlsMenu.SetActive(true);
         EventSystem.current.SetSelectedGameObject(controlsMenuFirstElement);
+    }
+
+    public void ShowAudioMenu()
+    {
+        HideAllMenus();
+        audioMenu.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(audioMenuFirstElement);
     }
 
     public void QuitButton()

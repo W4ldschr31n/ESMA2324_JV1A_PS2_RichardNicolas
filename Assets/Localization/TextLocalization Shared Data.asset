@@ -115,6 +115,14 @@ MonoBehaviour:
     m_Key: ui_thx_for_p
     m_Metadata:
       m_Items: []
+  - m_Id: 11960238189785088
+    m_Key: menu_music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11962127979589632
+    m_Key: menu_sound
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

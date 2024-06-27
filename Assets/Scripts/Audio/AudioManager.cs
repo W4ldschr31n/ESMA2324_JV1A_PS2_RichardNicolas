@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     public float fadeInTime;
 
     public AudioClip clickSound;
+    public AudioClip deathSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +43,11 @@ public class AudioManager : MonoBehaviour
     public void PlayClickSound()
     {
         PlaySoundEffect(clickSound);
+    }
+
+    public void PlayDeathSound()
+    {
+        PlaySoundEffect(deathSound);
     }
 
     public void PlaySoundEffect(AudioClip clip)

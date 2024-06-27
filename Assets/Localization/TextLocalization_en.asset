@@ -118,6 +118,14 @@ MonoBehaviour:
     m_Localized: The end
     m_Metadata:
       m_Items: []
+  - m_Id: 11960238189785088
+    m_Localized: Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11962127979589632
+    m_Localized: Sound effects
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
