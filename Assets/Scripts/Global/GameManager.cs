@@ -47,18 +47,22 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        CheatCodes();
         if (!isInLoadingScreen && SingletonMaster.Instance.InputManager.PauseInput)
         {
             SwitchPauseMenu();
         }
-        // Don't listen for further inputs if game is paused
-        if (isGamePaused)
+
+        // Don't listen for further inputs
+        if (isGamePaused || isInLoadingScreen)
         {
             return;
         }
+
+        CheatCodes();
+        
+        
         // Level Start
-        else if (!isInLoadingScreen && !isPlaying && SingletonMaster.Instance.InputManager.AnyInput)
+        if (!isPlaying && SingletonMaster.Instance.InputManager.AnyInput)
         {
             if (!finishedLevel)
             {

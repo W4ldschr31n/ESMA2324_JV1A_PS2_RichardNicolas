@@ -349,7 +349,7 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
             m_RebindOverlay?.SetActive(true);
             if (m_RebindText != null)
             {
-                var text = action.bindings[bindingIndex].groups == "Keyboard" ? "Appuyez sur une touche du clavier.": "Appuyez sur un bouton de la manette.";
+                var text = action.bindings[bindingIndex].groups == "Keyboard" ? "Press a keyboard key.": "Press a controller button.";
                 m_RebindText.text = partName + text;
             }
 
@@ -422,7 +422,7 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
 
         private void DisplayRebindError(string path)
         {
-            m_ErrorText.text = "Le bouton '"+path+"' est déjà attribué à une autre action";
+            m_ErrorText.text = "Key '"+path+"' is already in use";
         }
 
         protected void OnEnable()
