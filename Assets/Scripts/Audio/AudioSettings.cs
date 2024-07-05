@@ -13,8 +13,11 @@ public class AudioSettings : MonoBehaviour
 
     private void Start()
     {
-        musicSlider.value = 0.5f;
-        sfxSlider.value = 0.5f;
+        float musicValue, sfxValue;
+        audioMixer.GetFloat("music", out musicValue);
+        audioMixer.GetFloat("sfx", out sfxValue);
+        musicSlider.value = ComputeSliderValue(musicValue);
+        sfxSlider.value = ComputeSliderValue(sfxValue);
     }
 
     public void ChangeMusicVolume()
@@ -31,7 +34,24 @@ public class AudioSettings : MonoBehaviour
 
     private float ComputeVolume(float sliderValue)
     {
-        float volume = Mathf.Log10(Mathf.Max(0.01f, sliderValue)) * 20;
-        return volume;
+        if(sliderValue == 0)
+        {
+            return -80f; // Mute
+        }
+        else
+        {
+            return Mathf.Log10(Mathf.Max(0.001f, sliderValue)) * 20f;
+        }
+    }
+    private float ComputeSliderValue(float volume)
+    {
+        if (volume <= -80f)
+        {
+            return 0f;
+        }
+        else
+        {
+            return Mathf.Pow(10, volume / 20f);
+        }
     }
 }
