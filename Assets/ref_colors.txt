@@ -1,0 +1,7 @@
+vert (straight) 00FF00
+blue (straight) 0000FF
+cyan (straight) 00FFFF
+yellow(on/off) FFFF00
+orange (on/off) FF8000
+red (close) FF0000
+pink (special) FF00FF
