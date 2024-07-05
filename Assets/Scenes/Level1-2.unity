@@ -193,7 +193,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9081171167683952709, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
       propertyPath: m_Color.b
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9081171167683952709, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
       propertyPath: m_Color.g
@@ -201,7 +201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9081171167683952709, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17768,7 +17768,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9081171167683952709, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
       propertyPath: m_Color.b
-      value: 0.9988626
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9081171167683952709, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
       propertyPath: m_Color.g
@@ -17776,7 +17776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9081171167683952709, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18046,15 +18046,15 @@ PrefabInstance:
       objectReference: {fileID: 880898521}
     - target: {fileID: 6232577596930763609, guid: db4021360f2d7db4da29fa6407571a65, type: 3}
       propertyPath: m_Color.b
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6232577596930763609, guid: db4021360f2d7db4da29fa6407571a65, type: 3}
       propertyPath: m_Color.g
-      value: 0.99615526
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6232577596930763609, guid: db4021360f2d7db4da29fa6407571a65, type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8234612503669878884, guid: db4021360f2d7db4da29fa6407571a65, type: 3}
       propertyPath: m_LocalPosition.y

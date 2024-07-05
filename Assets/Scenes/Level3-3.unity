@@ -171,9 +171,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 6503027630465637240, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7595149156255420660, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
       propertyPath: m_Name
       value: Door (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9081171167683952709, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9081171167683952709, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -332,6 +344,14 @@ PrefabInstance:
       propertyPath: listActivablesOff.Array.data[0]
       value: 
       objectReference: {fileID: 1459202620}
+    - target: {fileID: 6232577596930763609, guid: db4021360f2d7db4da29fa6407571a65, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232577596930763609, guid: db4021360f2d7db4da29fa6407571a65, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5019608
+      objectReference: {fileID: 0}
     - target: {fileID: 8239566466417872142, guid: db4021360f2d7db4da29fa6407571a65, type: 3}
       propertyPath: m_Name
       value: PressButton (2)
@@ -417,6 +437,14 @@ PrefabInstance:
       propertyPath: listActivablesOff.Array.data[1]
       value: 
       objectReference: {fileID: 74184224}
+    - target: {fileID: 6232577596930763609, guid: db4021360f2d7db4da29fa6407571a65, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232577596930763609, guid: db4021360f2d7db4da29fa6407571a65, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8239566466417872142, guid: db4021360f2d7db4da29fa6407571a65, type: 3}
       propertyPath: m_Name
       value: PressButton
@@ -1015,9 +1043,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6503027630465637240, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 6503027630465637240, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.33
+      objectReference: {fileID: 0}
     - target: {fileID: 7595149156255420660, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
       propertyPath: m_Name
       value: Door (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9081171167683952709, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9081171167683952709, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5019608
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5657,6 +5701,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 9081171167683952709, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5737,6 +5785,14 @@ PrefabInstance:
       propertyPath: listActivablesOn.Array.data[0]
       value: 
       objectReference: {fileID: 881678759}
+    - target: {fileID: 6232577596930763609, guid: db4021360f2d7db4da29fa6407571a65, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232577596930763609, guid: db4021360f2d7db4da29fa6407571a65, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8239566466417872142, guid: db4021360f2d7db4da29fa6407571a65, type: 3}
       propertyPath: m_Name
       value: PressButton (3)
@@ -5794,9 +5850,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6503027630465637240, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7595149156255420660, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
       propertyPath: m_Name
       value: Door (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9081171167683952709, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9081171167683952709, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
+      propertyPath: m_Color.r
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5865,6 +5933,14 @@ PrefabInstance:
     - target: {fileID: 7595149156255420660, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
       propertyPath: m_Name
       value: Door (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9081171167683952709, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9081171167683952709, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
+      propertyPath: m_Color.r
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6211,6 +6287,14 @@ PrefabInstance:
       propertyPath: listActivablesOn.Array.data[1]
       value: 
       objectReference: {fileID: 1095110235}
+    - target: {fileID: 6232577596930763609, guid: db4021360f2d7db4da29fa6407571a65, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232577596930763609, guid: db4021360f2d7db4da29fa6407571a65, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8239566466417872142, guid: db4021360f2d7db4da29fa6407571a65, type: 3}
       propertyPath: m_Name
       value: PressButton (1)
@@ -6268,9 +6352,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 6503027630465637240, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7595149156255420660, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
       propertyPath: m_Name
       value: Door (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9081171167683952709, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9081171167683952709, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
+      propertyPath: m_Color.r
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13540,6 +13636,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimedGate
       objectReference: {fileID: 0}
+    - target: {fileID: 3592825960373682964, guid: dda47fdd19ff79842b524c247a53071d, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13596,6 +13696,14 @@ PrefabInstance:
     - target: {fileID: 7595149156255420660, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
       propertyPath: m_Name
       value: Door (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9081171167683952709, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9081171167683952709, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5019608
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13824,9 +13932,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6503027630465637240, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7595149156255420660, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
       propertyPath: m_Name
       value: Door (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9081171167683952709, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9081171167683952709, guid: 8dddc98e31333d14eba6ee99c2f13767, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
