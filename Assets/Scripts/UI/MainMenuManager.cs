@@ -70,7 +70,7 @@ public class MainMenuManager : MonoBehaviour
         #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
         #endif
-        Application.Quit();
+        System.Diagnostics.Process.GetCurrentProcess().Kill();
     }
 
     public void PlayGame()
